@@ -68,10 +68,10 @@ RM = /snap/clion/145/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fernando/Documents/TEC/ADS2-PJ1
+CMAKE_SOURCE_DIR = /home/camanem/CLionProjects/ADS2-PJ1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fernando/Documents/TEC/ADS2-PJ1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fernando/Documents/TEC/ADS2-PJ1/cmake-build-debug/CMakeFiles /home/fernando/Documents/TEC/ADS2-PJ1/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/CMakeFiles /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fernando/Documents/TEC/ADS2-PJ1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -143,6 +143,33 @@ ADS2_PJ1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/build
 .PHONY : ADS2_PJ1/fast
 
+Gui/MainWindow.o: Gui/MainWindow.cpp.o
+
+.PHONY : Gui/MainWindow.o
+
+# target to build an object file
+Gui/MainWindow.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o
+.PHONY : Gui/MainWindow.cpp.o
+
+Gui/MainWindow.i: Gui/MainWindow.cpp.i
+
+.PHONY : Gui/MainWindow.i
+
+# target to preprocess a source file
+Gui/MainWindow.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.i
+.PHONY : Gui/MainWindow.cpp.i
+
+Gui/MainWindow.s: Gui/MainWindow.cpp.s
+
+.PHONY : Gui/MainWindow.s
+
+# target to generate assembly for a file
+Gui/MainWindow.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.s
+.PHONY : Gui/MainWindow.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -179,6 +206,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ADS2_PJ1"
+	@echo "... Gui/MainWindow.o"
+	@echo "... Gui/MainWindow.i"
+	@echo "... Gui/MainWindow.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
