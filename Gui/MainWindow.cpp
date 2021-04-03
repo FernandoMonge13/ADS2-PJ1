@@ -10,6 +10,7 @@ MainWindow::MainWindow() {
     ListViewText listViewText(4, true);
 
     button_run.add_label("Run");
+
 //    button_run.add_pixlabel("info.xpm", "Run");
 //    button_run.signal_clicked().connect([this]{this->//m}); // Clases
 
@@ -36,18 +37,19 @@ MainWindow::MainWindow() {
     fixed.put(scroll_editor, 5, 35);
     fixed.put(scroll_stdout_, 5, 540);
     fixed.put(scroll_app_log, 5, 670);
-    fixed.put(listViewText, 400, 700);
     fixed.put(label_ram, 550, 10);
     fixed.put(scroll_ram_view,420, 35);
+    fixed.put(listViewText, 450, 700);
 
     //ram_view.resize(10,10);
     //fixed.put(ram_view, 500,200);
 
     stdout_.get_buffer()->set_text(">>");
 
-    ram_view.get_buffer()->set_text("     Direction                     Value                     Label                   Refs");
+    ram_view.get_buffer()->set_text("     Direction                     Value                     "
+                                    "Label                   Refs");
 
-//    stdout_.get_buffer()->set_text(stdout_.get_buffer()->get_text() + "ajuuaaaa"); // Command to add text and not overwrite //
+//    stdout_.get_buffer()->set_text(stdout_.get_buffer()->get_text()+"text"); // Command to add text and not overwrite
 //    editor.set_size_request(200, 100);
 //    editor.get_buffer()->get_text();
 //    editor.get_buffer()->set_text("");
