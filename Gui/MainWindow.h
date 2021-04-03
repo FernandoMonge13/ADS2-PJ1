@@ -51,7 +51,6 @@ public:
      * @brief Generates the window with all its components
      */
     MainWindow();
-
     void holamundo(Label*);
 
 };
