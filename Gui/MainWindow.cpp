@@ -3,8 +3,12 @@
 //
 
 #include "MainWindow.h"
+#include "iostream"
+#include "../logic/Syntax.h"
+
 
 MainWindow::MainWindow() {
+
 
     label_ram.set_text("Ram Live View");
     ListViewText listViewText(4, true);
@@ -48,18 +52,23 @@ MainWindow::MainWindow() {
 
     ram_view.get_buffer()->set_text("     Direction                     Value                     "
                                     "Label                   Refs");
-
 //    stdout_.get_buffer()->set_text(stdout_.get_buffer()->get_text()+"text"); // Command to add text and not overwrite
 //    editor.set_size_request(200, 100);
 //    editor.get_buffer()->get_text();
 //    editor.get_buffer()->set_text("");
 //    editor.set_editable(false);
-
+    button_run.signal_clicked().connect( sigc::mem_fun(*this, &MainWindow::run_button_clicked) );
     window.show_all_children();
     main.run(window);
 }
 
-void MainWindow::holamundo(Label * hol){
+void MainWindow::run_button_clicked(){
+
+    std::cout << "Contenido del editor:" << std::endl;
+    std::cout << editor.get_buffer()->get_text() << std::endl;
+
+    Syntax* syntax = new Syntax;
+    syntax->analyze(editor.get_buffer()->get_text());
 
 
 }

@@ -27,6 +27,8 @@ class MainWindow {
 
 private:
 
+
+
     Main main;
     Window window;
     Fixed fixed;
@@ -51,7 +53,7 @@ public:
      * @brief Generates the window with all its components
      */
     MainWindow();
-    void holamundo(Label*);
+    void run_button_clicked();
 
 };
 

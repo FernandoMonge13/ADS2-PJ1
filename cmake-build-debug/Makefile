@@ -170,6 +170,33 @@ Gui/MainWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.s
 .PHONY : Gui/MainWindow.cpp.s
 
+logic/Syntax.o: logic/Syntax.cpp.o
+
+.PHONY : logic/Syntax.o
+
+# target to build an object file
+logic/Syntax.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.o
+.PHONY : logic/Syntax.cpp.o
+
+logic/Syntax.i: logic/Syntax.cpp.i
+
+.PHONY : logic/Syntax.i
+
+# target to preprocess a source file
+logic/Syntax.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.i
+.PHONY : logic/Syntax.cpp.i
+
+logic/Syntax.s: logic/Syntax.cpp.s
+
+.PHONY : logic/Syntax.s
+
+# target to generate assembly for a file
+logic/Syntax.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.s
+.PHONY : logic/Syntax.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -209,6 +236,9 @@ help:
 	@echo "... Gui/MainWindow.o"
 	@echo "... Gui/MainWindow.i"
 	@echo "... Gui/MainWindow.s"
+	@echo "... logic/Syntax.o"
+	@echo "... logic/Syntax.i"
+	@echo "... logic/Syntax.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
