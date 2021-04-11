@@ -2,9 +2,13 @@
 #include <gtkmm.h>
 #include "Gui/MainWindow.h"
 
+
+
 int main() {
 
-    MainWindow window;
+    //MainWindow window;
+
+
 
     return 0;
 }

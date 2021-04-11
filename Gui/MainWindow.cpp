@@ -14,10 +14,11 @@ MainWindow::MainWindow() {
 //    button_run.add_pixlabel("info.xpm", "Run");
 //    button_run.signal_clicked().connect([this]{this->//m}); // Clases
 
-    window.set_default_size(800,800);
+    window.set_default_size(1100,800);
     window.set_title("C!  --  IDE");
     window.set_position(Gtk::WIN_POS_CENTER);
     window.add(fixed);
+    window.set_resizable(false);
 
     stdout_.set_editable(false);
     app_log.set_editable(false);
@@ -28,18 +29,18 @@ MainWindow::MainWindow() {
     scroll_app_log.add(app_log);
     scroll_ram_view.add(ram_view);
 
-    scroll_editor.set_size_request(400,500);
-    scroll_stdout_.set_size_request(400, 125);
-    scroll_app_log.set_size_request(400, 125);
+    scroll_editor.set_size_request(700,500);
+    scroll_stdout_.set_size_request(700, 125);
+    scroll_app_log.set_size_request(700, 125);
     scroll_ram_view.set_size_request(370, 500);
 
     fixed.put(button_run, 5, 0);
     fixed.put(scroll_editor, 5, 35);
     fixed.put(scroll_stdout_, 5, 540);
     fixed.put(scroll_app_log, 5, 670);
-    fixed.put(label_ram, 550, 10);
-    fixed.put(scroll_ram_view,420, 35);
-    fixed.put(listViewText, 450, 700);
+    fixed.put(label_ram, 850, 10);
+    fixed.put(scroll_ram_view,720, 35);
+    fixed.put(listViewText, 750, 700);
 
     //ram_view.resize(10,10);
     //fixed.put(ram_view, 500,200);

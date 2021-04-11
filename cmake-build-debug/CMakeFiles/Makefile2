@@ -93,12 +93,12 @@ clean: CMakeFiles/ADS2_PJ1.dir/clean
 CMakeFiles/ADS2_PJ1.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4 "Built target ADS2_PJ1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target ADS2_PJ1"
 .PHONY : CMakeFiles/ADS2_PJ1.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ADS2_PJ1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles 5
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/ADS2_PJ1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/ADS2_PJ1.dir/rule

@@ -142,6 +142,33 @@ ADS2_PJ1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/build
 .PHONY : ADS2_PJ1/fast
 
+Client/Client.o: Client/Client.cpp.o
+
+.PHONY : Client/Client.o
+
+# target to build an object file
+Client/Client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.o
+.PHONY : Client/Client.cpp.o
+
+Client/Client.i: Client/Client.cpp.i
+
+.PHONY : Client/Client.i
+
+# target to preprocess a source file
+Client/Client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.i
+.PHONY : Client/Client.cpp.i
+
+Client/Client.s: Client/Client.cpp.s
+
+.PHONY : Client/Client.s
+
+# target to generate assembly for a file
+Client/Client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.s
+.PHONY : Client/Client.cpp.s
+
 Gui/MainWindow.o: Gui/MainWindow.cpp.o
 
 .PHONY : Gui/MainWindow.o
@@ -232,6 +259,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ADS2_PJ1"
+	@echo "... Client/Client.o"
+	@echo "... Client/Client.i"
+	@echo "... Client/Client.s"
 	@echo "... Gui/MainWindow.o"
 	@echo "... Gui/MainWindow.i"
 	@echo "... Gui/MainWindow.s"

@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/fernando/Documents/ADS2-PJ1/Client/Client.cpp" "/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.o"
   "/home/fernando/Documents/ADS2-PJ1/Gui/MainWindow.cpp" "/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o"
   "/home/fernando/Documents/ADS2-PJ1/Server/Server.cpp" "/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o"
   "/home/fernando/Documents/ADS2-PJ1/main.cpp" "/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles/ADS2_PJ1.dir/main.cpp.o"

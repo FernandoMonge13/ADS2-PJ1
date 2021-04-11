@@ -154,6 +154,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/fernando/Documents/ADS2-PJ1/Client/Client.cpp">
+			<Option target="ADS2_PJ1"/>
+		</Unit>
+		<Unit filename="/home/fernando/Documents/ADS2-PJ1/Client/Client.h">
+			<Option target="ADS2_PJ1"/>
+		</Unit>
 		<Unit filename="/home/fernando/Documents/ADS2-PJ1/Gui/MainWindow.cpp">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
