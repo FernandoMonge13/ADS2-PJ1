@@ -10,7 +10,12 @@ class Client {
 public:
 
     Client();
+    void start(int, char *[] );
 
+private:
+    int socket0;
+    int port = 1234;
+    int association;
 
 
 };
