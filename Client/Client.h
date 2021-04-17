@@ -10,12 +10,15 @@ class Client {
 public:
 
     Client();
-    void start(int, char *[] );
+    void start();
 
 private:
-    int socket0;
-    int port = 1234;
-    int association;
+    int socketC;
+    int port = 56000;
+    int connect_Res;
+    int send_Res;
+    int bytes_Received;
+    char buffer[4096];
 };
 
 
