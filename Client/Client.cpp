@@ -77,7 +77,3 @@ void Client::start(int argc, char *argv[]) {
     close(socket0);
 
 }
-
-
-
-

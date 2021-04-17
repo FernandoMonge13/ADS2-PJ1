@@ -16,8 +16,6 @@ private:
     int socket0;
     int port = 1234;
     int association;
-
-
 };
 
 

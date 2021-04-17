@@ -11,13 +11,15 @@ class Server {
 public:
 
     Server();
-    void start(int, char *[]);
+    void start();
 
 private:
-    int port = 1243;
-    int socket0;
-    int socket1;
-    int association;
+    int socketS;
+    int client_Socket;
+    int port = 56000;
+    int bytes_Received;
+    char buffer[4096];
+
 
 };
 
