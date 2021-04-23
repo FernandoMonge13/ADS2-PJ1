@@ -1218,10 +1218,12 @@ CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o: /usr/lib/x86_64-linux-gnu/gtkmm-3.
 CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o: /usr/lib/x86_64-linux-gnu/pangomm-1.4/include/pangommconfig.h
 CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o: /usr/lib/x86_64-linux-gnu/sigc++-2.0/include/sigc++config.h
 
+CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o: ../Json/json.hpp
 CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o: ../Server/Server.cpp
 CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o: ../Server/Server.h
 
 CMakeFiles/ADS2_PJ1.dir/main.cpp.o: ../Gui/MainWindow.h
+CMakeFiles/ADS2_PJ1.dir/main.cpp.o: ../Json/json.hpp
 CMakeFiles/ADS2_PJ1.dir/main.cpp.o: ../Server/Server.h
 CMakeFiles/ADS2_PJ1.dir/main.cpp.o: ../main.cpp
 CMakeFiles/ADS2_PJ1.dir/main.cpp.o: /usr/include/atk-1.0/atk/atk-enum-types.h

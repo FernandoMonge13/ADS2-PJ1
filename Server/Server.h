@@ -5,6 +5,18 @@
 #ifndef ADS2_PJ1_SERVER_H
 #define ADS2_PJ1_SERVER_H
 
+#include <iostream>
+#include <sys/types.h>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <netdb.h>
+#include <arpa/inet.h>
+#include <string.h>
+#include <string>
+#include "../Json/json.hpp"
+
+using json = nlohmann::json;
+
 
 class Server {
 
@@ -19,6 +31,7 @@ private:
     int port = 56000;
     int bytes_Received;
     char buffer[4096];
+    json info;
 
 
 };

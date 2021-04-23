@@ -5,16 +5,8 @@
 
 #include "Server.h"
 
-#include <iostream>
-#include <sys/types.h>
-#include <unistd.h>
-#include <sys/socket.h>
-#include <netdb.h>
-#include <arpa/inet.h>
-#include <string.h>
-#include <string>
-
 using namespace std;
+
 
 Server ::Server() {
 
@@ -46,6 +38,7 @@ void Server::start() {
 
     if (getnameinfo((sockaddr*)&client, sizeof(client), host, NI_MAXHOST, service, NI_MAXSERV, 0) == 0){
         cout << host << " connected on port " << service << endl;
+
     }
     else{
         inet_ntop(AF_INET, &client.sin_addr, host, NI_MAXHOST);
@@ -67,13 +60,17 @@ void Server::start() {
         if (bytes_Received == 0)
         {
             cout << "Client disconnected " << endl;
+            close(client_Socket); // restart server if client closes
+            start();
             break;
         }
 
-        cout << string(buffer, 0, bytes_Received) << endl;
+        auto info = json::parse(string(buffer, 0, bytes_Received));
+        cout << info["Name"] << endl;
+        //cout << string(buffer, 0, bytes_Received) << endl;
 
         // Echo message back to client
-        send(client_Socket, buffer, bytes_Received + 1, 0);
+        //send(client_Socket, info.dump().c_str(), info.dump().size() +1 , 0);
     }
     close(client_Socket);
 }

@@ -15,6 +15,8 @@
 
 using namespace std;
 
+
+
 Client ::Client() {
 
 }
@@ -31,11 +33,9 @@ void Client::start() {
     // Connect to the server
     connect_Res = connect(socketC, (sockaddr*) &hint, sizeof(hint));
 
-    string userInput;
+    string userInput = line.dump();
 
     do {
-        cout << "> ";
-        getline(cin, userInput);
 
         send_Res =  send(socketC, userInput.c_str(), userInput.size() + 1, 0);
 
@@ -45,6 +45,7 @@ void Client::start() {
         }
 
         memset(buffer, 0, 4096);
+
         bytes_Received = recv(socketC, buffer, 4096, 0);
 
         if (bytes_Received == -1){
@@ -52,11 +53,21 @@ void Client::start() {
             break;
         }
         else{
+            cout << typeid(buffer).name() << endl;
             cout << "SERVER> " << string(buffer, bytes_Received) << "\r\n";
+            break;
         }
+
 
     } while (true);
 
     close(socketC);
 
+}
+
+void Client ::construction(string type, string name, string value, string state) {
+    line= {{"Type",  type},
+           {"Name",  name},
+           {"Value", value},
+           {"State", state}};
 }
