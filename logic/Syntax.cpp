@@ -19,13 +19,13 @@ void Syntax::ignore_spaces(std::string* _text) {
         character = character[0];
 
         if (character == " ") {
-            std::cout << "espacio" << std::endl;
+            //std::cout << "espacio" << std::endl;
         }
         else if (character == "\n") {
-            std::cout << "backslash" << std::endl;
+            //std::cout << "backslash" << std::endl;
         }
         else if (character == "\t") {
-            std::cout << "Tab" << std::endl;
+            //std::cout << "Tab" << std::endl;
         }
         else {
             break;
@@ -35,12 +35,75 @@ void Syntax::ignore_spaces(std::string* _text) {
 }
 
 
+std::string Syntax::identify_print(std::string *_text) {
+
+    ignore_spaces(_text);
+
+    if (_text->empty()){
+        // error: insufficient text for identify type
+        return "error";
+    }
+    else if (_text->substr(0, 5) == "print") {
+        if (_text->substr(5, 1) == "("){
+            _text->erase(0, 6);
+            std::string to_print;
+            std::string character = *_text;
+            character = character[0];
+            // caso en el que se desea imprimir un string
+
+            if (character == "'"){
+                _text->erase(_text->begin());
+                character = *_text;
+                character = character[0];
+                // extracción de string para printear
+                while (!_text->empty() && character != "'"){
+                    to_print.append(character);
+                    _text->erase(_text->begin());
+                    character = *_text;
+                    character = character[0];
+                }
+                _text->erase(_text->begin());
+                ignore_spaces(_text);
+                character = *_text;
+                character = character[0];
+                // cierrre del print
+                if (character == ")"){
+                    _text->erase(_text->begin());
+                    if (finisihed_sentence(_text)) {
+                        finisihed_sentence(_text);
+                        std::cout << "print: " + to_print << std::endl;
+                        return "printed";
+                    }
+                }
+                else {
+                    // sintaxis error in print
+                    return "error";
+                }
+            }
+            else{
+                return identify_operation(_text);
+            }
+        }
+        else{
+            // se encontró la palabra recervada print pero le falta su sintaxis de parentesis correcta"
+            return "error";
+        }
+
+    }
+    else{
+        // No print sintaxis
+        return "error";
+    }
+
+}
+
 std::string Syntax::identify_type(std::string* _string) {
 
     ignore_spaces(_string);
 
     if (_string->empty()){
-        return "error: insufficient text for identify type";
+        // error: insufficient text for identify type
+        return "error";
     }
     else {
         //_string.find("int") != std::string::npos
@@ -68,8 +131,8 @@ std::string Syntax::identify_type(std::string* _string) {
             _string->erase(0, 10);
             return "reference";
         }
-        return "error finding type";
-        // wtf se arregló el error 15
+        // error finding type
+        return "error";
     }
 }
 
@@ -78,6 +141,7 @@ std::string Syntax::identify_label(std::string *_string) {
     ignore_spaces(_string);
 
     if (_string->empty()) {
+        fatal_error = true;
         return "error: incomplete text to identify label";
     }
     else{
@@ -85,7 +149,6 @@ std::string Syntax::identify_label(std::string *_string) {
         std::string label;
         std::string character = *_string;
         character = character[0];
-
         while (!_string->empty() && character != "." && character != " " && character != "\t" && character != "\n" && character != "=" &&
                character != ";") {
 
@@ -96,70 +159,13 @@ std::string Syntax::identify_label(std::string *_string) {
             character = character[0];
         }
         if (label.empty()){
+            fatal_error = true;
             return "error label";
         }
         else {
             return label;
         }
     }
-}
-
-std::string Syntax::identify_command(std::string *_text) {
-
-    ignore_spaces(_text);
-    if (_text->empty()){
-        return "error: no txt for identify_command";
-    }
-    else {
-        std::string character = *_text;
-        character = character[0];
-        _text->erase(_text->begin());
-
-        if (character == ".") {
-            return "method";
-        } else if (character == ";") {
-            return "declaration";
-        } else if (character == "=") {
-            return "definition";
-        } else {
-            return "error: instruction not identified";
-        }
-    }
-}
-
-void Syntax::analyze(std::string text) {
-
-    std::string type;
-    std::string label;
-
-    std::string instruction;
-    std::string value;
-
-
-    std::cout << "Proceso de interpretación:" << std::endl;
-
-
-    while (!text.empty()){
-
-        type = identify_type(&text);
-        std::cout << "tipo: " + type << std::endl;
-
-        label = identify_label(&text);
-        std::cout << "etiqueta: " + label << std::endl;
-
-        instruction = identify_command(&text);
-        std::cout << "instrucción: " +  instruction << std::endl;
-
-        if (instruction != "declaration"){
-            value = identify_value(&text);
-            std::cout << "value = " + value << std::endl;
-        }
-        // character is ignored and the analysis continues
-        //std::cout << *character << std::endl;
-            //std::cout << text.substr(index, 3) << std::endl;
-
-    }
-    std::cout << "----------------" << std::endl;
 }
 
 std::string Syntax::identify_value(std::string *_text) {
@@ -175,17 +181,18 @@ std::string Syntax::identify_value(std::string *_text) {
         std::string character = *_text;
         character = character[0];
 
-        while (!_text->empty() && character != " " && character != "\t" && character != "\n" && character != "" && character != ";") {
+        while (!_text->empty() && character != ";") {
 
             value.append(character);
             _text->erase(_text->begin());
-
+            ignore_spaces(_text);
             character = *_text;
             character = character[0];
         }
         ignore_spaces(_text);
 
         if (_text->empty()){
+            fatal_error = true;
             return "error: no txt after value or ; missed";
         }
         else {
@@ -196,9 +203,267 @@ std::string Syntax::identify_value(std::string *_text) {
                 ignore_spaces(_text);
                 return value;
             } else {
+                fatal_error = true;
                 return "error: ; or value missed";
             }
         }
     }
+}
+
+std::string Syntax::identify_instruction(std::string *_text, std::string type) {
+
+    ignore_spaces(_text);
+    if (_text->empty()){
+        return "error: no txt for identify_instruction";
+    }
+    else {
+        std::string character = *_text;
+        character = character[0];
+        _text->erase(_text->begin());
+
+        if (character == "." && type == "error") {
+            return "method";
+        }
+        else if (character == ";" && type != "error") {
+            return "declaration";
+        }
+        else if (character == "=") {
+            if (type == "error") {
+                return "re definition";
+            }
+            return "definition";
+        }
+        else {
+            fatal_error = true;
+            return "error: instruction not identified";
+        }
+    }
+}
+
+
+std::string Syntax::identify_operation(std::string *_text) {
+
+    ignore_spaces(_text);
+
+    if (_text->empty()) {
+        return "Error: insufficient text to identify value";
+    }
+    else {
+        std::string operation;
+        std::string character = *_text;
+        character = character[0];
+
+        while (!_text->empty() && character != ";" && character != ")") {
+
+            operation.append(character);
+            _text->erase(_text->begin());
+            ignore_spaces(_text);
+            character = *_text;
+            character = character[0];
+        }
+        if (_text->empty()){
+            fatal_error = true;
+            return "error";
+        }
+        else {
+            if (character == ")") {
+                _text->erase(_text->begin());
+                if (finisihed_sentence(_text)) {
+                    return operation;
+                } else {
+                    fatal_error = true;
+                    return "error";
+                    // print sintaxis incompleta, missing ;
+                }
+            }
+            if (finisihed_sentence(_text)) {
+                return operation;
+            } else {
+                fatal_error = true;
+                return "error";
+                // missing ;
+            }
+            // por probar y llamar
+        }
+    }
+}
+
+bool Syntax::finisihed_sentence(std::string *_text) {
+    ignore_spaces(_text);
+    std::string character = *_text;
+    character = character[0];
+    if (character == ";"){
+        _text->erase(_text->begin());
+        return true;
+    }
+    else{
+        // severe fail, the detected print should be finished with ;  -- missing ;
+        return false;
+    }
+}
+
+bool Syntax::arytmethic(std::string _text) {
+
+    std::string variable_1;
+    std::string variable_2;
+    std::string operation;
+    int result;
+    std::string character = _text;
+    character = character[0];
+
+    while (!_text.empty()){
+
+        if (character == "+" || character == "-" || character == "*" || character == "/"){
+            if (variable_1.empty()){
+                // mega error, hay una operación antes que cualquier variable
+                break;
+            }
+            // se encuentra el signo de operacion y eso tambien indica que se tiene la variable 1
+            else if (variable_2.empty()) {
+                operation = character;
+                _text.erase(_text.begin());
+                character = _text;
+                character = character[0];
+            }
+            // la variable dos no está vacia por lo que se debe utilizar para operación
+            else if (!variable_2.empty()){
+                result = calculate(variable_1, variable_2, operation);
+                std::cout << result << std::endl;
+                variable_1 = std::to_string(result);
+                operation = character;
+                _text.erase(_text.begin());
+                character = _text;
+                character = character[0];
+                variable_2 = "";
+            }
+        }
+        // Si aun no ha encontrado una operación, significa que está obteniendo la variable 1
+        else if (operation.empty()){
+            variable_1.append(character);
+            _text.erase(_text.begin());
+            character = _text;
+            character = character[0];
+        }
+        // Si se ha encontrado una operación, significa que está obteniendo la variable 2
+        else if (!operation.empty()) {
+            variable_2.append(character);
+            _text.erase(_text.begin());
+            character = _text;
+            character = character[0];
+        }
+
+    }
+    if (!variable_2.empty()){
+        result = calculate(variable_1, variable_2, operation);
+    }
+    std::cout << result << std::endl;
+}
+
+int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::string _operation) {
+    int result;
+    try {
+        int variable1 = std::stoi(_variable_1);
+        int variable2 = std::stoi(_variable_2);
+
+        if (_operation == "+"){
+            result = variable1 + variable2;
+        }
+        else if (_operation == "-"){
+            result = variable1 - variable2;
+        }
+        else if (_operation == "*"){
+            result = variable1 * variable2;
+        }
+        else if (_operation == "/"){
+            result = variable1 / variable2;
+        }
+    }
+    catch (int exc){
+        std::cout << "failed in conversion" << std::endl;
+    }
+    return result;
+}
+
+void Syntax::analyze(std::string text) {
+
+    fatal_error = false;
+
+    std::string to_print;
+    std::string type;
+    std::string label;
+
+    std::string instruction;
+    std::string value;
+
+    std::cout << "" << std::endl;
+    std::cout << "Proceso de interpretación:" << std::endl;
+
+
+    while (!text.empty() && !fatal_error){
+
+        // print case
+        to_print = identify_print(&text);
+        if (to_print != "error") {
+            if (to_print != "printed") {
+                std::cout << "operacion: " + to_print << std::endl;
+                //arytmethic(to_print);
+            }
+        }
+        else {
+            type = identify_type(&text);
+            std::cout << "tipo: " + type << std::endl;
+
+            label = identify_label(&text);
+            std::cout << "etiqueta: " + label << std::endl;
+
+            instruction = identify_instruction(&text, type);
+            std::cout << "instrucción: " + instruction << std::endl;
+
+            if (instruction != "declaration" && !fatal_error) {
+                if (Only_1_Value(text)) {
+                    value = identify_value(&text);
+                    // verificar type y value compatibles
+                }
+                else{
+                    value = identify_operation(&text);
+                }
+                std::cout << "value = " + value << std::endl;
+            }
+        }
+        // character is ignored and the analysis continues
+
+    }
+    if (fatal_error){
+        std::cout << "Fatal Error: the interpret process have to stop" << std::endl;
+    }
+    std::cout << "----------------" << std::endl;
+}
+
+bool Syntax::Only_1_Value(std::string _text) {
+
+    ignore_spaces(&_text);
+
+    if (_text.empty()) {
+        fatal_error = true;
+        return true;
+    }
+    else{
+        std::string character = _text;
+        character = character[0];
+
+        while (!_text.empty() && character != ";" && character != "+" && character != "-" && character != "*" && character != "/"){
+
+            _text.erase(_text.begin());
+            character = _text;
+            character = character[0];
+        }
+        if (character == "+" || character == "+" || character == "-" && character == "*" && character == "/"){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
 }
 
