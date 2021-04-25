@@ -5,6 +5,9 @@
 #ifndef ADS2_PJ1_SYNTAX_H
 #define ADS2_PJ1_SYNTAX_H
 #include "string"
+#include <gtkmm.h>
+
+using namespace Gtk;
 
 
 class Syntax {
@@ -12,7 +15,7 @@ class Syntax {
 private:
     bool fatal_error;
     void ignore_spaces(std::string* _text);
-    std::string identify_print(std::string* _text);
+    std::string identify_print(std::string* _text, TextView* _stdout);
     std::string identify_type(std::string* _string);
     std::string identify_label(std::string* _string);
     std::string identify_value(std::string* _text);
@@ -27,7 +30,7 @@ private:
 
 public:
     Syntax();
-    void analyze(std::string text);
+    void analyze(std::string text, TextView* _stdout_);
 
 };
 

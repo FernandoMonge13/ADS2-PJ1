@@ -64,11 +64,11 @@ MainWindow::MainWindow() {
 
 void MainWindow::run_button_clicked(){
 
-    std::cout << "Contenido del editor:" << std::endl;
-    std::cout << editor.get_buffer()->get_text() << std::endl;
-
+//    std::cout << "Contenido del editor:" << std::endl;
+//    std::cout << editor.get_buffer()->get_text() << std::endl;
+    stdout_.get_buffer()->set_text(">> ");
     Syntax* syntax = new Syntax;
-    syntax->analyze(editor.get_buffer()->get_text());
+    syntax->analyze(editor.get_buffer()->get_text(), &stdout_);
 
 
 }

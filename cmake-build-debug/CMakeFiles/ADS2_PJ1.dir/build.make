@@ -62,10 +62,10 @@ RM = /snap/clion/151/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/fernando/Documents/ADS2-PJ1
+CMAKE_SOURCE_DIR = /home/camanem/CLionProjects/ADS2-PJ1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/fernando/Documents/ADS2-PJ1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ADS2_PJ1.dir/depend.make
@@ -78,68 +78,68 @@ include CMakeFiles/ADS2_PJ1.dir/flags.make
 
 CMakeFiles/ADS2_PJ1.dir/main.cpp.o: CMakeFiles/ADS2_PJ1.dir/flags.make
 CMakeFiles/ADS2_PJ1.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ADS2_PJ1.dir/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ADS2_PJ1.dir/main.cpp.o -c /home/fernando/Documents/ADS2-PJ1/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ADS2_PJ1.dir/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ADS2_PJ1.dir/main.cpp.o -c /home/camanem/CLionProjects/ADS2-PJ1/main.cpp
 
 CMakeFiles/ADS2_PJ1.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ADS2_PJ1.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fernando/Documents/ADS2-PJ1/main.cpp > CMakeFiles/ADS2_PJ1.dir/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/camanem/CLionProjects/ADS2-PJ1/main.cpp > CMakeFiles/ADS2_PJ1.dir/main.cpp.i
 
 CMakeFiles/ADS2_PJ1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ADS2_PJ1.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fernando/Documents/ADS2-PJ1/main.cpp -o CMakeFiles/ADS2_PJ1.dir/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/camanem/CLionProjects/ADS2-PJ1/main.cpp -o CMakeFiles/ADS2_PJ1.dir/main.cpp.s
 
 CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o: CMakeFiles/ADS2_PJ1.dir/flags.make
 CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o: ../Gui/MainWindow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o -c /home/fernando/Documents/ADS2-PJ1/Gui/MainWindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o -c /home/camanem/CLionProjects/ADS2-PJ1/Gui/MainWindow.cpp
 
 CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fernando/Documents/ADS2-PJ1/Gui/MainWindow.cpp > CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/camanem/CLionProjects/ADS2-PJ1/Gui/MainWindow.cpp > CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.i
 
 CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fernando/Documents/ADS2-PJ1/Gui/MainWindow.cpp -o CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/camanem/CLionProjects/ADS2-PJ1/Gui/MainWindow.cpp -o CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.s
 
 CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.o: CMakeFiles/ADS2_PJ1.dir/flags.make
 CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.o: ../logic/Syntax.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.o -c /home/fernando/Documents/ADS2-PJ1/logic/Syntax.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.o -c /home/camanem/CLionProjects/ADS2-PJ1/logic/Syntax.cpp
 
 CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fernando/Documents/ADS2-PJ1/logic/Syntax.cpp > CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/camanem/CLionProjects/ADS2-PJ1/logic/Syntax.cpp > CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.i
 
 CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fernando/Documents/ADS2-PJ1/logic/Syntax.cpp -o CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/camanem/CLionProjects/ADS2-PJ1/logic/Syntax.cpp -o CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.s
 
 CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.o: CMakeFiles/ADS2_PJ1.dir/flags.make
 CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.o: ../Client/Client.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.o -c /home/fernando/Documents/ADS2-PJ1/Client/Client.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.o -c /home/camanem/CLionProjects/ADS2-PJ1/Client/Client.cpp
 
 CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fernando/Documents/ADS2-PJ1/Client/Client.cpp > CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/camanem/CLionProjects/ADS2-PJ1/Client/Client.cpp > CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.i
 
 CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fernando/Documents/ADS2-PJ1/Client/Client.cpp -o CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/camanem/CLionProjects/ADS2-PJ1/Client/Client.cpp -o CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.s
 
 CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o: CMakeFiles/ADS2_PJ1.dir/flags.make
 CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o: ../Server/Server.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o -c /home/fernando/Documents/ADS2-PJ1/Server/Server.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o -c /home/camanem/CLionProjects/ADS2-PJ1/Server/Server.cpp
 
 CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/fernando/Documents/ADS2-PJ1/Server/Server.cpp > CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/camanem/CLionProjects/ADS2-PJ1/Server/Server.cpp > CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.i
 
 CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/fernando/Documents/ADS2-PJ1/Server/Server.cpp -o CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/camanem/CLionProjects/ADS2-PJ1/Server/Server.cpp -o CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.s
 
 # Object files for target ADS2_PJ1
 ADS2_PJ1_OBJECTS = \
@@ -159,7 +159,7 @@ ADS2_PJ1: CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.o
 ADS2_PJ1: CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o
 ADS2_PJ1: CMakeFiles/ADS2_PJ1.dir/build.make
 ADS2_PJ1: CMakeFiles/ADS2_PJ1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ADS2_PJ1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable ADS2_PJ1"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ADS2_PJ1.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -172,6 +172,6 @@ CMakeFiles/ADS2_PJ1.dir/clean:
 .PHONY : CMakeFiles/ADS2_PJ1.dir/clean
 
 CMakeFiles/ADS2_PJ1.dir/depend:
-	cd /home/fernando/Documents/ADS2-PJ1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/fernando/Documents/ADS2-PJ1 /home/fernando/Documents/ADS2-PJ1 /home/fernando/Documents/ADS2-PJ1/cmake-build-debug /home/fernando/Documents/ADS2-PJ1/cmake-build-debug /home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles/ADS2_PJ1.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/camanem/CLionProjects/ADS2-PJ1 /home/camanem/CLionProjects/ADS2-PJ1 /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/CMakeFiles/ADS2_PJ1.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ADS2_PJ1.dir/depend
 

@@ -35,7 +35,7 @@ void Syntax::ignore_spaces(std::string* _text) {
 }
 
 
-std::string Syntax::identify_print(std::string *_text) {
+std::string Syntax::identify_print(std::string *_text, TextView* _stdout) {
 
     ignore_spaces(_text);
 
@@ -71,7 +71,8 @@ std::string Syntax::identify_print(std::string *_text) {
                     _text->erase(_text->begin());
                     if (finisihed_sentence(_text)) {
                         finisihed_sentence(_text);
-                        std::cout << "print: " + to_print << std::endl;
+                        //std::cout << "print: " + to_print << std::endl;
+                        _stdout->get_buffer()->set_text(_stdout->get_buffer()->get_text() + to_print + "\n");
                         return "printed";
                     }
                 }
@@ -384,7 +385,7 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
     return result;
 }
 
-void Syntax::analyze(std::string text) {
+void Syntax::analyze(std::string text, TextView* _stdout_) {
 
     fatal_error = false;
 
@@ -402,7 +403,7 @@ void Syntax::analyze(std::string text) {
     while (!text.empty() && !fatal_error){
 
         // print case
-        to_print = identify_print(&text);
+        to_print = identify_print(&text, _stdout_);
         if (to_print != "error") {
             if (to_print != "printed") {
                 std::cout << "operacion: " + to_print << std::endl;

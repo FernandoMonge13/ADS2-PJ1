@@ -25,7 +25,7 @@ public:
 
     Client();
     void start();
-    void construction(string, string, string, string);
+    void construction(string, string, string, string ,string);
 
 private:
     int socketC;
