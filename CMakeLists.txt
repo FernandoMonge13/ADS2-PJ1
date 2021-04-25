@@ -8,5 +8,5 @@ pkg_check_modules(GTKMM gtkmm-3.0)
 include_directories(${GTKMM_INCLUDE_DIRS})
 link_directories(${GTKMM_LIBRARY_DIRS})
 
-add_executable(ADS2_PJ1 main.cpp Gui/MainWindow.cpp Gui/MainWindow.h logic/Syntax.cpp logic/Syntax.h)
+add_executable(ADS2_PJ1 main.cpp Gui/MainWindow.cpp Gui/MainWindow.h logic/Syntax.cpp logic/Syntax.h Client/Client.cpp Client/Client.h Server/Server.cpp Server/Server.h)
 target_link_libraries(ADS2_PJ1 ${GTKMM_LIBRARIES})

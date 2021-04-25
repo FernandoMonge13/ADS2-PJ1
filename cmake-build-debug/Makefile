@@ -67,10 +67,10 @@ RM = /snap/clion/151/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/camanem/CLionProjects/ADS2-PJ1
+CMAKE_SOURCE_DIR = /home/fernando/Documents/ADS2-PJ1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/fernando/Documents/ADS2-PJ1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/CMakeFiles /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles /home/fernando/Documents/ADS2-PJ1/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -142,6 +142,33 @@ ADS2_PJ1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/build
 .PHONY : ADS2_PJ1/fast
 
+Client/Client.o: Client/Client.cpp.o
+
+.PHONY : Client/Client.o
+
+# target to build an object file
+Client/Client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.o
+.PHONY : Client/Client.cpp.o
+
+Client/Client.i: Client/Client.cpp.i
+
+.PHONY : Client/Client.i
+
+# target to preprocess a source file
+Client/Client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.i
+.PHONY : Client/Client.cpp.i
+
+Client/Client.s: Client/Client.cpp.s
+
+.PHONY : Client/Client.s
+
+# target to generate assembly for a file
+Client/Client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.s
+.PHONY : Client/Client.cpp.s
+
 Gui/MainWindow.o: Gui/MainWindow.cpp.o
 
 .PHONY : Gui/MainWindow.o
@@ -168,6 +195,33 @@ Gui/MainWindow.s: Gui/MainWindow.cpp.s
 Gui/MainWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.s
 .PHONY : Gui/MainWindow.cpp.s
+
+Server/Server.o: Server/Server.cpp.o
+
+.PHONY : Server/Server.o
+
+# target to build an object file
+Server/Server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o
+.PHONY : Server/Server.cpp.o
+
+Server/Server.i: Server/Server.cpp.i
+
+.PHONY : Server/Server.i
+
+# target to preprocess a source file
+Server/Server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.i
+.PHONY : Server/Server.cpp.i
+
+Server/Server.s: Server/Server.cpp.s
+
+.PHONY : Server/Server.s
+
+# target to generate assembly for a file
+Server/Server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.s
+.PHONY : Server/Server.cpp.s
 
 logic/Syntax.o: logic/Syntax.cpp.o
 
@@ -232,9 +286,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ADS2_PJ1"
+	@echo "... Client/Client.o"
+	@echo "... Client/Client.i"
+	@echo "... Client/Client.s"
 	@echo "... Gui/MainWindow.o"
 	@echo "... Gui/MainWindow.i"
 	@echo "... Gui/MainWindow.s"
+	@echo "... Server/Server.o"
+	@echo "... Server/Server.i"
+	@echo "... Server/Server.s"
 	@echo "... logic/Syntax.o"
 	@echo "... logic/Syntax.i"
 	@echo "... logic/Syntax.s"
