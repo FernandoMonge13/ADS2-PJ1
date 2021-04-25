@@ -169,6 +169,33 @@ Gui/MainWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.s
 .PHONY : Gui/MainWindow.cpp.s
 
+List/List.o: List/List.cpp.o
+
+.PHONY : List/List.o
+
+# target to build an object file
+List/List.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/List/List.cpp.o
+.PHONY : List/List.cpp.o
+
+List/List.i: List/List.cpp.i
+
+.PHONY : List/List.i
+
+# target to preprocess a source file
+List/List.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/List/List.cpp.i
+.PHONY : List/List.cpp.i
+
+List/List.s: List/List.cpp.s
+
+.PHONY : List/List.s
+
+# target to generate assembly for a file
+List/List.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/List/List.cpp.s
+.PHONY : List/List.cpp.s
+
 Node/Node.o: Node/Node.cpp.o
 
 .PHONY : Node/Node.o
@@ -235,6 +262,9 @@ help:
 	@echo "... Gui/MainWindow.o"
 	@echo "... Gui/MainWindow.i"
 	@echo "... Gui/MainWindow.s"
+	@echo "... List/List.o"
+	@echo "... List/List.i"
+	@echo "... List/List.s"
 	@echo "... Node/Node.o"
 	@echo "... Node/Node.i"
 	@echo "... Node/Node.s"

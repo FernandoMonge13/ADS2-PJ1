@@ -11,10 +11,20 @@
 class Node {
 public:
 
-    Node* next;
     Node();
 
+public:
+    Node *getNext();
+    void setNext(Node *);
+
+    int getSize();
+    void setSize(int);
+
+    std::string getName();
+    void setName(std::string);
+
 private:
+    Node* next;
     int size;
     std::string name;
 
