@@ -6,23 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/camanem/CLionProjects/ADS2-PJ1/Gui/MainWindow.cpp
-MainWindow.h
-/home/camanem/CLionProjects/ADS2-PJ1/Gui/MainWindow.h
-iostream
-/home/camanem/CLionProjects/ADS2-PJ1/Gui/iostream
-../logic/Syntax.h
-/home/camanem/CLionProjects/ADS2-PJ1/logic/Syntax.h
-
-/home/camanem/CLionProjects/ADS2-PJ1/Gui/MainWindow.h
-gtkmm.h
--
-
 /home/camanem/CLionProjects/ADS2-PJ1/logic/Syntax.cpp
 iostream
 -
 Syntax.h
 /home/camanem/CLionProjects/ADS2-PJ1/logic/Syntax.h
+spdlog/spdlog.h
+/home/camanem/CLionProjects/ADS2-PJ1/logic/spdlog/spdlog.h
 
 /home/camanem/CLionProjects/ADS2-PJ1/logic/Syntax.h
 string

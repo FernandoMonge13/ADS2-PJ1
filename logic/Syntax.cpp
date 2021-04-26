@@ -4,12 +4,13 @@
 #include <iostream>
 
 #include "Syntax.h"
-
+#include "spdlog/spdlog.h"
 Syntax::Syntax() {
 
 }
 
 void Syntax::ignore_spaces(std::string* _text) {
+
 
     std::string character;
 
@@ -41,6 +42,7 @@ std::string Syntax::identify_print(std::string *_text, TextView* _stdout) {
 
     if (_text->empty()){
         // error: insufficient text for identify type
+        spdlog::error("Insufficient text to identify print");
         return "error";
     }
     else if (_text->substr(0, 5) == "print") {
@@ -78,6 +80,7 @@ std::string Syntax::identify_print(std::string *_text, TextView* _stdout) {
                 }
                 else {
                     // sintaxis error in print
+                    spdlog::error("Syntax error in print command attempt");
                     return "error";
                 }
             }
@@ -87,6 +90,7 @@ std::string Syntax::identify_print(std::string *_text, TextView* _stdout) {
         }
         else{
             // se encontró la palabra recervada print pero le falta su sintaxis de parentesis correcta"
+            spdlog::error("Syntax error in print command attempt");
             return "error";
         }
 
@@ -104,6 +108,7 @@ std::string Syntax::identify_type(std::string* _string) {
 
     if (_string->empty()){
         // error: insufficient text for identify type
+        spdlog::error("Insufficient text to identify type");
         return "error";
     }
     else {
@@ -142,6 +147,7 @@ std::string Syntax::identify_label(std::string *_string) {
     ignore_spaces(_string);
 
     if (_string->empty()) {
+        spdlog::error("Insufficient text to identify label");
         fatal_error = true;
         return "error: incomplete text to identify label";
     }
@@ -160,6 +166,7 @@ std::string Syntax::identify_label(std::string *_string) {
             character = character[0];
         }
         if (label.empty()){
+            spdlog::error("No label found");
             fatal_error = true;
             return "error label";
         }
@@ -174,6 +181,7 @@ std::string Syntax::identify_value(std::string *_text) {
     ignore_spaces(_text);
 
     if (_text->empty()){
+        spdlog::error("Insufficient text to identify value");
         return "Error: insufficient text to identify value";
     }
     else{
@@ -193,6 +201,7 @@ std::string Syntax::identify_value(std::string *_text) {
         ignore_spaces(_text);
 
         if (_text->empty()){
+            spdlog::error(" ; missed");
             fatal_error = true;
             return "error: no txt after value or ; missed";
         }
@@ -204,6 +213,7 @@ std::string Syntax::identify_value(std::string *_text) {
                 ignore_spaces(_text);
                 return value;
             } else {
+                spdlog::error(" ; missed");
                 fatal_error = true;
                 return "error: ; or value missed";
             }
@@ -215,6 +225,7 @@ std::string Syntax::identify_instruction(std::string *_text, std::string type) {
 
     ignore_spaces(_text);
     if (_text->empty()){
+        spdlog::error("no txt to identify instruction");
         return "error: no txt for identify_instruction";
     }
     else {
@@ -235,6 +246,7 @@ std::string Syntax::identify_instruction(std::string *_text, std::string type) {
             return "definition";
         }
         else {
+            spdlog::error("Instruction not identified");
             fatal_error = true;
             return "error: instruction not identified";
         }
@@ -247,6 +259,7 @@ std::string Syntax::identify_operation(std::string *_text) {
     ignore_spaces(_text);
 
     if (_text->empty()) {
+        spdlog::error("insufficient text to identify operation");
         return "Error: insufficient text to identify value";
     }
     else {
@@ -263,6 +276,7 @@ std::string Syntax::identify_operation(std::string *_text) {
             character = character[0];
         }
         if (_text->empty()){
+            spdlog::error("insufficient text to identify operation");
             fatal_error = true;
             return "error";
         }
@@ -272,6 +286,7 @@ std::string Syntax::identify_operation(std::string *_text) {
                 if (finisihed_sentence(_text)) {
                     return operation;
                 } else {
+                    spdlog::error("Missing ;");
                     fatal_error = true;
                     return "error";
                     // print sintaxis incompleta, missing ;
@@ -280,6 +295,7 @@ std::string Syntax::identify_operation(std::string *_text) {
             if (finisihed_sentence(_text)) {
                 return operation;
             } else {
+                spdlog::error("Missing ;");
                 fatal_error = true;
                 return "error";
                 // missing ;
@@ -298,6 +314,7 @@ bool Syntax::finisihed_sentence(std::string *_text) {
         return true;
     }
     else{
+        spdlog::error("Missing ;");
         // severe fail, the detected print should be finished with ;  -- missing ;
         return false;
     }
@@ -316,6 +333,7 @@ bool Syntax::arytmethic(std::string _text) {
 
         if (character == "+" || character == "-" || character == "*" || character == "/"){
             if (variable_1.empty()){
+                spdlog::error("Error getting operation");
                 // mega error, hay una operación antes que cualquier variable
                 break;
             }
@@ -435,7 +453,8 @@ void Syntax::analyze(std::string text, TextView* _stdout_) {
 
     }
     if (fatal_error){
-        std::cout << "Fatal Error: the interpret process have to stop" << std::endl;
+        spdlog::error("Fatal Error: canceled analisys ");
+        //std::cout << "Fatal Error: the interpret process have to stop" << std::endl;
     }
     std::cout << "----------------" << std::endl;
 }
@@ -445,6 +464,7 @@ bool Syntax::Only_1_Value(std::string _text) {
     ignore_spaces(&_text);
 
     if (_text.empty()) {
+        spdlog::error("Insufficient txt to Only_1_Value");
         fatal_error = true;
         return true;
     }
