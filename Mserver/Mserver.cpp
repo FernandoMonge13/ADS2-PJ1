@@ -7,3 +7,7 @@
 Mserver::Mserver() {
 
 }
+
+void Mserver::insertion() {
+
+}
