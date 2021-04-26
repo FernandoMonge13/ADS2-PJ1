@@ -8,31 +8,57 @@ List::List() {
 
 }
 
-void List::insert(int size, std::string name){
+void List::insert(int size, std::string name) {
+
+    temporal =  new Node;
+    temporal->setName(name);
+    temporal->setSize(size);
+
     if (flag){
-        Node* new_node = new Node();
-
-        new_node->setSize(size);
-        new_node->setName(name);
-
-        new_node->setNext(nullptr);
-        setTemporal(new_node);
-
+        head = temporal;
+        tail = temporal;
         flag = false;
-
     }else{
-        Node* new_node = new Node();
-
-        new_node->setSize(size);
-        new_node->setName(name);
-
-        new_node->setNext(temporal);
-
-        setTemporal(new_node);
-
+        tail->setNext(temporal);
+        tail = temporal;
     }
 }
 
-void List::setTemporal(Node *) {
-    List::temporal = temporal;
+void List::remove(std::string name) {
+
+    temporal = head;
+    Node* prev;
+
+    while (temporal->getNext() != nullptr && temporal->getName() != name){
+
+        prev = temporal;
+        temporal = temporal->getNext();
+    }
+    if (temporal->getName() == name){
+        prev->setNext(temporal->getNext());
+        delete temporal;
+    }else if (temporal->getNext() == nullptr){
+
+        //
+    }
+
 }
+
+bool List::find(std::string name) {
+
+    temporal = head;
+
+    while (temporal->getNext() != nullptr ){
+
+        if (temporal->getName() == name){
+            return true;
+
+        }
+
+        temporal = temporal->getNext();
+    }
+    return false;
+
+}
+
+

@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/fernando/Documents/ADS2-PJ1/Gui/MainWindow.cpp" "/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o"
   "/home/fernando/Documents/ADS2-PJ1/List/List.cpp" "/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles/ADS2_PJ1.dir/List/List.cpp.o"
+  "/home/fernando/Documents/ADS2-PJ1/Mserver/Mserver.cpp" "/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.o"
   "/home/fernando/Documents/ADS2-PJ1/Node/Node.cpp" "/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles/ADS2_PJ1.dir/Node/Node.cpp.o"
   "/home/fernando/Documents/ADS2-PJ1/main.cpp" "/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles/ADS2_PJ1.dir/main.cpp.o"
   )

@@ -196,6 +196,33 @@ List/List.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/List/List.cpp.s
 .PHONY : List/List.cpp.s
 
+Mserver/Mserver.o: Mserver/Mserver.cpp.o
+
+.PHONY : Mserver/Mserver.o
+
+# target to build an object file
+Mserver/Mserver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.o
+.PHONY : Mserver/Mserver.cpp.o
+
+Mserver/Mserver.i: Mserver/Mserver.cpp.i
+
+.PHONY : Mserver/Mserver.i
+
+# target to preprocess a source file
+Mserver/Mserver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.i
+.PHONY : Mserver/Mserver.cpp.i
+
+Mserver/Mserver.s: Mserver/Mserver.cpp.s
+
+.PHONY : Mserver/Mserver.s
+
+# target to generate assembly for a file
+Mserver/Mserver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.s
+.PHONY : Mserver/Mserver.cpp.s
+
 Node/Node.o: Node/Node.cpp.o
 
 .PHONY : Node/Node.o
@@ -265,6 +292,9 @@ help:
 	@echo "... List/List.o"
 	@echo "... List/List.i"
 	@echo "... List/List.s"
+	@echo "... Mserver/Mserver.o"
+	@echo "... Mserver/Mserver.i"
+	@echo "... Mserver/Mserver.s"
 	@echo "... Node/Node.o"
 	@echo "... Node/Node.i"
 	@echo "... Node/Node.s"

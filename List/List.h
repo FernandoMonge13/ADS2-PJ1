@@ -13,12 +13,16 @@ class List {
 public:
 
     void insert(int, std::string);
-    void setTemporal(Node*);
+    void remove(std::string);
+    bool find(std::string);
+
     List();
 
 
 private:
     bool flag = true;
+    Node *head = nullptr;
+    Node *tail = nullptr;
     Node *temporal = nullptr;
 
 
