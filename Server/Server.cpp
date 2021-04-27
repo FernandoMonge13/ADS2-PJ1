@@ -74,8 +74,9 @@ void Server::start() {
 
         //cout << string(buffer, 0, bytes_Received) << endl;
 
+        std:: string s = "BUenos dias";
         // Echo message back to client
-        //send(client_Socket, info.dump().c_str(), info.dump().N() +1 , 0);
+        send(client_Socket, s.c_str(), s.size() + 1 , 0);
     }
     close(client_Socket);
 }

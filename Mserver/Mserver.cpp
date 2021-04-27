@@ -24,10 +24,12 @@ void Mserver::insertion(std::string temporal){
 //            *((int *)(memory)) = std::stoi(json["value"]);
 //
 //        }
+//////////////////////////// AQui va lo de memoria
 
     }else{
         list.insert(std::to_string((list.getTail()->getSize())+1), json["Name"], json["Type"],json["Size"].dump());
 
+//////////////////////////// AQui va lo de memoria
 
 
     }
