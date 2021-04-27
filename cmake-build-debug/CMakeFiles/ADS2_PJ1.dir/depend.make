@@ -1220,6 +1220,18 @@ CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o: /usr/lib/x86_64-linux-gnu/gtkmm-3.
 CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o: /usr/lib/x86_64-linux-gnu/pangomm-1.4/include/pangommconfig.h
 CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o: /usr/lib/x86_64-linux-gnu/sigc++-2.0/include/sigc++config.h
 
+CMakeFiles/ADS2_PJ1.dir/List/List.cpp.o: ../List/List.cpp
+CMakeFiles/ADS2_PJ1.dir/List/List.cpp.o: ../List/List.h
+CMakeFiles/ADS2_PJ1.dir/List/List.cpp.o: ../Node/Node.h
+
+CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.o: ../List/List.h
+CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.o: ../Mserver/Mserver.cpp
+CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.o: ../Mserver/Mserver.h
+CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.o: ../Node/Node.h
+
+CMakeFiles/ADS2_PJ1.dir/Node/Node.cpp.o: ../Node/Node.cpp
+CMakeFiles/ADS2_PJ1.dir/Node/Node.cpp.o: ../Node/Node.h
+
 CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o: ../Json/json.hpp
 CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o: ../Server/Server.cpp
 CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o: ../Server/Server.h

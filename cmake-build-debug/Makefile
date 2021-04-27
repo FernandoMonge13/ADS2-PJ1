@@ -67,10 +67,10 @@ RM = /snap/clion/151/bin/cmake/linux/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/camanem/CLionProjects/ADS2-PJ1
+CMAKE_SOURCE_DIR = /home/fernando/Documents/ADS2-PJ1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug
+CMAKE_BINARY_DIR = /home/fernando/Documents/ADS2-PJ1/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/CMakeFiles /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles /home/fernando/Documents/ADS2-PJ1/cmake-build-debug//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/fernando/Documents/ADS2-PJ1/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -195,6 +195,87 @@ Gui/MainWindow.s: Gui/MainWindow.cpp.s
 Gui/MainWindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.s
 .PHONY : Gui/MainWindow.cpp.s
+
+List/List.o: List/List.cpp.o
+
+.PHONY : List/List.o
+
+# target to build an object file
+List/List.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/List/List.cpp.o
+.PHONY : List/List.cpp.o
+
+List/List.i: List/List.cpp.i
+
+.PHONY : List/List.i
+
+# target to preprocess a source file
+List/List.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/List/List.cpp.i
+.PHONY : List/List.cpp.i
+
+List/List.s: List/List.cpp.s
+
+.PHONY : List/List.s
+
+# target to generate assembly for a file
+List/List.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/List/List.cpp.s
+.PHONY : List/List.cpp.s
+
+Mserver/Mserver.o: Mserver/Mserver.cpp.o
+
+.PHONY : Mserver/Mserver.o
+
+# target to build an object file
+Mserver/Mserver.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.o
+.PHONY : Mserver/Mserver.cpp.o
+
+Mserver/Mserver.i: Mserver/Mserver.cpp.i
+
+.PHONY : Mserver/Mserver.i
+
+# target to preprocess a source file
+Mserver/Mserver.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.i
+.PHONY : Mserver/Mserver.cpp.i
+
+Mserver/Mserver.s: Mserver/Mserver.cpp.s
+
+.PHONY : Mserver/Mserver.s
+
+# target to generate assembly for a file
+Mserver/Mserver.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.s
+.PHONY : Mserver/Mserver.cpp.s
+
+Node/Node.o: Node/Node.cpp.o
+
+.PHONY : Node/Node.o
+
+# target to build an object file
+Node/Node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Node/Node.cpp.o
+.PHONY : Node/Node.cpp.o
+
+Node/Node.i: Node/Node.cpp.i
+
+.PHONY : Node/Node.i
+
+# target to preprocess a source file
+Node/Node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Node/Node.cpp.i
+.PHONY : Node/Node.cpp.i
+
+Node/Node.s: Node/Node.cpp.s
+
+.PHONY : Node/Node.s
+
+# target to generate assembly for a file
+Node/Node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ADS2_PJ1.dir/build.make CMakeFiles/ADS2_PJ1.dir/Node/Node.cpp.s
+.PHONY : Node/Node.cpp.s
 
 Server/Server.o: Server/Server.cpp.o
 
@@ -292,6 +373,15 @@ help:
 	@echo "... Gui/MainWindow.o"
 	@echo "... Gui/MainWindow.i"
 	@echo "... Gui/MainWindow.s"
+	@echo "... List/List.o"
+	@echo "... List/List.i"
+	@echo "... List/List.s"
+	@echo "... Mserver/Mserver.o"
+	@echo "... Mserver/Mserver.i"
+	@echo "... Mserver/Mserver.s"
+	@echo "... Node/Node.o"
+	@echo "... Node/Node.i"
+	@echo "... Node/Node.s"
 	@echo "... Server/Server.o"
 	@echo "... Server/Server.i"
 	@echo "... Server/Server.s"
