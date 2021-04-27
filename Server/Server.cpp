@@ -71,8 +71,8 @@ void Server::start() {
         memory.insertion(string(buffer, 0, bytes_Received));
 
 
-
-        //cout << string(buffer, 0, bytes_Received) << endl;
+        cout << "Serverrrrr";
+        cout << string(buffer, 0, bytes_Received) << endl;
 
         std:: string s = "BUenos dias";
         // Echo message back to client

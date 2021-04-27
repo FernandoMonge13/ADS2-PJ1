@@ -30,7 +30,7 @@ public:
 private:
     int socketS;
     int client_Socket;
-    int port = 56000;
+    int port = 40000;
     int bytes_Received;
     char buffer[4096];
     json info;

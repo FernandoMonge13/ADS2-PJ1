@@ -12,12 +12,14 @@
 
 class List {
 public:
-
-    void insert(std::string, std::string, std::string, std::string);
+    //agrega al final - retorna la posicion donde se debe almacenar la variable
+    int insert(std::string, std::string, std::string, std::string);
     void remove(std::string);
     bool find(std::string);
     bool getFlag();
+    // Ultimo nodo
     Node* getTail();
+    void print(bool * _memory);
 
     List();
 

@@ -19,12 +19,13 @@ class Mserver {
 
 public:
     void insertion(std::string);
+    void print();
     Mserver();
 
 private:
 
     bool* memory = (bool*) malloc(10000000);
-
+    void add(std::string _value, std::string _type, int position);
 };
 
 

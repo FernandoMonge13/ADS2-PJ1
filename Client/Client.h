@@ -29,7 +29,7 @@ public:
 
 private:
     int socketC;
-    int port = 56000;
+    int port = 40000;
     int connect_Res;
     int send_Res;
     int bytes_Received;

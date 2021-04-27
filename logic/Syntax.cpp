@@ -454,7 +454,8 @@ void Syntax::analyze(std::string text, TextView* _stdout_) {
             }
 
             hp.start();
-            hp.construction(type, label, value, "",instruction, "6");
+
+            hp.construction(type, label, value, "picha",instruction, this->getSize(type));
 
         }
 
@@ -495,5 +496,23 @@ bool Syntax::Only_1_Value(std::string _text) {
         }
     }
 
+}
+
+std::string Syntax::getSize(std::string _type) {
+    if (_type == "int"){
+        return "4";
+    }
+    else if (_type == "long"){
+        return "8";
+    }
+    else if (_type == "char"){
+        return "1";
+    }
+    else if (_type == "float"){
+        return "4";
+    }
+    else if (_type == "double"){
+        return "8";
+    }
 }
 

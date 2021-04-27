@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/fernando/Documents/ADS2-PJ1/Client/Client.h
+/home/camanem/CLionProjects/ADS2-PJ1/Client/Client.h
 iostream
 -
 sys/types.h
@@ -24,13 +24,13 @@ string.h
 string
 -
 ../Json/json.hpp
-/home/fernando/Documents/ADS2-PJ1/Json/json.hpp
+/home/camanem/CLionProjects/ADS2-PJ1/Json/json.hpp
 
-/home/fernando/Documents/ADS2-PJ1/Gui/MainWindow.h
+/home/camanem/CLionProjects/ADS2-PJ1/Gui/MainWindow.h
 gtkmm.h
 -
 
-/home/fernando/Documents/ADS2-PJ1/Json/json.hpp
+/home/camanem/CLionProjects/ADS2-PJ1/Json/json.hpp
 algorithm
 -
 cstddef
@@ -354,29 +354,29 @@ utility
 vector
 -
 
-/home/fernando/Documents/ADS2-PJ1/List/List.h
+/home/camanem/CLionProjects/ADS2-PJ1/List/List.h
 ../Node/Node.h
-/home/fernando/Documents/ADS2-PJ1/Node/Node.h
+/home/camanem/CLionProjects/ADS2-PJ1/Node/Node.h
 string
 -
 spdlog/spdlog.h
-/home/fernando/Documents/ADS2-PJ1/List/spdlog/spdlog.h
+/home/camanem/CLionProjects/ADS2-PJ1/List/spdlog/spdlog.h
 
-/home/fernando/Documents/ADS2-PJ1/Mserver/Mserver.h
+/home/camanem/CLionProjects/ADS2-PJ1/Mserver/Mserver.h
 ../List/List.h
-/home/fernando/Documents/ADS2-PJ1/List/List.h
+/home/camanem/CLionProjects/ADS2-PJ1/List/List.h
 ../Json/json.hpp
-/home/fernando/Documents/ADS2-PJ1/Json/json.hpp
+/home/camanem/CLionProjects/ADS2-PJ1/Json/json.hpp
 spdlog/spdlog.h
-/home/fernando/Documents/ADS2-PJ1/Mserver/spdlog/spdlog.h
+/home/camanem/CLionProjects/ADS2-PJ1/Mserver/spdlog/spdlog.h
 string
 -
 
-/home/fernando/Documents/ADS2-PJ1/Node/Node.h
+/home/camanem/CLionProjects/ADS2-PJ1/Node/Node.h
 string
 -
 
-/home/fernando/Documents/ADS2-PJ1/Server/Server.h
+/home/camanem/CLionProjects/ADS2-PJ1/Server/Server.h
 iostream
 -
 sys/types.h
@@ -394,23 +394,23 @@ string.h
 string
 -
 spdlog/spdlog.h
-/home/fernando/Documents/ADS2-PJ1/Server/spdlog/spdlog.h
+/home/camanem/CLionProjects/ADS2-PJ1/Server/spdlog/spdlog.h
 ../Json/json.hpp
-/home/fernando/Documents/ADS2-PJ1/Json/json.hpp
+/home/camanem/CLionProjects/ADS2-PJ1/Json/json.hpp
 ../Mserver/Mserver.h
-/home/fernando/Documents/ADS2-PJ1/Mserver/Mserver.h
+/home/camanem/CLionProjects/ADS2-PJ1/Mserver/Mserver.h
 
-/home/fernando/Documents/ADS2-PJ1/main.cpp
+/home/camanem/CLionProjects/ADS2-PJ1/main.cpp
 iostream
 -
 gtkmm.h
 -
 Gui/MainWindow.h
-/home/fernando/Documents/ADS2-PJ1/Gui/MainWindow.h
+/home/camanem/CLionProjects/ADS2-PJ1/Gui/MainWindow.h
 Server/Server.h
-/home/fernando/Documents/ADS2-PJ1/Server/Server.h
+/home/camanem/CLionProjects/ADS2-PJ1/Server/Server.h
 Client/Client.h
-/home/fernando/Documents/ADS2-PJ1/Client/Client.h
+/home/camanem/CLionProjects/ADS2-PJ1/Client/Client.h
 
 /usr/include/atk-1.0/atk/atk-enum-types.h
 atk/atkversion.h
