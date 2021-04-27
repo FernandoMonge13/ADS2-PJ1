@@ -71,5 +71,5 @@ void Client::construction(string type, string name, string value, string instruc
            {"Value", value},
            {"Instruccion", instruction},
            {"Access", access},
-            {"Size", size}};
+           {"Size", size}};
 }

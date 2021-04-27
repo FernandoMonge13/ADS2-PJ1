@@ -28,9 +28,9 @@ int main() {
 */
 //
 
-
+    MainWindow window;
     Server hp = Server();
     hp.start();
-    MainWindow window;
+
     return 0;
 }
