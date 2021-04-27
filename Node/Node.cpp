@@ -16,12 +16,12 @@ void Node::setNext(Node *next) {
     Node::next = next;
 }
 
-int Node::getSize() {
-    return size;
+int Node::getN() {
+    return N;
 }
 
-void Node::setSize(int size) {
-    Node::size = size;
+void Node::setN(int size) {
+    Node::N = size;
 }
 
 std::string Node::getName() {
@@ -30,5 +30,19 @@ std::string Node::getName() {
 
 void Node::setName(std::string name) {
     Node::name = name;
+}
 
+std::string Node::getType() {
+    return type;
+}
+
+void Node::setType(std::string type) {
+    Node::type = type;
+}
+int Node::getSize() {
+    return size;
+}
+
+void Node::setSize(int size) {
+    Node::size = size;
 }

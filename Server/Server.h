@@ -13,7 +13,9 @@
 #include <arpa/inet.h>
 #include <string.h>
 #include <string>
+#include "spdlog/spdlog.h"
 #include "../Json/json.hpp"
+#include "../Mserver/Mserver.h"
 
 using json = nlohmann::json;
 

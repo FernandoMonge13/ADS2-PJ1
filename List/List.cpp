@@ -8,11 +8,14 @@ List::List() {
 
 }
 
-void List::insert(int size, std::string name) {
+void List::insert(std::string N, std::string name, std::string type, std::string) {
+
+    spdlog::warn("AIUDA");
 
     temporal =  new Node;
     temporal->setName(name);
-    temporal->setSize(size);
+    temporal->setN(stoi(N));
+    temporal->setType(type);
 
     if (flag){
         head = temporal;
@@ -59,6 +62,14 @@ bool List::find(std::string name) {
     }
     return false;
 
+}
+
+bool List::getFlag() {
+    return flag;
+}
+
+Node *List::getTail() {
+    return tail;
 }
 
 

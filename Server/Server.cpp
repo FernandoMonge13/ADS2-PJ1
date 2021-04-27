@@ -5,8 +5,10 @@
 
 #include "Server.h"
 
+
 using namespace std;
 
+Mserver memory = Mserver();
 
 Server ::Server() {
 
@@ -65,12 +67,15 @@ void Server::start() {
             break;
         }
 
-        auto info = json::parse(string(buffer, 0, bytes_Received));
-        cout << info["Name"] << endl;
+
+        memory.insertion(string(buffer, 0, bytes_Received));
+
+
+
         //cout << string(buffer, 0, bytes_Received) << endl;
 
         // Echo message back to client
-        //send(client_Socket, info.dump().c_str(), info.dump().size() +1 , 0);
+        //send(client_Socket, info.dump().c_str(), info.dump().N() +1 , 0);
     }
     close(client_Socket);
 }

@@ -6,6 +6,7 @@
 #define ADS2_PJ1_SYNTAX_H
 #include "string"
 #include <gtkmm.h>
+#include "../Client/Client.h"
 
 using namespace Gtk;
 

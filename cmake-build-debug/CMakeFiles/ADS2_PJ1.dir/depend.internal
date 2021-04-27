@@ -6,8 +6,10 @@ CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.o
  /home/fernando/Documents/ADS2-PJ1/Client/Client.h
  /home/fernando/Documents/ADS2-PJ1/Json/json.hpp
 CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o
+ /home/fernando/Documents/ADS2-PJ1/Client/Client.h
  /home/fernando/Documents/ADS2-PJ1/Gui/MainWindow.cpp
  /home/fernando/Documents/ADS2-PJ1/Gui/MainWindow.h
+ /home/fernando/Documents/ADS2-PJ1/Json/json.hpp
  /home/fernando/Documents/ADS2-PJ1/logic/Syntax.h
  /usr/include/atk-1.0/atk/atk-enum-types.h
  /usr/include/atk-1.0/atk/atk.h
@@ -1225,6 +1227,7 @@ CMakeFiles/ADS2_PJ1.dir/List/List.cpp.o
  /home/fernando/Documents/ADS2-PJ1/List/List.h
  /home/fernando/Documents/ADS2-PJ1/Node/Node.h
 CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.o
+ /home/fernando/Documents/ADS2-PJ1/Json/json.hpp
  /home/fernando/Documents/ADS2-PJ1/List/List.h
  /home/fernando/Documents/ADS2-PJ1/Mserver/Mserver.cpp
  /home/fernando/Documents/ADS2-PJ1/Mserver/Mserver.h
@@ -1234,9 +1237,14 @@ CMakeFiles/ADS2_PJ1.dir/Node/Node.cpp.o
  /home/fernando/Documents/ADS2-PJ1/Node/Node.h
 CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o
  /home/fernando/Documents/ADS2-PJ1/Json/json.hpp
+ /home/fernando/Documents/ADS2-PJ1/List/List.h
+ /home/fernando/Documents/ADS2-PJ1/Mserver/Mserver.h
+ /home/fernando/Documents/ADS2-PJ1/Node/Node.h
  /home/fernando/Documents/ADS2-PJ1/Server/Server.cpp
  /home/fernando/Documents/ADS2-PJ1/Server/Server.h
 CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.o
+ /home/fernando/Documents/ADS2-PJ1/Client/Client.h
+ /home/fernando/Documents/ADS2-PJ1/Json/json.hpp
  /home/fernando/Documents/ADS2-PJ1/logic/Syntax.cpp
  /home/fernando/Documents/ADS2-PJ1/logic/Syntax.h
  /usr/include/atk-1.0/atk/atk-enum-types.h
@@ -2454,6 +2462,9 @@ CMakeFiles/ADS2_PJ1.dir/main.cpp.o
  /home/fernando/Documents/ADS2-PJ1/Client/Client.h
  /home/fernando/Documents/ADS2-PJ1/Gui/MainWindow.h
  /home/fernando/Documents/ADS2-PJ1/Json/json.hpp
+ /home/fernando/Documents/ADS2-PJ1/List/List.h
+ /home/fernando/Documents/ADS2-PJ1/Mserver/Mserver.h
+ /home/fernando/Documents/ADS2-PJ1/Node/Node.h
  /home/fernando/Documents/ADS2-PJ1/Server/Server.h
  /home/fernando/Documents/ADS2-PJ1/main.cpp
  /usr/include/atk-1.0/atk/atk-enum-types.h

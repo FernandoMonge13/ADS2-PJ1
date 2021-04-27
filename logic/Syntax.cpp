@@ -5,6 +5,9 @@
 
 #include "Syntax.h"
 #include "spdlog/spdlog.h"
+
+Client hp = Client();
+
 Syntax::Syntax() {
 
 }
@@ -447,8 +450,14 @@ void Syntax::analyze(std::string text, TextView* _stdout_) {
                     value = identify_operation(&text);
                 }
                 std::cout << "value = " + value << std::endl;
+
             }
+
+            hp.start();
+            hp.construction(type, label, value, "",instruction, "6");
+
         }
+
         // character is ignored and the analysis continues
 
     }

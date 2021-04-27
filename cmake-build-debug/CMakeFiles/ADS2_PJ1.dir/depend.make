@@ -5,8 +5,10 @@ CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.o: ../Client/Client.cpp
 CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.o: ../Client/Client.h
 CMakeFiles/ADS2_PJ1.dir/Client/Client.cpp.o: ../Json/json.hpp
 
+CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o: ../Client/Client.h
 CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o: ../Gui/MainWindow.cpp
 CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o: ../Gui/MainWindow.h
+CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o: ../Json/json.hpp
 CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o: ../logic/Syntax.h
 CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o: /usr/include/atk-1.0/atk/atk-enum-types.h
 CMakeFiles/ADS2_PJ1.dir/Gui/MainWindow.cpp.o: /usr/include/atk-1.0/atk/atk.h
@@ -1224,6 +1226,7 @@ CMakeFiles/ADS2_PJ1.dir/List/List.cpp.o: ../List/List.cpp
 CMakeFiles/ADS2_PJ1.dir/List/List.cpp.o: ../List/List.h
 CMakeFiles/ADS2_PJ1.dir/List/List.cpp.o: ../Node/Node.h
 
+CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.o: ../Json/json.hpp
 CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.o: ../List/List.h
 CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.o: ../Mserver/Mserver.cpp
 CMakeFiles/ADS2_PJ1.dir/Mserver/Mserver.cpp.o: ../Mserver/Mserver.h
@@ -1233,9 +1236,14 @@ CMakeFiles/ADS2_PJ1.dir/Node/Node.cpp.o: ../Node/Node.cpp
 CMakeFiles/ADS2_PJ1.dir/Node/Node.cpp.o: ../Node/Node.h
 
 CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o: ../Json/json.hpp
+CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o: ../List/List.h
+CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o: ../Mserver/Mserver.h
+CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o: ../Node/Node.h
 CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o: ../Server/Server.cpp
 CMakeFiles/ADS2_PJ1.dir/Server/Server.cpp.o: ../Server/Server.h
 
+CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.o: ../Client/Client.h
+CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.o: ../Json/json.hpp
 CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.o: ../logic/Syntax.cpp
 CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.o: ../logic/Syntax.h
 CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.o: /usr/include/atk-1.0/atk/atk-enum-types.h
@@ -2453,6 +2461,9 @@ CMakeFiles/ADS2_PJ1.dir/logic/Syntax.cpp.o: /usr/lib/x86_64-linux-gnu/sigc++-2.0
 CMakeFiles/ADS2_PJ1.dir/main.cpp.o: ../Client/Client.h
 CMakeFiles/ADS2_PJ1.dir/main.cpp.o: ../Gui/MainWindow.h
 CMakeFiles/ADS2_PJ1.dir/main.cpp.o: ../Json/json.hpp
+CMakeFiles/ADS2_PJ1.dir/main.cpp.o: ../List/List.h
+CMakeFiles/ADS2_PJ1.dir/main.cpp.o: ../Mserver/Mserver.h
+CMakeFiles/ADS2_PJ1.dir/main.cpp.o: ../Node/Node.h
 CMakeFiles/ADS2_PJ1.dir/main.cpp.o: ../Server/Server.h
 CMakeFiles/ADS2_PJ1.dir/main.cpp.o: ../main.cpp
 CMakeFiles/ADS2_PJ1.dir/main.cpp.o: /usr/include/atk-1.0/atk/atk-enum-types.h

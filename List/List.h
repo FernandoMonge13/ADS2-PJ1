@@ -1,4 +1,4 @@
-//
+//nt
 // Created by fernando on 24/4/21.
 //
 
@@ -7,14 +7,17 @@
 
 #include "../Node/Node.h"
 #include <string>
+#include "spdlog/spdlog.h"
 
 
 class List {
 public:
 
-    void insert(int, std::string);
+    void insert(std::string, std::string, std::string, std::string);
     void remove(std::string);
     bool find(std::string);
+    bool getFlag();
+    Node* getTail();
 
     List();
 

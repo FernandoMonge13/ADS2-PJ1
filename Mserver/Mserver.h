@@ -5,14 +5,20 @@
 #ifndef ADS2_PJ1_MSERVER_H
 #define ADS2_PJ1_MSERVER_H
 
+
+
 #include "../List/List.h"
-//#include "../Json/Json.hpp"
+#include "../Json/json.hpp"
+#include "spdlog/spdlog.h"
+#include <string>
+
+using json = nlohmann::json;
 
 
 class Mserver {
 
 public:
-    void insertion();
+    void insertion(std::string);
     Mserver();
 
 private:

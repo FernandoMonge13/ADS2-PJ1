@@ -65,10 +65,11 @@ void Client::start() {
 
 }
 
-void Client::construction(string type, string name, string value, string instruction, string access) {
+void Client::construction(string type, string name, string value, string instruction, string access, string size) {
     line= {{"Type",  type},
            {"Name",  name},
            {"Value", value},
            {"Instruccion", instruction},
-           {"Access", access}};
+           {"Access", access},
+            {"Size", size}};
 }
