@@ -3,6 +3,8 @@
 //
 
 #include "Node.h"
+#include "iostream"
+#include "string"
 
 Node::Node() {
 
@@ -43,6 +45,7 @@ int Node::getSize() {
     return size;
 }
 
-void Node::setSize(int size) {
-    Node::size = size;
+void Node::setSize(int _size) {
+    Node::size = _size;
 }
+

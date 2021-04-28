@@ -68,7 +68,7 @@ void Server::start() {
         }
 
 
-        memory.insertion(string(buffer, 0, bytes_Received));
+        memory.receive(string(buffer, 0, bytes_Received));
 
 
         cout << "Serverrrrr";

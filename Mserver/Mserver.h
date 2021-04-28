@@ -18,7 +18,7 @@ using json = nlohmann::json;
 class Mserver {
 
 public:
-    void insertion(std::string);
+    void receive(std::string);
     void print();
     Mserver();
 

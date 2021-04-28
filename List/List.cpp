@@ -4,30 +4,36 @@
 
 #include <iostream>
 #include "List.h"
+#include "string"
 
 List::List() {
 
 }
 
-int List::insert(std::string N, std::string name, std::string type, std::string _size) {
+void List::insert(std::string name, std::string type, int _size) {
 
 
     temporal =  new Node;
     temporal->setName(name);
-    temporal->setN(stoi(N));
     temporal->setType(type);
-//    temporal->setSize(std::stoi(_size));
+    temporal->setSize(_size);
+//    std::cout << "El valor del nodo es " << std::endl;
+
+//    std::cout << "a" << std::endl;
+
 
     if (flag){
+        temporal->setN(0);
         head = temporal;
         tail = temporal;
         temporal->setNext(nullptr);
         flag = false;
-        return tail->getN();
+//        return tail->getN();
     }else{
+        temporal->setN(tail->getN() + tail->getSize());
         tail->setNext(temporal);
         tail = temporal;
-        return tail->getN();
+//        return tail->getN();
     }
 }
 
@@ -51,20 +57,22 @@ void List::remove(std::string name) {
 
 }
 
-bool List::find(std::string name) {
+Node* List::find(std::string _name) {
 
     temporal = head;
 
-    while (temporal->getNext() != nullptr ){
+    while (true){
 
-        if (temporal->getName() == name){
-            return true;
-
+        if (temporal->getName() == _name){
+            return temporal;
         }
-
-        temporal = temporal->getNext();
+        else if (temporal->getNext() == nullptr){
+            return nullptr;
+        }
+        else {
+            temporal = temporal->getNext();
+        }
     }
-    return false;
 
 }
 
@@ -77,30 +85,64 @@ Node *List::getTail() {
 }
 
 void List::print(bool *_memory) {
-    Node* index = tail;
-    spdlog::info("In List print");
+    std::cout << " "    << std::endl;
+    std::cout << "☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭ Print Socialista ☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭" << std::endl;
+    Node* index = head;
     while (index->getNext() != nullptr){
 
         std::cout << "N = ";
-        std::cout << index->getN();
-        spdlog::info("In List print2");
-        std::cout << ((int *)(_memory + index->getN()));
-        std::cout << " -";
-        std::cout << *((int *)(_memory+index->getN()));
-        std::cout << "- ";
-        std::cout << " -> ";
+        std::cout << index->getN() << std::endl;
+        std::cout << "Label = ";
+        std::cout << index->getName() << std::endl;
+        std::cout << "ref = ";
+        std::cout << (_memory + index->getN()) << std::endl;
+        std::cout << "value = ";
+        std::cout << getValue(index->getType(), index->getN(), _memory) << std::endl;
+        std::cout << "|" << std::endl;
+        std::cout << "V" << std::endl;
         index = index->getNext();
-        spdlog::info("In while");
     }
     std::cout << "N = ";
-    std::cout << index->getN();
-    spdlog::info("llego");
-    std::cout << ((int *)(_memory + index->getN()));
-    std::cout << " -";
-    std::cout << *((int *)(_memory + index->getN()));
-    std::cout << "- ";
-    std::cout << " -> nullptr";
+    std::cout << index->getN() << std::endl;
+    std::cout << "ref = ";
+    std::cout << (_memory + index->getN()) << std::endl;
+    std::cout << "value = ";
+    std::cout << getValue(index->getType(), index->getN(), _memory)  << std::endl;
+    std::cout << "|" << std::endl;
+    std::cout << "V" << std::endl;
+    std::cout << "nullptr" << std::endl;
     spdlog::info("Out of while");
 }
+
+int List::available_memory(int _size) {
+
+    //Pendiente de obtener espacios que han sido liberados
+    }
+
+std::string List::getValue(std::string _type, int position, bool* _memory) {
+
+    if (_type == "int"){
+        return std::to_string(*((int *)(_memory + position)));
+    }
+    else if (_type == "long"){
+        return std::to_string(*((long *)(_memory + position)));
+    }
+    else if (_type == "char"){
+        // How the fuck it suppose that i save a char
+    }
+    else if (_type == "float"){
+        return std::to_string(*((float *)(_memory + position)));
+    }
+    else if (_type == "double"){
+        return std::to_string(*((double *)(_memory + position)));
+    }
+    else if(_type == "reference"){
+        // Protocol for reference declarations
+    }
+    else{
+        spdlog::critical("Lis.getValue:  Error desconocido");
+    }
+}
+
 
 

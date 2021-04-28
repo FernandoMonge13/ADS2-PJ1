@@ -13,18 +13,21 @@
 class List {
 public:
     //agrega al final - retorna la posicion donde se debe almacenar la variable
-    int insert(std::string, std::string, std::string, std::string);
+    void insert(std::string name, std::string type, int _size);
     void remove(std::string);
-    bool find(std::string);
     bool getFlag();
     // Ultimo nodo
     Node* getTail();
+    Node* find(std::string);
     void print(bool * _memory);
 
     List();
 
 
 private:
+
+    std::string getValue(std::string _type, int position, bool * _memory);
+    int available_memory(int _size);
     bool flag = true;
     Node *head = nullptr;
     Node *tail = nullptr;

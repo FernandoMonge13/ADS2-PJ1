@@ -13,39 +13,36 @@ Mserver::Mserver() {
 List list = List();
 
 
-void Mserver::insertion(std::string temporal){
+void Mserver::receive(std::string temporal){
     auto json = json::parse(temporal);
+
+    std::string tipo =  json["Type"].get<std::string>();
 
 
     if(list.getFlag()){
-        int available_position = list.insert("0", (json["Name"]).dump(), (json["Type"]).dump(), json["Size"].dump());
-        std::cout << json;
-        this->add((json["Value"]).dump(), (json["Type"]).dump(), available_position);
+        //std::cout << json;
+        spdlog::info("Mserver: First");
+        list.insert(json["Name"].get<std::string>(), json["Type"].get<std::string>(), std::stoi(json["Size"].get<std::string>()));
+        spdlog::info("Mserver: list insert finalized");
+        this->add((json["Value"]).get<std::string>(), (json["Type"]).get<std::string>(), (list.find(json["Name"].get<std::string>())->getN()));
+        spdlog::info("Mserver: add finalized");
         this->print();
-
-//        if(json["type"]== "int"){
-//            *((int *)(memory)) = std::stoi(json["value"]);
-//
-//        }
-//////////////////////////// AQui va lo de memoria
-
+        spdlog::info("Mserver: print did");
     }
     else{
-        int available_position = list.insert(std::to_string((list.getTail()->getN() + list.getTail()->getSize())), json["Name"], json["Type"],json["Size"].dump());
-        this->add((json["Value"]).dump(), (json["Type"]).dump(), available_position);
-        spdlog::info("Variable added, to print in Mserver");
+        list.insert(json["Name"], json["Type"], std::stoi(json["Size"].get<std::string>()));
+        this->add((json["Value"]).get<std::string>(), (json["Type"]).get<std::string>(), list.find((json["Name"]).get<std::string>())->getN());
+//        spdlog::info("Variable added, to print in Mserver");
         this->print();
-//////////////////////////// AQui va lo de memoria
     }
 }
 
 void Mserver::add(std::string _value, std::string _type, int position) {
-    std::cout << "dE QUE LLEGO LEGO";
-    std::cout << _type;
+
     if (_type == "int"){
+        spdlog::info("Mserver: Add - int");
         *((int *)(memory + position)) = std::stoi(_value);
-        std::cout << "HPPPPPPPP";
-        std::cout << memory+position;
+        spdlog::info("Mserver: Add - int - finalized");
     }
     else if (_type == "long"){
         *((long *)(memory + position)) = std::stol(_value);
@@ -61,6 +58,9 @@ void Mserver::add(std::string _value, std::string _type, int position) {
     }
     else if(_type == "reference"){
         // Protocol for reference declarations
+    }
+    else{
+        spdlog::critical("Valió verga el guardado en memoria");
     }
 }
 

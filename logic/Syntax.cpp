@@ -453,7 +453,7 @@ void Syntax::analyze(std::string text, TextView* _stdout_) {
 
             }
 
-            hp.construction(type, label, value, "picha",instruction, this->getSize(type));
+            hp.construction(type, label, value, instruction,instruction, this->getSize(type));
             hp.start();
 
         }

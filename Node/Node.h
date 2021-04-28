@@ -28,9 +28,10 @@ public:
     void setType(std::string);
 
     int getSize();
-    void setSize(int );
+    void setSize(int _size);
 
 private:
+
     Node* next;
     int N;
     std::
