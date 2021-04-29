@@ -9,6 +9,7 @@
 using namespace std;
 
 Mserver memory = Mserver();
+ofstream text;
 
 Server ::Server() {
 
@@ -23,11 +24,13 @@ void Server::start() {
     hint.sin_port = htons(port);
     inet_pton(AF_INET, "0.0.0.0", &hint.sin_addr);
 
+
     bind(socketS, (sockaddr*)&hint, sizeof(hint));
 
     listen(socketS, SOMAXCONN);
 
     sockaddr_in client;
+
     socklen_t clientSize = sizeof(client);
 
     client_Socket = accept(socketS, (sockaddr*)&client, &clientSize);
@@ -49,8 +52,24 @@ void Server::start() {
 
     close(socketS);
 
+    std::string test = "Radio check";
+    cout << "MANDA" << endl;
+
     while (true){
-        memset(buffer, 0, 4096);
+        //memset(buffer, 0, 4096);
+
+        while (true){
+
+            memset(buffer, 0, 4096);
+            cout << "MANDA" << endl;
+
+            recv(client_Socket, buffer, 4096, 0);
+            memory.receive(string(buffer, 0, bytes_Received));
+            cout << string(buffer);
+            send(client_Socket, test.c_str(), test.size() + 1 , 0);
+
+
+        }
         bytes_Received = recv(client_Socket, buffer, 4096, 0);
 
         if (bytes_Received == -1)
@@ -71,12 +90,7 @@ void Server::start() {
         memory.receive(string(buffer, 0, bytes_Received));
 
 
-        cout << "Serverrrrr";
-        cout << string(buffer, 0, bytes_Received) << endl;
-
-        std:: string s = "BUenos dias";
-        // Echo message back to client
-        send(client_Socket, s.c_str(), s.size() + 1 , 0);
     }
     close(client_Socket);
+
 }

@@ -11,7 +11,7 @@
 #include <sys/socket.h>
 #include <netdb.h>
 #include <arpa/inet.h>
-
+#include <fstream>
 #include <string.h>
 #include <string>
 
@@ -25,17 +25,19 @@ public:
 
     Client();
     void start();
+    void communication();
     void construction(string type, string name, string value, string instruction, string access, string size);
 
 private:
     int socketC;
-    int port = 40000;
+    int port = 56000;
     int connect_Res;
     int send_Res;
     int bytes_Received;
     int counter = 1;
     char buffer[4096];
     json line ;
+    bool flag = true;
 
 };
 

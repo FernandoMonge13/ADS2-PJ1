@@ -453,8 +453,8 @@ void Syntax::analyze(std::string text, TextView* _stdout_) {
 
             }
 
-            hp.construction(type, label, value, instruction,instruction, this->getSize(type));
-            hp.start();
+            hp.construction(type, label, value, instruction, instruction, this->getSize(type));
+            //hp.start();
 
         }
 
