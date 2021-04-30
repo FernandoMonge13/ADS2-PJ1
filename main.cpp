@@ -7,12 +7,12 @@
 
 int main() {
 
+    // holaa
 /*
     Client hp = Client();
     hp.construction("Int", "numero", "25745846", "TRUE");
     hp.start();
 
-    std::cout << "Hello, World!" << std::endl;
 
     bool * memoria = (bool *)malloc(1000);
 
