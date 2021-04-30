@@ -17,4 +17,4 @@ Así como también incluir estas lineas en el CmakeList.txt:
     pkg_check_modules(GTKMM gtkmm-3.0)
     include_directories(${GTKMM_INCLUDE_DIRS})
     link_directories(${GTKMM_LIBRARY_DIRS})
-    target_link_libraries(ADS2-PJ1 ${GTKMM_LIBRARIES})
+    target_link_libraries(ADS2_PJ1 ${GTKMM_LIBRARIES})
