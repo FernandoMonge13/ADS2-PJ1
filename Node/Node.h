@@ -32,10 +32,9 @@ public:
 
 private:
 
-    Node* next;
+    Node* next = nullptr;
     int N;
-    std::
-    string name;
+    std::string name;
     std::string type;
     int size;
 

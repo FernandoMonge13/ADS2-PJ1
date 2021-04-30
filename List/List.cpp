@@ -88,7 +88,7 @@ void List::print(bool *_memory) {
     std::cout << " "    << std::endl;
     std::cout << "☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭ Print Socialista ☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭" << std::endl;
     Node* index = head;
-    while (index->getNext() != nullptr){
+    while (index != nullptr){
 
         std::cout << "N = ";
         std::cout << index->getN() << std::endl;
@@ -102,16 +102,18 @@ void List::print(bool *_memory) {
         std::cout << "V" << std::endl;
         index = index->getNext();
     }
-    std::cout << "N = ";
-    std::cout << index->getN() << std::endl;
-    std::cout << "ref = ";
-    std::cout << (_memory + index->getN()) << std::endl;
-    std::cout << "value = ";
-    std::cout << getValue(index->getType(), index->getN(), _memory)  << std::endl;
-    std::cout << "|" << std::endl;
-    std::cout << "V" << std::endl;
     std::cout << "nullptr" << std::endl;
-    spdlog::info("Out of while");
+//
+//    std::cout << "N = ";
+//    std::cout << index->getN() << std::endl;
+//    std::cout << "ref = ";
+//    std::cout << (_memory + index->getN()) << std::endl;
+//    std::cout << "value = ";
+//    std::cout << getValue(index->getType(), index->getN(), _memory)  << std::endl;
+//    std::cout << "|" << std::endl;
+//    std::cout << "V" << std::endl;
+//    std::cout << "nullptr" << std::endl;
+//    spdlog::info("Out of while");
 }
 
 int List::available_memory(int _size) {
@@ -142,6 +144,10 @@ std::string List::getValue(std::string _type, int position, bool* _memory) {
     else{
         spdlog::critical("Lis.getValue:  Error desconocido");
     }
+}
+
+void List::setFlag() {
+    flag = true;
 }
 
 

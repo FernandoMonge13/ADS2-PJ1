@@ -8,38 +8,38 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/fernando/Documents/ADS2-PJ1/cmake-build-debug"/>
+				<Option working_dir="/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/fernando/Documents/ADS2-PJ1/cmake-build-debug"/>
+				<Option working_dir="/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/fernando/Documents/ADS2-PJ1/cmake-build-debug"/>
+				<Option working_dir="/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ADS2_PJ1">
-				<Option output="/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/ADS2_PJ1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/fernando/Documents/ADS2-PJ1/cmake-build-debug"/>
+				<Option output="/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/ADS2_PJ1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -89,15 +89,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 ADS2_PJ1"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 ADS2_PJ1"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="ADS2_PJ1/fast">
-				<Option output="/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/ADS2_PJ1" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/fernando/Documents/ADS2-PJ1/cmake-build-debug"/>
+				<Option output="/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/ADS2_PJ1" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -147,59 +147,59 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 ADS2_PJ1/fast"/>
-					<CompileFile command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -f &quot;/home/fernando/Documents/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 ADS2_PJ1/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/camanem/CLionProjects/ADS2-PJ1/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/Client/Client.cpp">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/Client/Client.cpp">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/Client/Client.h">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/Client/Client.h">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/Gui/MainWindow.cpp">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/Gui/MainWindow.cpp">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/Gui/MainWindow.h">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/Gui/MainWindow.h">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/List/List.cpp">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/List/List.cpp">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/List/List.h">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/List/List.h">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/Mserver/Mserver.cpp">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/Mserver/Mserver.cpp">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/Mserver/Mserver.h">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/Mserver/Mserver.h">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/Node/Node.cpp">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/Node/Node.cpp">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/Node/Node.h">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/Node/Node.h">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/Server/Server.cpp">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/Server/Server.cpp">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/Server/Server.h">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/Server/Server.h">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/logic/Syntax.cpp">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/logic/Syntax.cpp">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/logic/Syntax.h">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/logic/Syntax.h">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/main.cpp">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/main.cpp">
 			<Option target="ADS2_PJ1"/>
 		</Unit>
-		<Unit filename="/home/fernando/Documents/ADS2-PJ1/CMakeLists.txt">
+		<Unit filename="/home/camanem/CLionProjects/ADS2-PJ1/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

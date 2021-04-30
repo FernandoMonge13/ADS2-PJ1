@@ -16,10 +16,15 @@ List list = List();
 void Mserver::receive(std::string temporal){
     auto json = json::parse(temporal);
 
-    std::string tipo =  json["Type"].get<std::string>();
+//    std::string tipo =  json["Type"].get<std::string>();
 
+    if(json["Instruccion"].get<std::string>() == "ReRun"){
+        list.setFlag();
+        free(memory);
+        memory = (bool*) malloc(10000000);
+    }
 
-    if(list.getFlag()){
+    else if(list.getFlag()){
         //std::cout << json;
         spdlog::info("Mserver: First");
         list.insert(json["Name"].get<std::string>(), json["Type"].get<std::string>(), std::stoi(json["Size"].get<std::string>()));
@@ -32,7 +37,7 @@ void Mserver::receive(std::string temporal){
     else{
         list.insert(json["Name"], json["Type"], std::stoi(json["Size"].get<std::string>()));
         this->add((json["Value"]).get<std::string>(), (json["Type"]).get<std::string>(), list.find((json["Name"]).get<std::string>())->getN());
-//        spdlog::info("Variable added, to print in Mserver");
+        spdlog::info("Second Variable added, to print in Mserver");
         this->print();
     }
 }
@@ -40,9 +45,7 @@ void Mserver::receive(std::string temporal){
 void Mserver::add(std::string _value, std::string _type, int position) {
 
     if (_type == "int"){
-        spdlog::info("Mserver: Add - int");
         *((int *)(memory + position)) = std::stoi(_value);
-        spdlog::info("Mserver: Add - int - finalized");
     }
     else if (_type == "long"){
         *((long *)(memory + position)) = std::stol(_value);
@@ -62,6 +65,7 @@ void Mserver::add(std::string _value, std::string _type, int position) {
     else{
         spdlog::critical("Valió verga el guardado en memoria");
     }
+
 }
 
 void Mserver::print() {

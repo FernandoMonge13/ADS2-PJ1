@@ -26,7 +26,7 @@ int main() {
 
     free(memoria);
 */
-    //MainWindow window;
+    MainWindow window;
     Server hp = Server();
     hp.start();
 

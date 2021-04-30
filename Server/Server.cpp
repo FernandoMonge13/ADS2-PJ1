@@ -53,44 +53,47 @@ void Server::start() {
     close(socketS);
 
     std::string test = "Radio check";
-    cout << "MANDA" << endl;
+    //cout << "MANDA" << endl;
 
-    while (true){
+//    while (true){
         //memset(buffer, 0, 4096);
+    int cont = 0;
+    memset(buffer, 0, 4096);
+    while (true){
 
-        while (true){
-
-            memset(buffer, 0, 4096);
-            cout << "MANDA" << endl;
-
-            recv(client_Socket, buffer, 4096, 0);
-            memory.receive(string(buffer, 0, bytes_Received));
-            cout << string(buffer);
-            send(client_Socket, test.c_str(), test.size() + 1 , 0);
-
-
-        }
-        bytes_Received = recv(client_Socket, buffer, 4096, 0);
-
-        if (bytes_Received == -1)
-        {
-            cerr << "Error in recv(). Quitting" << endl;
-            break;
-        }
-
-        if (bytes_Received == 0)
-        {
-            cout << "Client disconnected " << endl;
-            close(client_Socket); // restart server if client closes
-            start();
-            break;
-        }
-
-
+        recv(client_Socket, buffer, 4096, 0);
+        cout << "Mensaje Recibido" << endl;
+        cout << string(buffer);
         memory.receive(string(buffer, 0, bytes_Received));
+        send(client_Socket, test.c_str(), test.size() + 1 , 0);
+        cont++;
+        cout << ""<< endl;
+        cout << cont << endl;
+        cout << "Mensaje Procesado" << endl;
 
 
     }
+//        bytes_Received = recv(client_Socket, buffer, 4096, 0);
+//
+//        if (bytes_Received == -1)
+//        {
+//            cerr << "Error in recv(). Quitting" << endl;
+//            break;
+//        }
+//
+//        if (bytes_Received == 0)
+//        {
+//            cout << "Client disconnected " << endl;
+//            close(client_Socket); // restart server if client closes
+//            start();
+//            break;
+//        }
+//
+//
+//        memory.receive(string(buffer, 0, bytes_Received));
+//
+//
+//    }
     close(client_Socket);
 
 }

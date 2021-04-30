@@ -16,6 +16,7 @@ public:
     void insert(std::string name, std::string type, int _size);
     void remove(std::string);
     bool getFlag();
+    void setFlag();
     // Ultimo nodo
     Node* getTail();
     Node* find(std::string);
