@@ -4,7 +4,7 @@
 
 
 #include "Server.h"
-
+#include "../Json/json.hpp"
 
 using namespace std;
 
@@ -53,22 +53,21 @@ void Server::start() {
     close(socketS);
 
     std::string test = "Radio check";
-    //cout << "MANDA" << endl;
-
-//    while (true){
+    std::string message;
+  //    while (true){
         //memset(buffer, 0, 4096);
     int cont = 0;
     memset(buffer, 0, 4096);
     while (true){
-
+        cout << "Hello" << endl;
         recv(client_Socket, buffer, 4096, 0);
         cout << "Mensaje Recibido" << endl;
         cout << string(buffer);
-        memory.receive(string(buffer, 0, bytes_Received));
-        send(client_Socket, test.c_str(), test.size() + 1 , 0);
+        message = memory.receive(string(buffer, 0, bytes_Received));
+        send(client_Socket, message.c_str(), message.size() + 1 , 0);
         cont++;
         cout << ""<< endl;
-        cout << cont << endl;
+        //cout << cont << endl;
         cout << "Mensaje Procesado" << endl;
 
 

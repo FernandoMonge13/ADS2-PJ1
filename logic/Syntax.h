@@ -32,7 +32,7 @@ private:
 
 
 public:
-    void analyze(std::string text, TextView* _stdout_);
+    std::string analyze(std::string text, TextView* _stdout_);
     Syntax();
 
 };

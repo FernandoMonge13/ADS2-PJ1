@@ -3,7 +3,6 @@
 //
 #include <string>
 #include <iostream>
-
 #include "Mserver.h"
 
 Mserver::Mserver() {
@@ -13,32 +12,36 @@ Mserver::Mserver() {
 List list = List();
 
 
-void Mserver::receive(std::string temporal){
-    auto json = json::parse(temporal);
+std::string Mserver::receive(std::string temporal){
+    auto json_message = json::parse(temporal);
 
-//    std::string tipo =  json["Type"].get<std::string>();
+//    std::string tipo =  json_message["Type"].get<std::string>();
 
-    if(json["Instruccion"].get<std::string>() == "ReRun"){
+    if(json_message["Instruccion"].get<std::string>() == "ReRun"){
         list.setFlag();
-        free(memory);
-        memory = (bool*) malloc(10000000);
+        json nullmessage ={
+                {"Addresses",  "skip"},
+                {"Values",  "skip"},
+                {"Labels", "skip"},
+                {"Refs_Count", "skip"},
+        };
+        return nullmessage.dump();
     }
 
     else if(list.getFlag()){
-        //std::cout << json;
+        //std::cout << json_message;
         spdlog::info("Mserver: First");
-        list.insert(json["Name"].get<std::string>(), json["Type"].get<std::string>(), std::stoi(json["Size"].get<std::string>()));
+        list.insert(json_message["Name"].get<std::string>(), json_message["Type"].get<std::string>(), std::stoi(json_message["Size"].get<std::string>()));
         spdlog::info("Mserver: list insert finalized");
-        this->add((json["Value"]).get<std::string>(), (json["Type"]).get<std::string>(), (list.find(json["Name"].get<std::string>())->getN()));
+        this->add((json_message["Value"]).get<std::string>(), (json_message["Type"]).get<std::string>(), (list.find(json_message["Name"].get<std::string>())->getN()));
         spdlog::info("Mserver: add finalized");
-        this->print();
-        spdlog::info("Mserver: print did");
+        return this->print();
     }
     else{
-        list.insert(json["Name"], json["Type"], std::stoi(json["Size"].get<std::string>()));
-        this->add((json["Value"]).get<std::string>(), (json["Type"]).get<std::string>(), list.find((json["Name"]).get<std::string>())->getN());
+        list.insert(json_message["Name"], json_message["Type"], std::stoi(json_message["Size"].get<std::string>()));
+        this->add((json_message["Value"]).get<std::string>(), (json_message["Type"]).get<std::string>(), list.find((json_message["Name"]).get<std::string>())->getN());
         spdlog::info("Second Variable added, to print in Mserver");
-        this->print();
+        return this->print();
     }
 }
 
@@ -68,6 +71,6 @@ void Mserver::add(std::string _value, std::string _type, int position) {
 
 }
 
-void Mserver::print() {
-    list.print(memory);
+std::string Mserver::print() {
+    return list.print(memory);
 }

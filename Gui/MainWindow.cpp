@@ -5,7 +5,7 @@
 #include "MainWindow.h"
 #include "iostream"
 #include "../logic/Syntax.h"
-
+#include "spdlog/spdlog.h"
 
 MainWindow::MainWindow() {
 
@@ -18,7 +18,7 @@ MainWindow::MainWindow() {
 //    button_run.add_pixlabel("info.xpm", "Run");
 //    button_run.signal_clicked().connect([this]{this->//m}); // Clases
 
-    window.set_default_size(800,800);
+    window.set_default_size(1100,800);
     window.set_title("C!  --  IDE");
     window.set_position(Gtk::WIN_POS_CENTER);
     window.add(fixed);
@@ -35,13 +35,13 @@ MainWindow::MainWindow() {
     scroll_editor.set_size_request(400,500);
     scroll_stdout_.set_size_request(400, 125);
     scroll_app_log.set_size_request(400, 125);
-    scroll_ram_view.set_size_request(370, 500);
+    scroll_ram_view.set_size_request(670, 500);
 
     fixed.put(button_run, 5, 0);
     fixed.put(scroll_editor, 5, 35);
     fixed.put(scroll_stdout_, 5, 540);
     fixed.put(scroll_app_log, 5, 670);
-    fixed.put(label_ram, 550, 10);
+    fixed.put(label_ram, 735, 10);
     fixed.put(scroll_ram_view,420, 35);
     fixed.put(listViewText, 450, 700);
 
@@ -50,8 +50,8 @@ MainWindow::MainWindow() {
 
     stdout_.get_buffer()->set_text(">>");
 
-    ram_view.get_buffer()->set_text("     Direction                     Value                     "
-                                    "Label                   Refs");
+    ram_view.get_buffer()->set_text("\tDirection\t\t\t\t\t\tValue\t\t\t\t\t\t"
+                                    "Label\t\t\t\t\tRefs");
 //    stdout_.get_buffer()->set_text(stdout_.get_buffer()->get_text()+"text"); // Command to add text and not overwrite
 //    editor.set_size_request(200, 100);
 //    editor.get_buffer()->get_text();
@@ -66,9 +66,79 @@ void MainWindow::run_button_clicked(){
 
 //    std::cout << "Contenido del editor:" << std::endl;
 //    std::cout << editor.get_buffer()->get_text() << std::endl;
-    stdout_.get_buffer()->set_text(">> ");
-    Syntax* syntax = new Syntax;
-    syntax->analyze(editor.get_buffer()->get_text(), &stdout_);
+    std::string text = editor.get_buffer()->get_text();
+    if (!text.empty()){
+        std::string ram_data;
+        stdout_.get_buffer()->set_text(">> ");
+        Syntax* syntax = new Syntax;
+        ram_data = syntax->analyze(editor.get_buffer()->get_text(), &stdout_);
+        if (ram_data != "Error"){
+            update(ram_data);
+        }
+    }
+}
 
+void MainWindow::update(std::string ram_data) {
 
+    if (ram_data.empty()){
+        std::cout << "QUÉ PUTAS?? POR QUÉ ESTÁ VACÍO???" << std::endl;
+    }
+    else{
+
+        std::cout << ram_data << std::endl;
+        spdlog::info("Inicia Updadate");
+
+        auto json = json::parse(ram_data);
+        std::string visual_data = "\tDirection\t\t\t\t\t\tValue\t\t\t\t\t\t"
+                                  "Label\t\t\t\t\tRefs\n";
+        std::string addresses = json["Addresses"].get<std::string>();
+        std::string values = json["Values"].get<std::string>();
+        std::string labels = json["Labels"].get<std::string>();
+        std::string refs = json["Refs_Count"].get<std::string>();
+
+        std::string character;
+
+        spdlog::info("De camino a whiles");
+
+        while (addresses != "" && addresses != "skip"){
+            spdlog::info("Gran  while inicia");
+            visual_data.append(showData(&addresses, 22));
+            visual_data.append(showData(&values, 55/3));
+            visual_data.append(showData(&labels, 65/3));
+//        visual_data.append(showData(&refs, ?));
+            visual_data.append("\n");
+        }
+        std::cout << "listo" << std::endl;
+        ram_view.get_buffer()->set_text(visual_data);
+    }
+
+}
+
+std::string MainWindow::showData(std::string* text, int max_lenght) {
+
+    std::string data_to_show;
+    std::string character;
+    int counter = 0;
+    while (!text->empty()){
+        character = ((*text)[0]);
+        if (character == " "){
+            text->erase(text->begin());
+            std::cout << "ajaaaa" << std::endl;
+            break;
+        }
+        else {
+            text->erase(text->begin());
+            if (counter<max_lenght){
+                data_to_show.append(character);
+                counter++;
+            }
+        }
+    }
+    if (counter < max_lenght && 1 < max_lenght-counter){
+        int spaces = (((max_lenght*3)-(counter*3))/2);
+        for (int i=0; i<spaces; i++){
+            data_to_show = " " + data_to_show + " ";
+        }
+    }
+    return data_to_show;
 }

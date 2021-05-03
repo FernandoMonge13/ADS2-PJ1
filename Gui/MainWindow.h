@@ -47,6 +47,9 @@ private:
 
     Label label_ram;
 
+    void update(std::string ram_data);
+    std::string showData(std::string* text, int max_lenght);
+
 public:
 
     /*

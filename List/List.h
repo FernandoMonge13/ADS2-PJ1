@@ -20,7 +20,7 @@ public:
     // Ultimo nodo
     Node* getTail();
     Node* find(std::string);
-    void print(bool * _memory);
+    std::string print(bool * _memory);
 
     List();
 

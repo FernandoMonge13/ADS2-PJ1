@@ -17,6 +17,7 @@ std::string Syntax::identify_instruction(std::string *_text, std::string type) {
     ignore_spaces(_text);
     if (_text->empty()){
         spdlog::error("no txt to identify instruction");
+        fatal_error = true;
         return "error: no txt for identify_instruction";
     }
     else {
@@ -423,7 +424,7 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
     return result;
 }
 
-    void Syntax::analyze(std::string text, TextView* _stdout_) {
+    std::string Syntax::analyze(std::string text, TextView* _stdout_) {
 
         fatal_error = false;
         std::string instruction = "ReRun";
@@ -431,6 +432,7 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
         std::string label;
         std::string value;
         std::string type;
+        std::string _ram_view_status;
         std::cout << "" << std::endl;
         client.construction("no", "no", "no", instruction, "no", "no");
         std::cout << "Proceso de interpretación:" << std::endl;
@@ -460,16 +462,22 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
                     std::cout << "value = " + value << std::endl;
                 }
                 if (!fatal_error) {
-                    client.construction(type, label, value, instruction, instruction, this->getSize(type));
+                    spdlog::info("cachau error");
+                    _ram_view_status = client.construction(type, label, value, instruction, instruction, this->getSize(type));
                 }
             }
 
         }
         if (fatal_error){
             spdlog::error("Fatal Error: canceled analisys ");
+            if (_ram_view_status.empty()){
+                return "Error";
+            }
+            return _ram_view_status;
             //std::cout << "Fatal Error: the interpret process have to stop" << std::endl;
         }
         std::cout << "----------------" << std::endl;
+        return _ram_view_status;
     }
 
 bool Syntax::Only_1_Value(std::string _text) {

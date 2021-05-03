@@ -66,7 +66,7 @@ void Client::start() {
 
 }
 
-void Client::construction(string type, string name, string value, string instruction, string access, string size) {
+std::string Client::construction(string type, string name, string value, string instruction, string access, string size) {
     line= {{"Type",  type},
            {"Name",  name},
            {"Value", value},
@@ -77,20 +77,20 @@ void Client::construction(string type, string name, string value, string instruc
     if (flag){
         start();
         cout << "PASSS0";
-        communication();
         flag = false;
+        return communication();
     }else{
-        communication();
+        return communication();
 
     }
 
 
 }
 
-void Client::communication(){
+std::string Client::communication(){
     userInput = line.dump();
     send(socketC, userInput.c_str(), userInput.size() + 1, 0);
     recv(socketC, buffer, 4096, 0);
-    cout << "SERVER> " << string(buffer, bytes_Received) << "\r\n";
-
+    cout << "SERVER> " << buffer << "\r\n";
+    return buffer;
 }

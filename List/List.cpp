@@ -3,8 +3,12 @@
 //
 
 #include <iostream>
+#include <sstream>
 #include "List.h"
-#include "string"
+#include <string>
+#include <Client.h>
+#include "../Json/json.hpp"
+
 
 List::List() {
 
@@ -84,36 +88,47 @@ Node *List::getTail() {
     return tail;
 }
 
-void List::print(bool *_memory) {
+std::string List::print(bool *_memory) {
     std::cout << " "    << std::endl;
     std::cout << "☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭ Print Socialista ☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭☭" << std::endl;
     Node* index = head;
-    while (index != nullptr){
 
+    std::string addresses;
+    std::string values;
+    std::string labels;
+    std::string refs_count = " ";
+    json j_message;
+
+    while (index != nullptr){
         std::cout << "N = ";
         std::cout << index->getN() << std::endl;
         std::cout << "Label = ";
         std::cout << index->getName() << std::endl;
+        labels.append(index->getName() + " ");
         std::cout << "ref = ";
         std::cout << (_memory + index->getN()) << std::endl;
+        std::ostringstream get_the_address;
+        get_the_address << _memory + index->getN();
+        addresses.append(get_the_address.str() + " ");
         std::cout << "value = ";
         std::cout << getValue(index->getType(), index->getN(), _memory) << std::endl;
+        values.append(getValue(index->getType(), index->getN(), _memory) + " ");
         std::cout << "|" << std::endl;
         std::cout << "V" << std::endl;
         index = index->getNext();
     }
     std::cout << "nullptr" << std::endl;
-//
-//    std::cout << "N = ";
-//    std::cout << index->getN() << std::endl;
-//    std::cout << "ref = ";
-//    std::cout << (_memory + index->getN()) << std::endl;
-//    std::cout << "value = ";
-//    std::cout << getValue(index->getType(), index->getN(), _memory)  << std::endl;
-//    std::cout << "|" << std::endl;
-//    std::cout << "V" << std::endl;
-//    std::cout << "nullptr" << std::endl;
-//    spdlog::info("Out of while");
+    std::cout << addresses << std::endl;
+    std::cout << values << std::endl;
+    std::cout << labels << std::endl;
+    j_message = {
+            {"Addresses",  addresses},
+            {"Values",  values},
+            {"Labels", labels},
+            {"Refs_Count", refs_count},
+    };
+    return j_message.dump();
+
 }
 
 int List::available_memory(int _size) {
