@@ -5,17 +5,19 @@
 #include "Client/Client.h"
 
 
-int main() {
 
-    std::cout << "1 for Server, 2 for Client";
-    int input;
-    cin >> input;
-    if (input == 1){
-        Server server = Server();
-        server.start();
-    }
-    else{
+int main() {
+    int option;
+
+    std::cin>> option;
+
+    if (option == 1){
+        Server hp = Server();
+        hp.start();
+
+    }else{
         MainWindow window;
     }
+
     return 0;
 }

@@ -59,7 +59,7 @@ void Server::start() {
         cout << host << " connected on port " << ntohs(client.sin_port) << endl;
     }
 
-    close(socketS);
+//    close(socketS);
 
     std::string test = "Radio check";
     std::string message;
