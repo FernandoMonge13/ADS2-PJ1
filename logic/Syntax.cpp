@@ -138,25 +138,27 @@ std::string Syntax::identify_operation(std::string *_text) {
             return "error";
         }
         else {
-            if (character == ")") {
-                _text->erase(_text->begin());
-                if (finisihed_sentence(_text)) {
-                    return operation;
-                } else {
-                    spdlog::error("Missing ;");
-                    fatal_error = true;
-                    return "error";
-                    // print sintaxis incompleta, missing ;
-                }
-            }
-            if (finisihed_sentence(_text)) {
-                return operation;
-            } else {
-                spdlog::error("Missing ;");
-                fatal_error = true;
-                return "error";
-                // missing ;
-            }
+            return operation;
+            // Esto podría agregarlo al if del print y ya
+//            if (character == ")") {
+//                _text->erase(_text->begin());
+//                if (finisihed_sentence(_text)) {
+//                    return operation;
+//                } else {
+//                    spdlog::error("Missing ;");
+//                    fatal_error = true;
+//                    return "error";
+//                    // print sintaxis incompleta, missing ;
+//                }
+//            }
+//              if (finisihed_sentence(_text)) {
+//                return operation;
+//            } else {
+//                spdlog::error("Missing ;");
+//                fatal_error = true;
+//                return "error";
+//                // missing ;
+//            }
             // por probar y llamar
         }
     }
@@ -269,10 +271,9 @@ std::string Syntax::identify_value(std::string *_text) {
             character = *_text;
             character = character[0];
             if (character == ";" && value != ";") {
-                _text->erase(_text->begin());
                 return value;
             } else {
-                spdlog::error(" ; missed");
+                spdlog::error("<identifyValue> ; missed");
                 fatal_error = true;
                 return "error: ; or value missed";
             }
@@ -340,6 +341,7 @@ bool Syntax::finisihed_sentence(std::string *_text) {
         return true;
     }
     else{
+        fatal_error = true;
         spdlog::error("Missing ;");
         // severe fail, the detected print should be finished with ;  -- missing ;
         return false;
@@ -347,61 +349,67 @@ bool Syntax::finisihed_sentence(std::string *_text) {
 }
 
 bool Syntax::arytmethic(std::string _text) {
+    try{
+        std::string variable_1;
+        std::string variable_2;
+        std::string operation;
+        int result;
+        std::string character = _text;
+        character = character[0];
 
-    std::string variable_1;
-    std::string variable_2;
-    std::string operation;
-    int result;
-    std::string character = _text;
-    character = character[0];
+        while (!_text.empty()){
 
-    while (!_text.empty()){
-
-        if (character == "+" || character == "-" || character == "*" || character == "/"){
-            if (variable_1.empty()){
-                spdlog::error("Error getting operation");
-                // mega error, hay una operación antes que cualquier variable
-                break;
+            if (character == "+" || character == "-" || character == "*" || character == "/"){
+                if (variable_1.empty()){
+                    spdlog::error("Error getting operation");
+                    // mega error, hay una operación antes que cualquier variable
+                    break;
+                }
+                    // se encuentra el signo de operacion y eso tambien indica que se tiene la variable 1
+                else if (variable_2.empty()) {
+                    operation = character;
+                    _text.erase(_text.begin());
+                    character = _text;
+                    character = character[0];
+                }
+                    // la variable dos no está vacia por lo que se debe utilizar para operación
+                else if (!variable_2.empty()){
+                    result = calculate(variable_1, variable_2, operation);
+                    std::cout << result << std::endl;
+                    variable_1 = std::to_string(result);
+                    operation = character;
+                    _text.erase(_text.begin());
+                    character = _text;
+                    character = character[0];
+                    variable_2 = "";
+                }
             }
-            // se encuentra el signo de operacion y eso tambien indica que se tiene la variable 1
-            else if (variable_2.empty()) {
-                operation = character;
+                // Si aun no ha encontrado una operación, significa que está obteniendo la variable 1
+            else if (operation.empty()){
+                variable_1.append(character);
                 _text.erase(_text.begin());
                 character = _text;
                 character = character[0];
             }
-            // la variable dos no está vacia por lo que se debe utilizar para operación
-            else if (!variable_2.empty()){
-                result = calculate(variable_1, variable_2, operation);
-                std::cout << result << std::endl;
-                variable_1 = std::to_string(result);
-                operation = character;
+                // Si se ha encontrado una operación, significa que está obteniendo la variable 2
+            else if (!operation.empty()) {
+                variable_2.append(character);
                 _text.erase(_text.begin());
                 character = _text;
                 character = character[0];
-                variable_2 = "";
             }
+
         }
-        // Si aun no ha encontrado una operación, significa que está obteniendo la variable 1
-        else if (operation.empty()){
-            variable_1.append(character);
-            _text.erase(_text.begin());
-            character = _text;
-            character = character[0];
+        if (!variable_2.empty()){
+            result = calculate(variable_1, variable_2, operation);
         }
-        // Si se ha encontrado una operación, significa que está obteniendo la variable 2
-        else if (!operation.empty()) {
-            variable_2.append(character);
-            _text.erase(_text.begin());
-            character = _text;
-            character = character[0];
-        }
+        std::cout << result << std::endl;
 
     }
-    if (!variable_2.empty()){
-        result = calculate(variable_1, variable_2, operation);
+    catch (std::exception exception){
+        std::cout << "Operation requires memory info" << std::endl;
+        return false;
     }
-    std::cout << result << std::endl;
 }
 
 int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::string _operation) {
@@ -430,10 +438,6 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
 }
 
     std::string Syntax::analyze(std::string text, TextView* _stdout_) {
-        std::cout<< text << std::endl;
-        std::cout<< "->>" << std::endl;
-
-
         fatal_error = false;
         std::string instruction = "ReRun";
         std::string to_print;
@@ -441,7 +445,6 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
         std::string value;
         std::string type;
         std::string _ram_view_status;
-        std::cout << "" << std::endl;
         client.construction("no", "no", "no", instruction, "no", "no");
         std::cout << "Proceso de interpretación:" << std::endl;
 
@@ -458,7 +461,6 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
                 type = identify_type(&text);
                 label = identify_label(&text);
                 instruction = identify_instruction(&text, type);
-
                 if (instruction != "declaration" && !fatal_error) {
                     if (Only_1_Value(text)) {
                         value = identify_value(&text);
@@ -466,11 +468,12 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
                     }
                     else{
                         value = identify_operation(&text);
+                        std::cout << arytmethic(value) << std::endl;
                     }
                     std::cout << "value = " + value << std::endl;
                 }
-                if (!fatal_error) {
-                    _ram_view_status = client.construction(type, label, value, instruction, std::to_string(access), this->getSize(type));
+                if (!fatal_error && finisihed_sentence(&text)) {
+//                    _ram_view_status = client.construction(type, label, value, instruction, std::to_string(access), this->getSize(type));
                 }
             }
 
@@ -506,7 +509,8 @@ bool Syntax::Only_1_Value(std::string _text) {
             character = _text;
             character = character[0];
         }
-        if (character == "+" || character == "+" || character == "-" && character == "*" && character == "/"){
+        if (character == "+" || character == "-" || character == "*" || character == "/"){
+            std::cout << "yep"  << std::endl;
             return false;
         }
         else{

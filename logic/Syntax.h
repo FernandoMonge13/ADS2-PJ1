@@ -25,7 +25,7 @@ private:
     void ignore_spaces(std::string* _text);
     bool finisihed_sentence(std::string* _text);
     bool Only_1_Value(std::string _text);
-    bool arytmethic(std::string _text);
+    bool arytmethic(std::string _text, std::string _value);
     bool fatal_error;
     bool flag_condition = false;
     int access = 0;

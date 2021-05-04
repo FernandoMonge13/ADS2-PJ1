@@ -86,7 +86,6 @@ void MainWindow::update(std::string ram_data) {
     else{
 
         std::cout << ram_data << std::endl;
-        spdlog::info("Inicia Updadate");
 
         auto json = json::parse(ram_data);
         std::string visual_data = "\tDirection\t\t\t\t\t\tValue\t\t\t\t\t\t"
@@ -98,10 +97,7 @@ void MainWindow::update(std::string ram_data) {
 
         std::string character;
 
-        spdlog::info("De camino a whiles");
-
         while (addresses != "" && addresses != "skip"){
-            spdlog::info("Gran  while inicia");
             visual_data.append(showData(&addresses, 16));
             visual_data.append(showData(&values, 90/3));
             visual_data.append(showData(&labels, 42/3));
