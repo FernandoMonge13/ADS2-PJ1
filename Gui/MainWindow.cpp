@@ -102,9 +102,9 @@ void MainWindow::update(std::string ram_data) {
 
         while (addresses != "" && addresses != "skip"){
             spdlog::info("Gran  while inicia");
-            visual_data.append(showData(&addresses, 22));
-            visual_data.append(showData(&values, 55/3));
-            visual_data.append(showData(&labels, 65/3));
+            visual_data.append(showData(&addresses, 16));
+            visual_data.append(showData(&values, 90/3));
+            visual_data.append(showData(&labels, 42/3));
 //        visual_data.append(showData(&refs, ?));
             visual_data.append("\n");
         }
@@ -123,7 +123,6 @@ std::string MainWindow::showData(std::string* text, int max_lenght) {
         character = ((*text)[0]);
         if (character == " "){
             text->erase(text->begin());
-            std::cout << "ajaaaa" << std::endl;
             break;
         }
         else {

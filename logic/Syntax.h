@@ -31,7 +31,6 @@ private:
     int access = 0;
 
 
-
 public:
     std::string analyze(std::string text, TextView* _stdout_);
     Syntax();

@@ -7,12 +7,15 @@
 
 int main() {
 
-    // holaa
-
-    MainWindow window;
-    Server hp = Server();
-    hp.start();
-
-
+    std::cout << "1 for Server, 2 for Client";
+    int input;
+    cin >> input;
+    if (input == 1){
+        Server server = Server();
+        server.start();
+    }
+    else{
+        MainWindow window;
+    }
     return 0;
 }

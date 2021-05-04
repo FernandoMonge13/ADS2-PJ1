@@ -270,7 +270,6 @@ std::string Syntax::identify_value(std::string *_text) {
             character = character[0];
             if (character == ";" && value != ";") {
                 _text->erase(_text->begin());
-                ignore_spaces(_text);
                 return value;
             } else {
                 spdlog::error(" ; missed");
@@ -443,12 +442,7 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
         std::string type;
         std::string _ram_view_status;
         std::cout << "" << std::endl;
-        if (flag_condition){
-            client.construction("no", "no", "no", instruction, "no", "no");
-        }else{
-            flag_condition = true;
-        }
-
+        client.construction("no", "no", "no", instruction, "no", "no");
         std::cout << "Proceso de interpretación:" << std::endl;
 
         while (!text.empty() && !fatal_error){
@@ -476,9 +470,6 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
                     std::cout << "value = " + value << std::endl;
                 }
                 if (!fatal_error) {
-                    spdlog::info("cachau error");
-                    std::cout << label << std::endl;
-                    std::cout << access << std::endl;
                     _ram_view_status = client.construction(type, label, value, instruction, std::to_string(access), this->getSize(type));
                 }
             }
