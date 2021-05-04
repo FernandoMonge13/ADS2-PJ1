@@ -13,7 +13,7 @@
 class List {
 public:
     //agrega al final - retorna la posicion donde se debe almacenar la variable
-    void insert(std::string name, std::string type, int _size);
+    void insert(std::string name, std::string type, int _size, std::string access);
     void remove(std::string);
     bool getFlag();
     void setFlag();

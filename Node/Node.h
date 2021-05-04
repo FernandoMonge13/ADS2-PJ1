@@ -30,12 +30,16 @@ public:
     int getSize();
     void setSize(int _size);
 
+    std::string getAccess();
+    void setAccess(std::string _access);
+
 private:
 
     Node* next = nullptr;
     int N;
     std::string name;
     std::string type;
+    std::string access;
     int size;
 
 

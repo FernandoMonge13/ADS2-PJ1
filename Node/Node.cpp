@@ -26,6 +26,14 @@ void Node::setN(int size) {
     Node::N = size;
 }
 
+std::string Node::getAccess() {
+    return access;
+}
+
+void Node::setAccess(std::string _access) {
+    Node::access = _access;
+}
+
 std::string Node::getName() {
     return name;
 }

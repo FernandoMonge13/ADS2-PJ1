@@ -28,6 +28,7 @@ private:
     bool arytmethic(std::string _text);
     bool fatal_error;
 
+    int access = 0;
 
 
 

@@ -8,17 +8,12 @@
 
 using namespace Gtk;
 
-/*
+/**
  * @file MainWindow.h
- * @version 1.0
+ * @version 1.1
  * @date 02/04/2021
  * @author CAMANEM
  * @title Main Window
- * @code
- * int main(){
- *      MainWindow main_window;
- * }
- * @endcode
  *
  * @brief MainWindow creates and contains the program window and all graphic objects
  */

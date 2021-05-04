@@ -319,6 +319,12 @@ void Syntax::ignore_spaces(std::string* _text) {
         else if (character == "\t") {
             //std::cout << "Tab" << std::endl;
         }
+        else if (character == "{"){
+            access++;
+        }
+        else if (character == "}"){
+            access--;
+        }
         else {
             break;
         }
@@ -463,7 +469,9 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
                 }
                 if (!fatal_error) {
                     spdlog::info("cachau error");
-                    _ram_view_status = client.construction(type, label, value, instruction, instruction, this->getSize(type));
+                    std::cout << label << std::endl;
+                    std::cout << access << std::endl;
+                    _ram_view_status = client.construction(type, label, value, instruction, std::to_string(access), this->getSize(type));
                 }
             }
 

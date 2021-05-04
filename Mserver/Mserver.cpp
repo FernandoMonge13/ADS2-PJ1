@@ -31,14 +31,14 @@ std::string Mserver::receive(std::string temporal){
     else if(list.getFlag()){
         //std::cout << json_message;
         spdlog::info("Mserver: First");
-        list.insert(json_message["Name"].get<std::string>(), json_message["Type"].get<std::string>(), std::stoi(json_message["Size"].get<std::string>()));
+        list.insert(json_message["Name"].get<std::string>(), json_message["Type"].get<std::string>(), std::stoi(json_message["Size"].get<std::string>()), json_message["Access"].get<std::string>());
         spdlog::info("Mserver: list insert finalized");
         this->add((json_message["Value"]).get<std::string>(), (json_message["Type"]).get<std::string>(), (list.find(json_message["Name"].get<std::string>())->getN()));
         spdlog::info("Mserver: add finalized");
         return this->print();
     }
     else{
-        list.insert(json_message["Name"], json_message["Type"], std::stoi(json_message["Size"].get<std::string>()));
+        list.insert(json_message["Name"], json_message["Type"], std::stoi(json_message["Size"].get<std::string>()),json_message["Access"].get<std::string>());
         this->add((json_message["Value"]).get<std::string>(), (json_message["Type"]).get<std::string>(), list.find((json_message["Name"]).get<std::string>())->getN());
         spdlog::info("Second Variable added, to print in Mserver");
         return this->print();
@@ -54,7 +54,7 @@ void Mserver::add(std::string _value, std::string _type, int position) {
         *((long *)(memory + position)) = std::stol(_value);
     }
     else if (_type == "char"){
-        // How the fuck it suppose that i save a char
+        *((char *)(memory + position)) = *((char*)_value.c_str());
     }
     else if (_type == "float"){
         *((float *)(memory + position)) = std::stof(_value);

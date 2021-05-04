@@ -14,13 +14,14 @@ List::List() {
 
 }
 
-void List::insert(std::string name, std::string type, int _size) {
+void List::insert(std::string name, std::string type, int _size, std::string access) {
 
 
     temporal =  new Node;
     temporal->setName(name);
     temporal->setType(type);
     temporal->setSize(_size);
+    temporal->setAccess(access);
 //    std::cout << "El valor del nodo es " << std::endl;
 
 //    std::cout << "a" << std::endl;
@@ -113,6 +114,8 @@ std::string List::print(bool *_memory) {
         std::cout << "value = ";
         std::cout << getValue(index->getType(), index->getN(), _memory) << std::endl;
         values.append(getValue(index->getType(), index->getN(), _memory) + " ");
+        std::cout << "access = ";
+        std::cout << index->getAccess() << std::endl;
         std::cout << "|" << std::endl;
         std::cout << "V" << std::endl;
         index = index->getNext();
@@ -145,7 +148,7 @@ std::string List::getValue(std::string _type, int position, bool* _memory) {
         return std::to_string(*((long *)(_memory + position)));
     }
     else if (_type == "char"){
-        // How the fuck it suppose that i save a char
+        return std::string(1,(*((char *)(_memory + position))));
     }
     else if (_type == "float"){
         return std::to_string(*((float *)(_memory + position)));
