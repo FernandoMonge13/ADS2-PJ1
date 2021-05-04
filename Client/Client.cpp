@@ -17,6 +17,7 @@ using namespace std;
 
 ifstream openPort;
 string userInput;
+int  hp5;
 
 Client ::Client() {
 
@@ -25,9 +26,13 @@ Client ::Client() {
 void Client::start() {
     socketC = socket(AF_INET, SOCK_STREAM, 0);
 
+    openPort.open("ports.txt");
+    openPort >> hp5;
+    port = hp5;
+
     sockaddr_in hint;
     hint.sin_family = AF_INET;
-    hint.sin_port = htons(port);
+    hint.sin_port = port;
     string ip = "127.0.0.1";
     inet_pton(AF_INET, ip.c_str(), &hint.sin_addr);
 

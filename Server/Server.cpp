@@ -22,7 +22,16 @@ void Server::start() {
     sockaddr_in hint;
     hint.sin_family = AF_INET;
     hint.sin_port = htons(port);
+
     inet_pton(AF_INET, "0.0.0.0", &hint.sin_addr);
+
+    cout << hint.sin_port << endl;
+
+    text.open("ports.txt");
+    text << hint.sin_port;
+    text.close();
+
+
 
 
     bind(socketS, (sockaddr*)&hint, sizeof(hint));

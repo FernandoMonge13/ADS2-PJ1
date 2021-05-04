@@ -431,6 +431,9 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
 }
 
     std::string Syntax::analyze(std::string text, TextView* _stdout_) {
+        std::cout<< text << std::endl;
+        std::cout<< "->>" << std::endl;
+
 
         fatal_error = false;
         std::string instruction = "ReRun";
@@ -440,7 +443,12 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
         std::string type;
         std::string _ram_view_status;
         std::cout << "" << std::endl;
-        client.construction("no", "no", "no", instruction, "no", "no");
+        if (flag_condition){
+            client.construction("no", "no", "no", instruction, "no", "no");
+        }else{
+            flag_condition = true;
+        }
+
         std::cout << "Proceso de interpretación:" << std::endl;
 
         while (!text.empty() && !fatal_error){
@@ -516,4 +524,3 @@ bool Syntax::Only_1_Value(std::string _text) {
     }
 
 }
-

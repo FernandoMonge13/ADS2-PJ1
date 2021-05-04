@@ -27,7 +27,7 @@ public:
 
 private:
 
-    bool* memory = (bool*) malloc(10000000);
+    bool* memory = (bool*) malloc(10485760);
     void add(std::string _value, std::string _type, int position);
 };
 

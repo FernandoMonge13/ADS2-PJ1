@@ -27,7 +27,7 @@ private:
     bool Only_1_Value(std::string _text);
     bool arytmethic(std::string _text);
     bool fatal_error;
-
+    bool flag_condition = false;
     int access = 0;
 
 
