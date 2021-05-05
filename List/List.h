@@ -22,12 +22,12 @@ public:
     Node* find(std::string);
     std::string print(bool * _memory);
 
+    std::string getValue(std::string _type, int position, bool * _memory);
+
+
     List();
 
-
 private:
-
-    std::string getValue(std::string _type, int position, bool * _memory);
     int available_memory(int _size);
     bool flag = true;
     Node *head = nullptr;

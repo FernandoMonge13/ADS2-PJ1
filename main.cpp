@@ -8,7 +8,7 @@
 
 int main() {
 
-    std::cout << "1 for server | 2 for client";
+    std::cout << "1 for server, 2 for client";
 
     int option;
 

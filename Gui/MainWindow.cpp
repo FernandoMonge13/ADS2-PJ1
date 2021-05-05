@@ -14,6 +14,8 @@ MainWindow::MainWindow() {
     ListViewText listViewText(4, true);
 
     button_run.add_label("Run");
+    button_startDebug.add_label("Debug");
+    button_next.add_label("Next");
 
 //    button_run.add_pixlabel("info.xpm", "Run");
 //    button_run.signal_clicked().connect([this]{this->//m}); // Clases
@@ -38,6 +40,8 @@ MainWindow::MainWindow() {
     scroll_ram_view.set_size_request(670, 500);
 
     fixed.put(button_run, 5, 0);
+    fixed.put(button_startDebug, 52, 0);
+    fixed.put(button_next, 115, 0);
     fixed.put(scroll_editor, 5, 35);
     fixed.put(scroll_stdout_, 5, 540);
     fixed.put(scroll_app_log, 5, 670);

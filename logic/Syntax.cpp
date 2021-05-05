@@ -348,7 +348,7 @@ bool Syntax::finisihed_sentence(std::string *_text) {
     }
 }
 
-bool Syntax::arytmethic(std::string _text) {
+bool Syntax::calculable(std::string _text, std::string* _value) {
     try{
         std::string variable_1;
         std::string variable_2;
@@ -403,7 +403,9 @@ bool Syntax::arytmethic(std::string _text) {
         if (!variable_2.empty()){
             result = calculate(variable_1, variable_2, operation);
         }
-        std::cout << result << std::endl;
+        *_value = std::to_string(result);
+        return true;
+//        std::cout << result << std::endl;
 
     }
     catch (std::exception exception){
@@ -449,12 +451,13 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
         std::cout << "Proceso de interpretación:" << std::endl;
 
         while (!text.empty() && !fatal_error){
+
             // print case
             to_print = identify_print(&text, _stdout_);
             if (to_print != "error") {
                 if (to_print != "printed") {
                     std::cout << "operacion: " + to_print << std::endl;
-                    //arytmethic(to_print);
+                    //calculable(to_print);
                 }
             }
             else {
@@ -464,16 +467,19 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
                 if (instruction != "declaration" && !fatal_error) {
                     if (Only_1_Value(text)) {
                         value = identify_value(&text);
+                        validate_definition(type, value);
                         // verificar type y value compatibles
                     }
                     else{
                         value = identify_operation(&text);
-                        std::cout << arytmethic(value) << std::endl;
+                        if (!calculable(value, &value)){
+                            instruction = "definition_with_operation";
+                        }
                     }
                     std::cout << "value = " + value << std::endl;
                 }
                 if (!fatal_error && finisihed_sentence(&text)) {
-//                    _ram_view_status = client.construction(type, label, value, instruction, std::to_string(access), this->getSize(type));
+                    _ram_view_status = client.construction(type, label, value, instruction, std::to_string(access), this->getSize(type));
                 }
             }
 
@@ -518,4 +524,29 @@ bool Syntax::Only_1_Value(std::string _text) {
         }
     }
 
+}
+
+void Syntax::validate_definition(std::string _type, std::string _value) {
+
+    try {
+        if (_type == "int") {
+            int variable = std::stoi(_value);
+        } else if (_type == "long") {
+            long variable = std::stol(_value);
+        } else if (_type == "char") {
+            char variable = *((char *) _value.c_str());
+        } else if (_type == "float") {
+            float variable = std::stof(_value);
+        } else if (_type == "double") {
+            double variable = std::stod(_value);
+        } else if (_type == "reference") {
+            // Protocol for reference declarations
+        } else {
+            spdlog::critical("validate_definition: Error al validar");
+        }
+    }
+    catch (std::exception exception){
+        spdlog::critical("validate_definition: Error al validar");
+        fatal_error = true;
+    }
 }
