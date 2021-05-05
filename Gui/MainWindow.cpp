@@ -7,6 +7,8 @@
 #include "../logic/Syntax.h"
 #include "spdlog/spdlog.h"
 
+Syntax* syntax = new Syntax;
+
 MainWindow::MainWindow() {
 
 
@@ -78,7 +80,6 @@ void MainWindow::run_button_clicked(){
     if (!text.empty()){
         std::string ram_data;
         stdout_.get_buffer()->set_text(">> ");
-        Syntax* syntax = new Syntax;
         ram_data = syntax->analyze(editor.get_buffer()->get_text(), &stdout_);
         if (ram_data != "Error"){
             update(ram_data);
@@ -98,7 +99,6 @@ void MainWindow::next_pressed() {
     if (!debug_Text.empty()){
         std::string ram_data;
         stdout_.get_buffer()->set_text(">> ");
-        Syntax* syntax = new Syntax;
         ram_data = syntax->debugText(&debug_Text, &stdout_);
         if (ram_data != "Error"){
             update(ram_data);
