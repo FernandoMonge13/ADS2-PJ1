@@ -1,0 +1,42 @@
+digraph "nlohmann::basic_json::type_name"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="nlohmann::basic_json\l::type_name",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="return the type as string"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="nlohmann::basic_json::at",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a5805a2f5a4f94bdff25423e7ba833ad2",tooltip="access specified array element with bounds checking"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="nlohmann::basic_json\l::emplace",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#ae3866ccade11e7b73902169714363f21",tooltip="add an object to an object if key does not exist"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="nlohmann::basic_json\l::emplace_back",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a58837bac1c40038dcb07f437a02735da",tooltip="add an object to an array"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="nlohmann::basic_json\l::erase",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a0d0f5fb6f22126f7e3803dd7cdf7030f",tooltip="remove element given an iterator"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="nlohmann::basic_json\l::merge_patch",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#ab68414151f2f3347a71c7a9984f1d72d",tooltip="applies a JSON Merge Patch"];
+  Node6 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="nlohmann::basic_json\l::get_binary",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a76403180c973eb50c39948ed7b931d7d",tooltip=" "];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="nlohmann::basic_json\l::insert",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#ac6be8bd68e9dffd793846e0f0b239d62",tooltip="inserts element"];
+  Node8 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="nlohmann::basic_json\l::insert",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a3b86713def43fb79d40cb344b826033c",tooltip="inserts element"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="nlohmann::basic_json\l::operator[]",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a05c86efa156004b090258c1469eab3fd",tooltip="access specified array element"];
+  Node10 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="nlohmann::basic_json\l::push_back",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a887cd40d16a12596c24cd42c66107ac6",tooltip="add an object to an array"];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="nlohmann::basic_json\l::operator+=",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#afe3c79845dc1dd2243724558859d7e4b",tooltip="add an object to an array"];
+  Node11 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="nlohmann::basic_json\l::push_back",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a4f811ef36976a82a8e29cb1ae7c40152",tooltip="add an object to an object"];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="nlohmann::basic_json\l::swap",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#adbb8131d4eaea460e8329bc0dfff1f6e",tooltip="exchanges the values"];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="nlohmann::basic_json\l::update",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a6c02637be3d8bd730a14082cc05f7a85",tooltip="updates a JSON object from another object, overwriting existing keys"];
+  Node1 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="nlohmann::basic_json\l::value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#ab29a59d20767180d6d2fe4f5054dd245",tooltip="access specified object element with default value"];
+  Node16 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="nlohmann::basic_json\l::value",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a7a378b9282dd1f7eb9bfffea6d177bbe",tooltip="overload for a default value of type const char*"];
+}

@@ -1,0 +1,17 @@
+Para correr este proyecto será necesario tener instalado gtkmm, si no lo tienes usa los siguientes comandos en consola para su instalación\+: \begin{DoxyVerb}sudo apt update
+sudo apt-get install libgtkmm-3.0-dev
+\end{DoxyVerb}
+
+
+Y también se necesita la librería de logging spdlog\+: \begin{DoxyVerb}sudo apt update
+sudo apt install libspdlog-dev
+\end{DoxyVerb}
+
+
+Así como también incluir estas lineas en el Cmake\+List.\+txt\+: \begin{DoxyVerb}find_package(PkgConfig)
+pkg_check_modules(GTKMM gtkmm-3.0)
+include_directories(${GTKMM_INCLUDE_DIRS})
+link_directories(${GTKMM_LIBRARY_DIRS})
+target_link_libraries(ADS2_PJ1 ${GTKMM_LIBRARIES})
+\end{DoxyVerb}
+ 

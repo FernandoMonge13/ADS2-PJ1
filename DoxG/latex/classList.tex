@@ -1,0 +1,152 @@
+\hypertarget{classList}{}\doxysection{List Class Reference}
+\label{classList}\index{List@{List}}
+
+
+{\ttfamily \#include $<$List.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classList_a0b6433cfc5b8728a95f113944edf80dc}{insert}} (std\+::string name, std\+::string type, \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} \+\_\+size, std\+::string access)
+\item 
+void \mbox{\hyperlink{classList_a00605db9b37a2d2d87e78910a7fa5dec}{remove}} (std\+::string)
+\item 
+bool \mbox{\hyperlink{classList_a3da9a84094786fef04b2efaad72e3bbc}{get\+Flag}} ()
+\item 
+void \mbox{\hyperlink{classList_a09361cc929b88743b3dbc04c282add78}{set\+Flag}} ()
+\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{classList_ab228f296f2e1b4a7249923959be11001}{get\+Tail}} ()
+\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{classList_a08e63fdd748d63a3d20b7f3e6b60d25b}{find}} (std\+::string)
+\item 
+std\+::string \mbox{\hyperlink{classList_a2ffef25cafd0dc10d9fc0e0609a2cd37}{print}} (bool $\ast$\+\_\+memory)
+\item 
+std\+::string \mbox{\hyperlink{classList_ac202b09bb323818e9085e4998438988d}{get\+Value}} (std\+::string \+\_\+type, \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} position, bool $\ast$\+\_\+memory)
+\item 
+\mbox{\hyperlink{classList_a64d878a92d11f7c63c70cbe4e7dd4176}{List}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 13 of file List.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classList_a64d878a92d11f7c63c70cbe4e7dd4176}\label{classList_a64d878a92d11f7c63c70cbe4e7dd4176}} 
+\index{List@{List}!List@{List}}
+\index{List@{List}!List@{List}}
+\doxysubsubsection{\texorpdfstring{List()}{List()}}
+{\footnotesize\ttfamily List\+::\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file List.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classList_a08e63fdd748d63a3d20b7f3e6b60d25b}\label{classList_a08e63fdd748d63a3d20b7f3e6b60d25b}} 
+\index{List@{List}!find@{find}}
+\index{find@{find}!List@{List}}
+\doxysubsubsection{\texorpdfstring{find()}{find()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}} $\ast$ List\+::find (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 65 of file List.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{classList_a3da9a84094786fef04b2efaad72e3bbc}\label{classList_a3da9a84094786fef04b2efaad72e3bbc}} 
+\index{List@{List}!getFlag@{getFlag}}
+\index{getFlag@{getFlag}!List@{List}}
+\doxysubsubsection{\texorpdfstring{getFlag()}{getFlag()}}
+{\footnotesize\ttfamily bool List\+::get\+Flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 84 of file List.\+cpp.
+
+\mbox{\Hypertarget{classList_ab228f296f2e1b4a7249923959be11001}\label{classList_ab228f296f2e1b4a7249923959be11001}} 
+\index{List@{List}!getTail@{getTail}}
+\index{getTail@{getTail}!List@{List}}
+\doxysubsubsection{\texorpdfstring{getTail()}{getTail()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}} $\ast$ List\+::get\+Tail (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 88 of file List.\+cpp.
+
+\mbox{\Hypertarget{classList_ac202b09bb323818e9085e4998438988d}\label{classList_ac202b09bb323818e9085e4998438988d}} 
+\index{List@{List}!getValue@{getValue}}
+\index{getValue@{getValue}!List@{List}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily std\+::string List\+::get\+Value (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+type,  }\item[{\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}}}]{position,  }\item[{bool $\ast$}]{\+\_\+memory }\end{DoxyParamCaption})}
+
+
+
+Definition at line 142 of file List.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classList_a0b6433cfc5b8728a95f113944edf80dc}\label{classList_a0b6433cfc5b8728a95f113944edf80dc}} 
+\index{List@{List}!insert@{insert}}
+\index{insert@{insert}!List@{List}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void List\+::insert (\begin{DoxyParamCaption}\item[{std\+::string}]{name,  }\item[{std\+::string}]{type,  }\item[{\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}}}]{\+\_\+size,  }\item[{std\+::string}]{access }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file List.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classList_a2ffef25cafd0dc10d9fc0e0609a2cd37}\label{classList_a2ffef25cafd0dc10d9fc0e0609a2cd37}} 
+\index{List@{List}!print@{print}}
+\index{print@{print}!List@{List}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily std\+::string List\+::print (\begin{DoxyParamCaption}\item[{bool $\ast$}]{\+\_\+memory }\end{DoxyParamCaption})}
+
+
+
+Definition at line 92 of file List.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classList_a00605db9b37a2d2d87e78910a7fa5dec}\label{classList_a00605db9b37a2d2d87e78910a7fa5dec}} 
+\index{List@{List}!remove@{remove}}
+\index{remove@{remove}!List@{List}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void List\+::remove (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 45 of file List.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{classList_a09361cc929b88743b3dbc04c282add78}\label{classList_a09361cc929b88743b3dbc04c282add78}} 
+\index{List@{List}!setFlag@{setFlag}}
+\index{setFlag@{setFlag}!List@{List}}
+\doxysubsubsection{\texorpdfstring{setFlag()}{setFlag()}}
+{\footnotesize\ttfamily void List\+::set\+Flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 167 of file List.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 7
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+List/\mbox{\hyperlink{List_8h}{List.\+h}}\item 
+List/\mbox{\hyperlink{List_8cpp}{List.\+cpp}}\end{DoxyCompactItemize}
