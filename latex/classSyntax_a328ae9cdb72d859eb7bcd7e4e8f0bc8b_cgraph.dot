@@ -1,0 +1,20 @@
+digraph "Syntax::analyze"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Syntax::analyze",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="analyze the info that is on the IDE in automatic mode"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Client::construction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classClient.html#a3f05cb35be05fe8d27443a49069b810f",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="nlohmann::basic_json::get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#adc6408fbeaf9545882dc62bc20db7d42",tooltip="get special-case overload"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Syntax::logger",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSyntax.html#ab3a8ed65e9faa2ee55f23ba4b073f375",tooltip="info that is gonna be on the logger"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="nlohmann::basic_json\l::parse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a633db4570bf0afb137dec11a2439acee",tooltip="deserialize from a compatible input"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="nlohmann::detail::input\l_adapter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacenlohmann_1_1detail.html#ad11a087dbe66eade5af4056aef9600bf",tooltip=" "];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="nlohmann::to_string",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16",tooltip="user-defined to_string function for JSON values"];
+}

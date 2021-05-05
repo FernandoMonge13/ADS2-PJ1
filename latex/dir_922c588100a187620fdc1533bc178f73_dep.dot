@@ -1,0 +1,8 @@
+digraph "Client" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_922c588100a187620fdc1533bc178f73 [shape=box, label="Client", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_922c588100a187620fdc1533bc178f73.html"];
+  dir_1461be47150aff16a081be733e8763ec [shape=box label="Json" URL="dir_1461be47150aff16a081be733e8763ec.html"];
+  dir_922c588100a187620fdc1533bc178f73->dir_1461be47150aff16a081be733e8763ec [headlabel="1", labeldistance=1.5 headhref="dir_000000_000008.html"];
+}

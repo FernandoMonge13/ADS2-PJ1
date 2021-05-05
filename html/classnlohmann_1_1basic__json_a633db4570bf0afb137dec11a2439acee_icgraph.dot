@@ -1,0 +1,22 @@
+digraph "nlohmann::basic_json::parse"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="nlohmann::basic_json\l::parse",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="deserialize from a compatible input"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Syntax::analyze",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSyntax.html#a328ae9cdb72d859eb7bcd7e4e8f0bc8b",tooltip="analyze the info that is on the IDE in automatic mode"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="MainWindow::run_button\l_clicked",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMainWindow.html#a24f1b378d5ef7b3f8b77717a8187f061",tooltip="Function related to the run button."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="MainWindow::MainWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb",tooltip="Generates the window with all its components."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="operator\"\"_json",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$json_8hpp.html#ae90d59ab420a183cd5fb8588bdc95e06",tooltip="user-defined string literal for JSON values"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Mserver::receive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMserver.html#aea44106299e7ee42124fb57e7e282152",tooltip="it get a Json object from the client to add it to the memory"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Server::start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classServer.html#a7eac07d2582fa01c2671362efa955b31",tooltip="Starts the server related to sockets."];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4",tooltip=" "];
+}

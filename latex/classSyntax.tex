@@ -1,0 +1,172 @@
+\hypertarget{classSyntax}{}\doxysection{Syntax Class Reference}
+\label{classSyntax}\index{Syntax@{Syntax}}
+
+
+{\ttfamily \#include $<$Syntax.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classSyntax_a328ae9cdb72d859eb7bcd7e4e8f0bc8b}{analyze}} (std\+::string \mbox{\hyperlink{Server_8cpp_a34bcb45957b08a4c47e4aa4b57125f23}{text}}, Text\+View $\ast$\+\_\+stdout\+\_\+)
+\begin{DoxyCompactList}\small\item\em analyze the info that is on the I\+DE in automatic mode \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classSyntax_a537f8b6e711c89ddb1336821536f7546}{debug\+Text}} (std\+::string $\ast$\mbox{\hyperlink{Server_8cpp_a34bcb45957b08a4c47e4aa4b57125f23}{text}}, Text\+View $\ast$\+\_\+stdout\+\_\+)
+\begin{DoxyCompactList}\small\item\em analyze the info that is on the I\+DE in debug mode \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSyntax_ae026dd821e8f22f35684b0eb86263e51}{set\+Logger}} (Text\+View $\ast$\+\_\+logger)
+\begin{DoxyCompactList}\small\item\em obtain the logger objet \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSyntax_ab3a8ed65e9faa2ee55f23ba4b073f375}{logger}} (std\+::string, std\+::string)
+\begin{DoxyCompactList}\small\item\em info that is gonna be on the logger \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classSyntax_a7733a5565bfc9ad2d37ca6803fbbccfb}{Debug\+Start}} ()
+\begin{DoxyCompactList}\small\item\em start the debug mode \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSyntax_aed44e54616a981075c1804ce5a3af137}{Syntax}} ()
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class is the one that validates the different possibilities that could appear in to the I\+DE structure 
+
+Definition at line 16 of file Syntax.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSyntax_aed44e54616a981075c1804ce5a3af137}\label{classSyntax_aed44e54616a981075c1804ce5a3af137}} 
+\index{Syntax@{Syntax}!Syntax@{Syntax}}
+\index{Syntax@{Syntax}!Syntax@{Syntax}}
+\doxysubsubsection{\texorpdfstring{Syntax()}{Syntax()}}
+{\footnotesize\ttfamily Syntax\+::\+Syntax (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+constructor 
+
+
+
+Definition at line 11 of file Syntax.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSyntax_a328ae9cdb72d859eb7bcd7e4e8f0bc8b}\label{classSyntax_a328ae9cdb72d859eb7bcd7e4e8f0bc8b}} 
+\index{Syntax@{Syntax}!analyze@{analyze}}
+\index{analyze@{analyze}!Syntax@{Syntax}}
+\doxysubsubsection{\texorpdfstring{analyze()}{analyze()}}
+{\footnotesize\ttfamily std\+::string Syntax\+::analyze (\begin{DoxyParamCaption}\item[{std\+::string}]{text,  }\item[{Text\+View $\ast$}]{\+\_\+stdout\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+analyze the info that is on the I\+DE in automatic mode 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & that is going to be analyzed \\
+\hline
+{\em $<$em$>$stdout$<$/em$>$} & where an out put info is gonna be \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+single I\+DE line analyzed 
+\end{DoxyReturn}
+
+
+Definition at line 461 of file Syntax.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 0
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classSyntax_a7733a5565bfc9ad2d37ca6803fbbccfb}\label{classSyntax_a7733a5565bfc9ad2d37ca6803fbbccfb}} 
+\index{Syntax@{Syntax}!DebugStart@{DebugStart}}
+\index{DebugStart@{DebugStart}!Syntax@{Syntax}}
+\doxysubsubsection{\texorpdfstring{DebugStart()}{DebugStart()}}
+{\footnotesize\ttfamily void Syntax\+::\+Debug\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+start the debug mode 
+
+
+
+Definition at line 657 of file Syntax.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classSyntax_a537f8b6e711c89ddb1336821536f7546}\label{classSyntax_a537f8b6e711c89ddb1336821536f7546}} 
+\index{Syntax@{Syntax}!debugText@{debugText}}
+\index{debugText@{debugText}!Syntax@{Syntax}}
+\doxysubsubsection{\texorpdfstring{debugText()}{debugText()}}
+{\footnotesize\ttfamily std\+::string Syntax\+::debug\+Text (\begin{DoxyParamCaption}\item[{std\+::string $\ast$}]{text,  }\item[{Text\+View $\ast$}]{\+\_\+stdout\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+analyze the info that is on the I\+DE in debug mode 
+
+
+\begin{DoxyParams}{Parameters}
+{\em text} & that is going to be analyzed \\
+\hline
+{\em $<$em$>$stdout$<$/em$>$} & where an out put info is gonna be \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+single I\+DE line analyzed 
+\end{DoxyReturn}
+
+
+Definition at line 592 of file Syntax.\+cpp.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classSyntax_ab3a8ed65e9faa2ee55f23ba4b073f375}\label{classSyntax_ab3a8ed65e9faa2ee55f23ba4b073f375}} 
+\index{Syntax@{Syntax}!logger@{logger}}
+\index{logger@{logger}!Syntax@{Syntax}}
+\doxysubsubsection{\texorpdfstring{logger()}{logger()}}
+{\footnotesize\ttfamily void Syntax\+::logger (\begin{DoxyParamCaption}\item[{std\+::string}]{from,  }\item[{std\+::string}]{info }\end{DoxyParamCaption})}
+
+
+
+info that is gonna be on the logger 
+
+
+\begin{DoxyParams}{Parameters}
+{\em where} & the problem happened \\
+\hline
+{\em error} & message \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 668 of file Syntax.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{classSyntax_ae026dd821e8f22f35684b0eb86263e51}\label{classSyntax_ae026dd821e8f22f35684b0eb86263e51}} 
+\index{Syntax@{Syntax}!setLogger@{setLogger}}
+\index{setLogger@{setLogger}!Syntax@{Syntax}}
+\doxysubsubsection{\texorpdfstring{setLogger()}{setLogger()}}
+{\footnotesize\ttfamily void Syntax\+::set\+Logger (\begin{DoxyParamCaption}\item[{Text\+View $\ast$}]{\+\_\+logger }\end{DoxyParamCaption})}
+
+
+
+obtain the logger objet 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+logger} & window object where is gonna be the logg info \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 663 of file Syntax.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 7
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+logic/\mbox{\hyperlink{Syntax_8h}{Syntax.\+h}}\item 
+logic/\mbox{\hyperlink{Syntax_8cpp}{Syntax.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,24 @@
+digraph "List::insert"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="List::insert",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Node::getN",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNode.html#afb2fedf6abbda4fbff8a3a47f53a6534",tooltip="give us the among of movements offsets from the head of the memory"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Node::getSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNode.html#a1e27a13e7c736934e621ddfa6ea6972c",tooltip="give us the size of an specific node"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Node::setAccess",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNode.html#ade640047ffc4866c066c42c6512f9926",tooltip="set the level of access"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Node::setN",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNode.html#a33c48699921d2e5d95078938d2b5e929",tooltip="set the N value"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Node::setName",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNode.html#aa65d25a13c15ef2d3727ebf597591186",tooltip="set the name of a node"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Node::setNext",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNode.html#a89b12aca90acdf6a8a547cbdab9b80a5",tooltip="set the nest node of a node"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="Node::setSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNode.html#a1a4e39a2f7e4a93f1270b0ba0118c3dc",tooltip="set the size of a node"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Node::setType",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classNode.html#aa73a35e5489fe5b14f6d0c5b1e6ca231",tooltip="set the type of a node"];
+}

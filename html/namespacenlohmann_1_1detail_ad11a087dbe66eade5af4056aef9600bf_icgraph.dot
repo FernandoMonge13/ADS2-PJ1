@@ -1,0 +1,46 @@
+digraph "nlohmann::detail::input_adapter"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="nlohmann::detail::input\l_adapter",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="nlohmann::basic_json\l::accept",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a7fb5ed7fb021ad10238cb57937f07d50",tooltip="check if the input is valid JSON"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="nlohmann::basic_json\l::from_bson",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a7f92545f5bd388d529df7eb27c09b5e8",tooltip="Create a JSON value from an input in BSON format."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="nlohmann::basic_json\l::from_bson",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a6357719d94fd44c069bece3fb7b002ea",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="nlohmann::basic_json\l::from_cbor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#ac771f2c2d0b16f59bc066db900963ba1",tooltip="create a JSON value from an input in CBOR format"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="nlohmann::basic_json\l::from_cbor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a0de100b38bceef049a83e37535bb1481",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="nlohmann::basic_json\l::from_msgpack",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a5d4c61976353f72d2baf8a382936abe4",tooltip="create a JSON value from an input in MessagePack format"];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="nlohmann::basic_json\l::from_msgpack",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a293d6186055b8c5ac1427a6ad67cb921",tooltip=" "];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="nlohmann::basic_json\l::from_ubjson",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a423ea903bcbe9c52bbdb8084f212293c",tooltip="create a JSON value from an input in UBJSON format"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="nlohmann::basic_json\l::from_ubjson",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a51b0ac5e00bc9b5086d8bce75ad9a7f6",tooltip=" "];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="nlohmann::detail::input\l_adapter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacenlohmann_1_1detail.html#a8487ca95646f8368f70e279e9bf63396",tooltip=" "];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="nlohmann::basic_json\l::parse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a633db4570bf0afb137dec11a2439acee",tooltip="deserialize from a compatible input"];
+  Node12 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="Syntax::analyze",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSyntax.html#a328ae9cdb72d859eb7bcd7e4e8f0bc8b",tooltip="analyze the info that is on the IDE in automatic mode"];
+  Node13 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="MainWindow::run_button\l_clicked",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMainWindow.html#a24f1b378d5ef7b3f8b77717a8187f061",tooltip="Function related to the run button."];
+  Node14 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node15 [label="MainWindow::MainWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb",tooltip="Generates the window with all its components."];
+  Node12 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node16 [label="operator\"\"_json",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$json_8hpp.html#ae90d59ab420a183cd5fb8588bdc95e06",tooltip="user-defined string literal for JSON values"];
+  Node12 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node17 [label="Mserver::receive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMserver.html#aea44106299e7ee42124fb57e7e282152",tooltip="it get a Json object from the client to add it to the memory"];
+  Node17 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node18 [label="Server::start",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classServer.html#a7eac07d2582fa01c2671362efa955b31",tooltip="Starts the server related to sockets."];
+  Node18 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node19 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4",tooltip=" "];
+  Node1 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="nlohmann::basic_json\l::sax_parse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a21dc71dda1df5d840625c360329e69fe",tooltip="generate SAX events"];
+}

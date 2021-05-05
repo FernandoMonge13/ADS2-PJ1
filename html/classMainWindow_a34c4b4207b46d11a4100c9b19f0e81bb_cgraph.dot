@@ -1,0 +1,39 @@
+digraph "MainWindow::MainWindow"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="MainWindow::MainWindow",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Generates the window with all its components."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="MainWindow::debugStart",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMainWindow.html#a5d049948ba1a30dae2654dd9bcde4c3a",tooltip="Function related to the debug button."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Syntax::DebugStart",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSyntax.html#a7733a5565bfc9ad2d37ca6803fbbccfb",tooltip="start the debug mode"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Client::construction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classClient.html#a3f05cb35be05fe8d27443a49069b810f",tooltip=" "];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Syntax::logger",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSyntax.html#ab3a8ed65e9faa2ee55f23ba4b073f375",tooltip="info that is gonna be on the logger"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="MainWindow::next_pressed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMainWindow.html#a2d0c7e73108991e84bfaef4f30ef0382",tooltip="Function related to the step by step button."];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Syntax::debugText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSyntax.html#a537f8b6e711c89ddb1336821536f7546",tooltip="analyze the info that is on the IDE in debug mode"];
+  Node7 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="nlohmann::to_string",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16",tooltip="user-defined to_string function for JSON values"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="MainWindow::run_button\l_clicked",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMainWindow.html#a24f1b378d5ef7b3f8b77717a8187f061",tooltip="Function related to the run button."];
+  Node9 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Syntax::analyze",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSyntax.html#a328ae9cdb72d859eb7bcd7e4e8f0bc8b",tooltip="analyze the info that is on the IDE in automatic mode"];
+  Node10 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node11 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="nlohmann::basic_json::get",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#adc6408fbeaf9545882dc62bc20db7d42",tooltip="get special-case overload"];
+  Node10 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="nlohmann::basic_json\l::parse",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classnlohmann_1_1basic__json.html#a633db4570bf0afb137dec11a2439acee",tooltip="deserialize from a compatible input"];
+  Node12 -> Node13 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="nlohmann::detail::input\l_adapter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacenlohmann_1_1detail.html#ad11a087dbe66eade5af4056aef9600bf",tooltip=" "];
+  Node10 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node14 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="Syntax::setLogger",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSyntax.html#ae026dd821e8f22f35684b0eb86263e51",tooltip="obtain the logger objet"];
+}

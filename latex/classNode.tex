@@ -1,0 +1,283 @@
+\hypertarget{classNode}{}\doxysection{Node Class Reference}
+\label{classNode}\index{Node@{Node}}
+
+
+This is the base of the linked list creation.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classNode_ad7a34779cad45d997bfd6d3d8043c75f}{Node}} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classNode}{Node}} $\ast$ \mbox{\hyperlink{classNode_ae36639ff267d63e058ce309fde5a9913}{get\+Next}} ()
+\begin{DoxyCompactList}\small\item\em give us the the next node of the linked list \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNode_a89b12aca90acdf6a8a547cbdab9b80a5}{set\+Next}} (\mbox{\hyperlink{classNode}{Node}} $\ast$)
+\begin{DoxyCompactList}\small\item\em set the nest node of a node \end{DoxyCompactList}\item 
+\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} \mbox{\hyperlink{classNode_afb2fedf6abbda4fbff8a3a47f53a6534}{getN}} ()
+\begin{DoxyCompactList}\small\item\em give us the among of movements offsets from the head of the memory \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNode_a33c48699921d2e5d95078938d2b5e929}{setN}} (\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}})
+\begin{DoxyCompactList}\small\item\em set the N value \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classNode_a3e5ac6b5881a3a9d82f3112953c1e546}{get\+Name}} ()
+\begin{DoxyCompactList}\small\item\em give us the name of the node \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNode_aa65d25a13c15ef2d3727ebf597591186}{set\+Name}} (std\+::string)
+\begin{DoxyCompactList}\small\item\em set the name of a node \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classNode_abce0a9ddac6a5e2c0e546dbe6af02e3d}{get\+Type}} ()
+\begin{DoxyCompactList}\small\item\em give us the variable type inside of a node \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNode_aa73a35e5489fe5b14f6d0c5b1e6ca231}{set\+Type}} (std\+::string)
+\begin{DoxyCompactList}\small\item\em set the type of a node \end{DoxyCompactList}\item 
+\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} \mbox{\hyperlink{classNode_a1e27a13e7c736934e621ddfa6ea6972c}{get\+Size}} ()
+\begin{DoxyCompactList}\small\item\em give us the size of an specific node \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNode_a1a4e39a2f7e4a93f1270b0ba0118c3dc}{set\+Size}} (\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} \+\_\+size)
+\begin{DoxyCompactList}\small\item\em set the size of a node \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classNode_a97cd94a8122c20d1faf9c327a6755547}{get\+Access}} ()
+\begin{DoxyCompactList}\small\item\em give us the level of access of some node \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classNode_ade640047ffc4866c066c42c6512f9926}{set\+Access}} (std\+::string \+\_\+access)
+\begin{DoxyCompactList}\small\item\em set the level of access \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the base of the linked list creation. 
+
+Definition at line 15 of file Node.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classNode_ad7a34779cad45d997bfd6d3d8043c75f}\label{classNode_ad7a34779cad45d997bfd6d3d8043c75f}} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructor. 
+
+
+
+Definition at line 9 of file Node.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classNode_a97cd94a8122c20d1faf9c327a6755547}\label{classNode_a97cd94a8122c20d1faf9c327a6755547}} 
+\index{Node@{Node}!getAccess@{getAccess}}
+\index{getAccess@{getAccess}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{getAccess()}{getAccess()}}
+{\footnotesize\ttfamily std\+::string Node\+::get\+Access (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+give us the level of access of some node 
+
+\begin{DoxyReturn}{Returns}
+access level 
+\end{DoxyReturn}
+
+
+Definition at line 29 of file Node.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 0
+\mbox{\Hypertarget{classNode_afb2fedf6abbda4fbff8a3a47f53a6534}\label{classNode_afb2fedf6abbda4fbff8a3a47f53a6534}} 
+\index{Node@{Node}!getN@{getN}}
+\index{getN@{getN}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{getN()}{getN()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} Node\+::getN (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+give us the among of movements offsets from the head of the memory 
+
+\begin{DoxyReturn}{Returns}
+the N value of an specific node 
+\end{DoxyReturn}
+
+
+Definition at line 21 of file Node.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 1
+\mbox{\Hypertarget{classNode_a3e5ac6b5881a3a9d82f3112953c1e546}\label{classNode_a3e5ac6b5881a3a9d82f3112953c1e546}} 
+\index{Node@{Node}!getName@{getName}}
+\index{getName@{getName}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{getName()}{getName()}}
+{\footnotesize\ttfamily std\+::string Node\+::get\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+give us the name of the node 
+
+\begin{DoxyReturn}{Returns}
+node name 
+\end{DoxyReturn}
+
+
+Definition at line 37 of file Node.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 2
+\mbox{\Hypertarget{classNode_ae36639ff267d63e058ce309fde5a9913}\label{classNode_ae36639ff267d63e058ce309fde5a9913}} 
+\index{Node@{Node}!getNext@{getNext}}
+\index{getNext@{getNext}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{getNext()}{getNext()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classNode}{Node}} $\ast$ Node\+::get\+Next (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+give us the the next node of the linked list 
+
+\begin{DoxyReturn}{Returns}
+the next node 
+\end{DoxyReturn}
+
+
+Definition at line 13 of file Node.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{classNode_a1e27a13e7c736934e621ddfa6ea6972c}\label{classNode_a1e27a13e7c736934e621ddfa6ea6972c}} 
+\index{Node@{Node}!getSize@{getSize}}
+\index{getSize@{getSize}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{getSize()}{getSize()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} Node\+::get\+Size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+give us the size of an specific node 
+
+\begin{DoxyReturn}{Returns}
+node size 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file Node.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 4
+\mbox{\Hypertarget{classNode_abce0a9ddac6a5e2c0e546dbe6af02e3d}\label{classNode_abce0a9ddac6a5e2c0e546dbe6af02e3d}} 
+\index{Node@{Node}!getType@{getType}}
+\index{getType@{getType}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily std\+::string Node\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+give us the variable type inside of a node 
+
+\begin{DoxyReturn}{Returns}
+variable type 
+\end{DoxyReturn}
+
+
+Definition at line 45 of file Node.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{classNode_ade640047ffc4866c066c42c6512f9926}\label{classNode_ade640047ffc4866c066c42c6512f9926}} 
+\index{Node@{Node}!setAccess@{setAccess}}
+\index{setAccess@{setAccess}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{setAccess()}{setAccess()}}
+{\footnotesize\ttfamily void Node\+::set\+Access (\begin{DoxyParamCaption}\item[{std\+::string}]{\+\_\+access }\end{DoxyParamCaption})}
+
+
+
+set the level of access 
+
+
+
+Definition at line 33 of file Node.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{classNode_a33c48699921d2e5d95078938d2b5e929}\label{classNode_a33c48699921d2e5d95078938d2b5e929}} 
+\index{Node@{Node}!setN@{setN}}
+\index{setN@{setN}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{setN()}{setN()}}
+{\footnotesize\ttfamily void Node\+::setN (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}}}]{size }\end{DoxyParamCaption})}
+
+
+
+set the N value 
+
+
+
+Definition at line 25 of file Node.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 7
+\mbox{\Hypertarget{classNode_aa65d25a13c15ef2d3727ebf597591186}\label{classNode_aa65d25a13c15ef2d3727ebf597591186}} 
+\index{Node@{Node}!setName@{setName}}
+\index{setName@{setName}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{setName()}{setName()}}
+{\footnotesize\ttfamily void Node\+::set\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+set the name of a node 
+
+
+
+Definition at line 41 of file Node.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{classNode_a89b12aca90acdf6a8a547cbdab9b80a5}\label{classNode_a89b12aca90acdf6a8a547cbdab9b80a5}} 
+\index{Node@{Node}!setNext@{setNext}}
+\index{setNext@{setNext}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{setNext()}{setNext()}}
+{\footnotesize\ttfamily void Node\+::set\+Next (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classNode}{Node}} $\ast$}]{next }\end{DoxyParamCaption})}
+
+
+
+set the nest node of a node 
+
+
+
+Definition at line 17 of file Node.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{classNode_a1a4e39a2f7e4a93f1270b0ba0118c3dc}\label{classNode_a1a4e39a2f7e4a93f1270b0ba0118c3dc}} 
+\index{Node@{Node}!setSize@{setSize}}
+\index{setSize@{setSize}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{setSize()}{setSize()}}
+{\footnotesize\ttfamily void Node\+::set\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}}}]{\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+set the size of a node 
+
+
+
+Definition at line 56 of file Node.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{classNode_aa73a35e5489fe5b14f6d0c5b1e6ca231}\label{classNode_aa73a35e5489fe5b14f6d0c5b1e6ca231}} 
+\index{Node@{Node}!setType@{setType}}
+\index{setType@{setType}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{setType()}{setType()}}
+{\footnotesize\ttfamily void Node\+::set\+Type (\begin{DoxyParamCaption}\item[{std\+::string}]{type }\end{DoxyParamCaption})}
+
+
+
+set the type of a node 
+
+
+
+Definition at line 49 of file Node.\+cpp.
+
+Here is the caller graph for this function\+:
+% FIG 11
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Node/\mbox{\hyperlink{Node_8h}{Node.\+h}}\item 
+Node/\mbox{\hyperlink{Node_8cpp}{Node.\+cpp}}\end{DoxyCompactItemize}

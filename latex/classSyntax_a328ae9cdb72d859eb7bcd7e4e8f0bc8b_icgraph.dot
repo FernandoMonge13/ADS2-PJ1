@@ -1,0 +1,12 @@
+digraph "Syntax::analyze"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Syntax::analyze",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="analyze the info that is on the IDE in automatic mode"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="MainWindow::run_button\l_clicked",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMainWindow.html#a24f1b378d5ef7b3f8b77717a8187f061",tooltip="Function related to the run button."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="MainWindow::MainWindow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMainWindow.html#a34c4b4207b46d11a4100c9b19f0e81bb",tooltip="Generates the window with all its components."];
+}

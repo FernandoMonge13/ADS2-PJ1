@@ -1,0 +1,55 @@
+\hypertarget{Client_8cpp}{}\doxysection{Client/\+Client.cpp File Reference}
+\label{Client_8cpp}\index{Client/Client.cpp@{Client/Client.cpp}}
+{\ttfamily \#include \char`\"{}Client.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$sys/socket.\+h$>$}\newline
+{\ttfamily \#include $<$netdb.\+h$>$}\newline
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
+Include dependency graph for Client.\+cpp\+:
+% FIG 0
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+ifstream \mbox{\hyperlink{Client_8cpp_a8fea1e2b5f94ab85ea40cd67ec2e97fb}{open\+Port}}
+\item 
+string \mbox{\hyperlink{Client_8cpp_a98c8591b75374b223df99a36ed0702ab}{user\+Input}}
+\item 
+\mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} \mbox{\hyperlink{Client_8cpp_a6bb91699e58527d05a66e71d8dcad1cc}{hp5}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{Client_8cpp_a6bb91699e58527d05a66e71d8dcad1cc}\label{Client_8cpp_a6bb91699e58527d05a66e71d8dcad1cc}} 
+\index{Client.cpp@{Client.cpp}!hp5@{hp5}}
+\index{hp5@{hp5}!Client.cpp@{Client.cpp}}
+\doxysubsubsection{\texorpdfstring{hp5}{hp5}}
+{\footnotesize\ttfamily \mbox{\hyperlink{CMakeCache_8txt_a79a3d8790b2588b09777910863574e09}{int}} hp5}
+
+
+
+Definition at line 20 of file Client.\+cpp.
+
+\mbox{\Hypertarget{Client_8cpp_a8fea1e2b5f94ab85ea40cd67ec2e97fb}\label{Client_8cpp_a8fea1e2b5f94ab85ea40cd67ec2e97fb}} 
+\index{Client.cpp@{Client.cpp}!openPort@{openPort}}
+\index{openPort@{openPort}!Client.cpp@{Client.cpp}}
+\doxysubsubsection{\texorpdfstring{openPort}{openPort}}
+{\footnotesize\ttfamily ifstream open\+Port}
+
+
+
+Definition at line 18 of file Client.\+cpp.
+
+\mbox{\Hypertarget{Client_8cpp_a98c8591b75374b223df99a36ed0702ab}\label{Client_8cpp_a98c8591b75374b223df99a36ed0702ab}} 
+\index{Client.cpp@{Client.cpp}!userInput@{userInput}}
+\index{userInput@{userInput}!Client.cpp@{Client.cpp}}
+\doxysubsubsection{\texorpdfstring{userInput}{userInput}}
+{\footnotesize\ttfamily string user\+Input}
+
+
+
+Definition at line 19 of file Client.\+cpp.
+
