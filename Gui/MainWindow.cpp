@@ -62,6 +62,10 @@ MainWindow::MainWindow() {
 //    editor.get_buffer()->set_text("");
 //    editor.set_editable(false);
     button_run.signal_clicked().connect( sigc::mem_fun(*this, &MainWindow::run_button_clicked) );
+    button_startDebug.signal_clicked().connect( sigc::mem_fun(*this, &MainWindow::debugStart) );
+    button_next.signal_clicked().connect( sigc::mem_fun(*this, &MainWindow::next_pressed) );
+
+
     window.show_all_children();
     main.run(window);
 }
@@ -80,6 +84,27 @@ void MainWindow::run_button_clicked(){
             update(ram_data);
         }
     }
+}
+
+void MainWindow::debugStart() {
+
+    debug_Text = editor.get_buffer()->get_text();
+    Syntax* syntax = new Syntax;
+    syntax->DebugStart();
+}
+
+void MainWindow::next_pressed() {
+
+    if (!debug_Text.empty()){
+        std::string ram_data;
+        stdout_.get_buffer()->set_text(">> ");
+        Syntax* syntax = new Syntax;
+        ram_data = syntax->debugText(&debug_Text, &stdout_);
+        if (ram_data != "Error"){
+            update(ram_data);
+        }
+    }
+
 }
 
 void MainWindow::update(std::string ram_data) {

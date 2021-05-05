@@ -34,6 +34,8 @@ private:
 
 public:
     std::string analyze(std::string text, TextView* _stdout_);
+    std::string debugText(std::string* text, TextView* _stdout_);
+    void DebugStart();
     Syntax();
 
 };

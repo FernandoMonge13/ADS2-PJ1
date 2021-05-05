@@ -56,7 +56,8 @@ public:
      */
     MainWindow();
     void run_button_clicked();
-
+    void debugStart();
+    void next_pressed();
 };
 
 

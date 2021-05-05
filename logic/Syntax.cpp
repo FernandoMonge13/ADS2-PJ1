@@ -550,3 +550,64 @@ void Syntax::validate_definition(std::string _type, std::string _value) {
         fatal_error = true;
     }
 }
+
+std::string Syntax::debugText(std::string *text, TextView *_stdout_) {
+
+    fatal_error = false;
+    std::string instruction;
+    std::string to_print;
+    std::string label;
+    std::string value;
+    std::string type;
+    std::string _ram_view_status;
+
+    if (!text->empty() && !fatal_error){
+
+        // print case
+        to_print = identify_print(text, _stdout_);
+        if (to_print != "error") {
+            if (to_print != "printed") {
+                std::cout << "operacion: " + to_print << std::endl;
+                //calculable(to_print);
+            }
+        }
+        else {
+            type = identify_type(text);
+            label = identify_label(text);
+            instruction = identify_instruction(text, type);
+            if (instruction != "declaration" && !fatal_error) {
+                if (Only_1_Value(*text)) {
+                    value = identify_value(text);
+                    validate_definition(type, value);
+                    // verificar type y value compatibles
+                }
+                else{
+                    value = identify_operation(text);
+                    if (!calculable(value, &value)){
+                        instruction = "definition_with_operation";
+                    }
+                }
+                std::cout << "value = " + value << std::endl;
+            }
+            if (!fatal_error && finisihed_sentence(text)) {
+                _ram_view_status = client.construction(type, label, value, instruction, std::to_string(access), this->getSize(type));
+            }
+        }
+
+    }
+    if (fatal_error){
+        spdlog::error("Fatal Error: canceled analisys ");
+        if (_ram_view_status.empty()){
+            return "Error";
+        }
+        return _ram_view_status;
+        //std::cout << "Fatal Error: the interpret process have to stop" << std::endl;
+    }
+    std::cout << "----------------" << std::endl;
+    return _ram_view_status;
+}
+
+void Syntax::DebugStart() {
+    std::string instruction = "ReRun";
+    client.construction("no", "no", "no", instruction, "no", "no");
+}
