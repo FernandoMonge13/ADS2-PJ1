@@ -16,7 +16,7 @@ std::string Syntax::identify_instruction(std::string *_text, std::string type) {
 
     ignore_spaces(_text);
     if (_text->empty()){
-        spdlog::error("no txt to identify instruction");
+        logger("Syntax-identify_instruction", "Fatal Error: no txt to identify instruction");
         fatal_error = true;
         return "error: no txt for identify_instruction";
     }
@@ -38,7 +38,7 @@ std::string Syntax::identify_instruction(std::string *_text, std::string type) {
             return "definition";
         }
         else {
-            spdlog::error("Instruction not identified");
+            logger("Syntax-identify_instruction", "Instruction not identified");
             fatal_error = true;
             return "error: instruction not identified";
         }
@@ -493,6 +493,7 @@ std::string Syntax::analyze(std::string text, TextView* _stdout_) {
     if (fatal_error){
         _stdout_->get_buffer()->set_text("Error: invalid syntax");
         spdlog::error("Fatal Error: canceled analisys \n");
+        logger("Syntax-Analyze", "Fatal Error: analisys canceled");
         if (_ram_view_status.empty()){
             return "Error";
         }
@@ -607,6 +608,7 @@ std::string Syntax::debugText(std::string *text, TextView *_stdout_) {
     if (fatal_error){
         _stdout_->get_buffer()->set_text("Error: invalid syntax");
         spdlog::error("Fatal Error: canceled analisys ");
+        logger("Syntax-Analyze", "Fatal Error: analisys canceled");
         if (_ram_view_status.empty()){
             return "Error";
         }
