@@ -31,6 +31,9 @@ MainWindow::MainWindow() {
     app_log.set_editable(false);
     ram_view.set_editable(false);
 
+    syntax->setLogger(&app_log);
+
+
     scroll_editor.add(editor);
     scroll_stdout_.add(stdout_);
     scroll_app_log.add(app_log);
