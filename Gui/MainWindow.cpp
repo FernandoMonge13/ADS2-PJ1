@@ -97,6 +97,7 @@ void MainWindow::update(std::string ram_data) {
 
         std::string character;
 
+
         while (addresses != "" && addresses != "skip"){
             visual_data.append(showData(&addresses, 16));
             visual_data.append(showData(&values, 90/3));
