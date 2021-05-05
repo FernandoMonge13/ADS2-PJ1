@@ -22,10 +22,11 @@ private:
     std::string identify_type(std::string* _string);
     std::string identify_value(std::string* _text);
     std::string getSize(std::string _type);
+    void validate_definition(std::string _type, std::string _value);
     void ignore_spaces(std::string* _text);
     bool finisihed_sentence(std::string* _text);
     bool Only_1_Value(std::string _text);
-    bool arytmethic(std::string _text, std::string _value);
+    bool calculable(std::string _text, std::string* _value);
     bool fatal_error;
     bool flag_condition = false;
     int access = 0;
@@ -33,6 +34,8 @@ private:
 
 public:
     std::string analyze(std::string text, TextView* _stdout_);
+    std::string debugText(std::string* text, TextView* _stdout_);
+    void DebugStart();
     Syntax();
 
 };

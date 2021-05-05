@@ -15,9 +15,10 @@ List list = List();
 std::string Mserver::receive(std::string temporal){
     auto json_message = json::parse(temporal);
 
+    std::string instruccion = json_message["Instruccion"].get<std::string>();
 //    std::string tipo =  json_message["Type"].get<std::string>();
 
-    if(json_message["Instruccion"].get<std::string>() == "ReRun"){
+    if(instruccion == "ReRun"){
         list.setFlag();
         json nullmessage ={
                 {"Addresses",  "skip"},
@@ -27,21 +28,11 @@ std::string Mserver::receive(std::string temporal){
         };
         return nullmessage.dump();
     }
-
-    else if(list.getFlag()){
-        //std::cout << json_message;
-        spdlog::info("Mserver: First");
-        list.insert(json_message["Name"].get<std::string>(), json_message["Type"].get<std::string>(), std::stoi(json_message["Size"].get<std::string>()), json_message["Access"].get<std::string>());
-        spdlog::info("Mserver: list insert finalized");
-        this->add((json_message["Value"]).get<std::string>(), (json_message["Type"]).get<std::string>(), (list.find(json_message["Name"].get<std::string>())->getN()));
-        spdlog::info("Mserver: add finalized");
-        return this->print();
+    else if (instruccion == "definition") {
+        return definition(temporal);
     }
-    else{
-        list.insert(json_message["Name"], json_message["Type"], std::stoi(json_message["Size"].get<std::string>()),json_message["Access"].get<std::string>());
-        this->add((json_message["Value"]).get<std::string>(), (json_message["Type"]).get<std::string>(), list.find((json_message["Name"]).get<std::string>())->getN());
-        spdlog::info("Second Variable added, to print in Mserver");
-        return this->print();
+    else if (instruccion == "definition_with_operation"){
+        return defintion_with_operation(temporal);
     }
 }
 
@@ -63,10 +54,10 @@ void Mserver::add(std::string _value, std::string _type, int position) {
         *((double *)(memory + position)) = std::stod(_value);
     }
     else if(_type == "reference"){
-        // Protocol for reference declarations
+        // Protocol for reference definitions
     }
     else{
-        spdlog::critical("Valió verga el guardado en memoria");
+        spdlog::critical("No se pudo realizar el guardado en memoria");
     }
 
 }
@@ -74,3 +65,258 @@ void Mserver::add(std::string _value, std::string _type, int position) {
 std::string Mserver::print() {
     return list.print(memory);
 }
+
+std::string Mserver::definition(std::string message) {
+    auto json_message = json::parse(message);
+
+    if (list.getFlag()) {
+        //std::cout << json_message;
+        spdlog::info("Mserver: First");
+        list.insert(json_message["Name"].get<std::string>(), json_message["Type"].get<std::string>(),
+                    std::stoi(json_message["Size"].get<std::string>()), json_message["Access"].get<std::string>());
+        spdlog::info("Mserver: list insert finalized");
+        this->add((json_message["Value"]).get<std::string>(), (json_message["Type"]).get<std::string>(),
+                  (list.find(json_message["Name"].get<std::string>())->getN()));
+        spdlog::info("Mserver: add finalized");
+        return this->print();
+    }
+    else {
+        list.insert(json_message["Name"], json_message["Type"], std::stoi(json_message["Size"].get<std::string>()),
+                    json_message["Access"].get<std::string>());
+        this->add((json_message["Value"]).get<std::string>(), (json_message["Type"]).get<std::string>(),
+                  list.find((json_message["Name"]).get<std::string>())->getN());
+        spdlog::info("Second Variable added, to print in Mserver");
+        return this->print();
+    }
+}
+
+std::string Mserver::defintion_with_operation(std::string message) {
+    auto json_message = json::parse(message);
+
+    std::string value = operation_handler(json_message["Value"].get<std::string>(),
+                                  json_message["Type"].get<std::string>());
+    if (list.getFlag()) {
+        //std::cout << json_message;
+        spdlog::info("Mserver: First");
+        list.insert(json_message["Name"].get<std::string>(), json_message["Type"].get<std::string>(),
+                    std::stoi(json_message["Size"].get<std::string>()), json_message["Access"].get<std::string>());
+        spdlog::info("Mserver: list insert finalized");
+        this->add(value, (json_message["Type"]).get<std::string>(),
+                  (list.find(json_message["Name"].get<std::string>())->getN()));
+        spdlog::info("Mserver: add finalized");
+        return this->print();
+    }
+    else {
+        list.insert(json_message["Name"], json_message["Type"], std::stoi(json_message["Size"].get<std::string>()),
+                    json_message["Access"].get<std::string>());
+        this->add(value, (json_message["Type"]).get<std::string>(),
+                  list.find((json_message["Name"]).get<std::string>())->getN());
+        spdlog::info("Second Variable added, to print in Mserver");
+        return this->print();
+    }
+}
+
+std::string Mserver::operation_handler (std::string _value, std::string type) {
+    try{
+        std::string variable_1;
+        std::string variable_2;
+        std::string operation;
+        std::string result;
+        std::string character = _value;
+        character = character[0];
+
+        while (!_value.empty()){
+
+            if (character == "+" || character == "-" || character == "*" || character == "/"){
+                if (variable_1.empty()){
+                    spdlog::error("Error getting operation");
+                    // mega error, hay una operación antes que cualquier variable
+                    break;
+                }
+                    // se encuentra el signo de operacion y eso tambien indica que se tiene la variable 1
+                else if (variable_2.empty()) {
+                    Node* node1 = list.find(variable_1);
+                    variable_1 = list.getValue(node1->getType(),node1->getN(), memory); // Cambio arriesgado
+                    operation = character;
+                    _value.erase(_value.begin());
+                    character = _value;
+                    character = character[0];
+                }
+                    // la variable dos no está vacia por lo que se debe utilizar para operación
+                else if (!variable_2.empty()){
+                    result = calculate(variable_1, variable_2, operation, type);
+//                    std::cout << result << std::endl;
+                    variable_1 = result;
+                    operation = character;
+                    _value.erase(_value.begin());
+                    character = _value;
+                    character = character[0];
+                    variable_2 = "";
+                }
+            }
+                // Si aun no ha encontrado una operación, significa que está obteniendo la variable 1
+            else if (operation.empty()){
+                variable_1.append(character);
+                _value.erase(_value.begin());
+                character = _value;
+                character = character[0];
+            }
+                // Si se ha encontrado una operación, significa que está obteniendo la variable 2
+            else if (!operation.empty()) {
+                variable_2.append(character);
+                _value.erase(_value.begin());
+                character = _value;
+                character = character[0];
+            }
+
+        }
+        if (!variable_2.empty()){
+            result = calculate(variable_1, variable_2, operation, type);
+        }
+        return result;
+//        return true;
+//        std::cout << result << std::endl;
+
+    }
+    catch (std::exception exception){
+        std::cout << "Operation error" << std::endl;
+        return "0";
+//        return false;
+    }
+    return _value;
+}
+
+std::string  Mserver::calculateI(std::string _variable_1, std::string _variable_2, std::string _operation) {
+    int result;
+    try {
+//        Node* node1 = list.find(_variable_1); // cambio arriesgado
+        Node* node2 = list.find(_variable_2);
+//        int variable1 = std::stoi(list.getValue(node1->getType(),node1->getN(), memory)); // cambio arriesgado
+        int variable1 = std::stoi(_variable_1); // cambio arriesgado
+        int variable2 = std::stoi(list.getValue(node2->getType(),node2->getN(), memory));
+
+        if (_operation == "+"){
+            result = variable1 + variable2;
+        }
+        else if (_operation == "-"){
+            result = variable1 - variable2;
+        }
+        else if (_operation == "*"){
+            result = variable1 * variable2;
+        }
+        else if (_operation == "/"){
+            result = variable1 / variable2;
+        }
+    }
+    catch (int exc){
+        std::cout << "failed in conversion" << std::endl;
+    }
+    return std::to_string(result);
+}
+
+std::string
+Mserver::calculate(std::string _variable_1, std::string _variable_2, std::string _operation, std::string _type) {
+
+    if (_type == "int"){
+        return calculateI(_variable_1, _variable_2, _operation);
+    }
+    else if (_type == "long"){
+        return calculateL(_variable_1, _variable_2, _operation);
+    }
+    else if (_type == "float"){
+        return calculateF(_variable_1, _variable_2, _operation);
+    }
+    else if (_type == "double"){
+        return calculateD(_variable_1, _variable_2, _operation);
+    }
+    else{
+        spdlog::error("Calculate: no se encontró type para realizar la operación");
+        return "0";
+    }
+}
+
+std::string Mserver::calculateF(std::string _variable_1, std::string _variable_2, std::string _operation) {
+
+    float result;
+    try {
+//        Node* node1 = list.find(_variable_1); // cambio arriesgado
+        Node* node2 = list.find(_variable_2);
+//        float variable1 = std::stoi(list.getValue(node1->getType(),node1->getN(), memory)); // cambio arriesgado
+        float variable1 = std::stof(_variable_1); // cambio arriesgado
+        float variable2 = std::stof(list.getValue(node2->getType(),node2->getN(), memory));
+
+        if (_operation == "+"){
+            result = variable1 + variable2;
+        }
+        else if (_operation == "-"){
+            result = variable1 - variable2;
+        }
+        else if (_operation == "*"){
+            result = variable1 * variable2;
+        }
+        else if (_operation == "/"){
+            result = variable1 / variable2;
+        }
+    }
+    catch (float exc){
+        std::cout << "failed in conversion" << std::endl;
+    }
+    return std::to_string(result);
+}
+
+std::string Mserver::calculateL(std::string _variable_1, std::string _variable_2, std::string _operation) {
+    long result;
+    try {
+//        Node* node1 = list.find(_variable_1); // cambio arriesgado
+        Node* node2 = list.find(_variable_2);
+//        long variable1 = std::stoi(list.getValue(node1->getType(),node1->getN(), memory)); // cambio arriesgado
+        long variable1 = std::stoi(_variable_1); // cambio arriesgado
+        long variable2 = std::stoi(list.getValue(node2->getType(),node2->getN(), memory));
+
+        if (_operation == "+"){
+            result = variable1 + variable2;
+        }
+        else if (_operation == "-"){
+            result = variable1 - variable2;
+        }
+        else if (_operation == "*"){
+            result = variable1 * variable2;
+        }
+        else if (_operation == "/"){
+            result = variable1 / variable2;
+        }
+    }
+    catch (long exc){
+        std::cout << "failed in conversion" << std::endl;
+    }
+    return std::to_string(result);
+}
+
+std::string Mserver::calculateD(std::string _variable_1, std::string _variable_2, std::string _operation) {
+    double result;
+    try {
+//        Node* node1 = list.find(_variable_1); // cambio arriesgado
+        Node* node2 = list.find(_variable_2);
+//        double variable1 = std::stoi(list.getValue(node1->getType(),node1->getN(), memory)); // cambio arriesgado
+        double variable1 = std::stoi(_variable_1); // cambio arriesgado
+        double variable2 = std::stoi(list.getValue(node2->getType(),node2->getN(), memory));
+
+        if (_operation == "+"){
+            result = variable1 + variable2;
+        }
+        else if (_operation == "-"){
+            result = variable1 - variable2;
+        }
+        else if (_operation == "*"){
+            result = variable1 * variable2;
+        }
+        else if (_operation == "/"){
+            result = variable1 / variable2;
+        }
+    }
+    catch (double exc){
+        std::cout << "failed in conversion" << std::endl;
+    }
+    return std::to_string(result);
+}
+

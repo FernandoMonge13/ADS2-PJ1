@@ -39,8 +39,12 @@ private:
     ScrolledWindow scroll_ram_view;
 
     Button button_run;
+    Button button_startDebug;
+    Button button_next;
 
     Label label_ram;
+
+    std::string debug_Text;
 
     void update(std::string ram_data);
     std::string showData(std::string* text, int max_lenght);
@@ -52,7 +56,8 @@ public:
      */
     MainWindow();
     void run_button_clicked();
-
+    void debugStart();
+    void next_pressed();
 };
 
 
