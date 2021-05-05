@@ -82,23 +82,23 @@ std::string Syntax::identify_print(std::string *_text, TextView* _stdout) {
                     _text->erase(_text->begin());
                     if (finisihed_sentence(_text)) {
                         finisihed_sentence(_text);
-                        //std::cout << "print: " + to_print << std::endl;
                         _stdout->get_buffer()->set_text(_stdout->get_buffer()->get_text() + to_print + "\n");
                         return "printed";
                     }
                 }
                 else {
-                    // sintaxis error in print
+                    logger("Syntax-identify_print", "    Incorrect print syntax");
                     spdlog::error("Syntax error in print command attempt");
                     return "error";
                 }
             }
             else{
-                return identify_operation(_text);
+                return identify_value(_text);
             }
         }
         else{
             // se encontró la palabra recervada print pero le falta su sintaxis de parentesis correcta"
+            logger("Syntax-identify_print", "    Incorrect print syntax");
             spdlog::error("Syntax error in print command attempt");
             return "error";
         }
@@ -117,6 +117,7 @@ std::string Syntax::identify_operation(std::string *_text) {
 
     if (_text->empty()) {
         spdlog::error("insufficient text to identify operation");
+        logger("Syntax-identify_operation", "Insufficient text to identify operation");
         return "Error: insufficient text to identify value";
     }
     else {
@@ -134,6 +135,7 @@ std::string Syntax::identify_operation(std::string *_text) {
         }
         if (_text->empty()){
             spdlog::error("insufficient text to identify operation");
+            logger("Syntax-identify_operation", "Insufficient text to identify operation");
             fatal_error = true;
             return "error";
         }
@@ -170,6 +172,7 @@ std::string Syntax::identify_label(std::string *_string) {
 
     if (_string->empty()) {
         spdlog::error("Insufficient text to identify label");
+        logger("Syntax-identify_label", "Insufficient text to identify label");
         fatal_error = true;
         return "error: incomplete text to identify label";
     }
@@ -189,6 +192,7 @@ std::string Syntax::identify_label(std::string *_string) {
         }
         if (label.empty()){
             spdlog::error("No label found");
+            logger("Syntax-identify_label", "No label found");
             fatal_error = true;
             return "error label";
         }
@@ -204,6 +208,7 @@ std::string Syntax::identify_type(std::string* _string) {
 
     if (_string->empty()){
         // error: insufficient text for identify type
+        logger("Syntax-identify_type", "Insufficient text to identify type");
         spdlog::error("Insufficient text to identify type");
         return "error";
     }
@@ -243,7 +248,9 @@ std::string Syntax::identify_value(std::string *_text) {
     ignore_spaces(_text);
 
     if (_text->empty()){
+        logger("Syntax-identify_value", "Insufficient text to identify value");
         spdlog::error("Insufficient text to identify value");
+        fatal_error = true;
         return "Error: insufficient text to identify value";
     }
     else{
@@ -252,7 +259,7 @@ std::string Syntax::identify_value(std::string *_text) {
         std::string character = *_text;
         character = character[0];
 
-        while (!_text->empty() && character != ";") {
+        while (!_text->empty() && character != ";" && character != ")") {
 
             value.append(character);
             _text->erase(_text->begin());
@@ -264,16 +271,19 @@ std::string Syntax::identify_value(std::string *_text) {
 
         if (_text->empty()){
             spdlog::error(" ; missed");
+            logger("Syntax-identify_value", "; missed");
             fatal_error = true;
             return "error: no txt after value or ; missed";
         }
         else {
             character = *_text;
             character = character[0];
-            if (character == ";" && value != ";") {
-                return value;
+            if (character == ";" || character == ")") {
+                if (value != ";"){
+                    return value;
+                }
             } else {
-                spdlog::error("<identifyValue> ; missed");
+                logger("Syntax-identify_value", "; or value missed");
                 fatal_error = true;
                 return "error: ; or value missed";
             }
@@ -336,14 +346,18 @@ bool Syntax::finisihed_sentence(std::string *_text) {
     ignore_spaces(_text);
     std::string character = *_text;
     character = character[0];
-    if (character == ";"){
+    if (character == ")"){
+        _text->erase(_text->begin());
+        finisihed_sentence(_text);
+    }
+    else if (character == ";"){
         _text->erase(_text->begin());
         return true;
     }
     else{
         fatal_error = true;
+        logger("Syntax-finisihed_sentence", "Missing ;");
         spdlog::error("Missing ;");
-        // severe fail, the detected print should be finished with ;  -- missing ;
         return false;
     }
 }
@@ -362,6 +376,7 @@ bool Syntax::calculable(std::string _text, std::string* _value) {
             if (character == "+" || character == "-" || character == "*" || character == "/"){
                 if (variable_1.empty()){
                     spdlog::error("Error getting operation");
+                    logger("Syntax-calculable", "Operator before variable");
                     // mega error, hay una operación antes que cualquier variable
                     break;
                 }
@@ -432,7 +447,9 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
         else if (_operation == "/"){
             if (variable2 != 0) {
                 result = variable1 / variable2;
-            } else{result = 0; std::cout << "Error in Calculate: division by zero" << std::endl;}
+            } else{result = 0;
+                logger("Syntax-calculate", "Division by zero");
+            }
         }
     }
     catch (int exc){
@@ -451,6 +468,7 @@ std::string Syntax::analyze(std::string text, TextView* _stdout_) {
     std::string value;
     std::string type;
     std::string _ram_view_status;
+    logger("Syntax-analyze", "Server call");
     client.construction("no", "no", "no", instruction, "no", "no");
     std::cout << "Proceso de interpretación:" << std::endl;
 
@@ -460,6 +478,15 @@ std::string Syntax::analyze(std::string text, TextView* _stdout_) {
         to_print = identify_print(&text, _stdout_);
         if (to_print != "error") {
             if (to_print != "printed") {
+                value = to_print;
+                instruction = "print";
+                if (finisihed_sentence(&text)){
+                    std::string printeo = client.construction(" ", value, " ", instruction, std::to_string(access), this->getSize(type));
+                    std::cout << printeo << std::endl;
+                    auto json = json::parse(printeo);
+                    _stdout_->get_buffer()->set_text(_stdout_->get_buffer()->get_text() + json["Values"].get<std::string>() + "\n");
+                    std::cout << "texto: " + text << std::endl;
+                }
                 std::cout << "operacion: " + to_print << std::endl;
                 //calculable(to_print);
             }
@@ -486,6 +513,7 @@ std::string Syntax::analyze(std::string text, TextView* _stdout_) {
                 std::cout << "value = " + value << std::endl;
             }
             if (!fatal_error && finisihed_sentence(&text)) {
+                logger("Syntax-analyze", "Server call");
                 _ram_view_status = client.construction(type, label, value, instruction, std::to_string(access), this->getSize(type));
             }
         }
@@ -510,6 +538,7 @@ bool Syntax::Only_1_Value(std::string _text) {
 
     if (_text.empty()) {
         spdlog::error("Insufficient txt to Only_1_Value");
+        logger("Syntax-Only_1_Value", "Insufficient text");
         fatal_error = true;
         return true;
     }
@@ -524,7 +553,6 @@ bool Syntax::Only_1_Value(std::string _text) {
             character = character[0];
         }
         if (character == "+" || character == "-" || character == "*" || character == "/"){
-            std::cout << "yep"  << std::endl;
             return false;
         }
         else{
@@ -550,10 +578,12 @@ void Syntax::validate_definition(std::string _type, std::string _value) {
         } else if (_type == "reference") {
             // Protocol for reference declarations
         } else {
+            logger("Syntax-validate_definition", "Type and value incompatibility");
             spdlog::critical("validate_definition: Error al validar");
         }
     }
     catch (std::exception exception){
+        logger("Syntax-validate_definition", "Type and value incompatibility");
         spdlog::critical("validate_definition: Error al validar");
         fatal_error = true;
     }
@@ -594,12 +624,17 @@ std::string Syntax::debugText(std::string *text, TextView *_stdout_) {
                 else{
                     value = identify_operation(text);
                     if (!calculable(value, &value)){
-                        instruction = "definition_with_operation";
+                        if (instruction == "definition"){
+                            instruction = "definition_with_operation";
+                        } else if (instruction == "re definition"){
+                            instruction = "re definition_with_operation";
+                        }
                     }
                 }
                 std::cout << "value = " + value << std::endl;
             }
             if (!fatal_error && finisihed_sentence(text)) {
+                logger("Syntax-debugText", "Server call");
                 _ram_view_status = client.construction(type, label, value, instruction, std::to_string(access), this->getSize(type));
             }
         }
@@ -621,6 +656,7 @@ std::string Syntax::debugText(std::string *text, TextView *_stdout_) {
 
 void Syntax::DebugStart() {
     std::string instruction = "ReRun";
+    logger("Syntax-DebugStart", "Server call");
     client.construction("no", "no", "no", instruction, "no", "no");
 }
 
