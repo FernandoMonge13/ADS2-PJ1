@@ -430,7 +430,9 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
             result = variable1 * variable2;
         }
         else if (_operation == "/"){
-            result = variable1 / variable2;
+            if (variable2 != 0) {
+                result = variable1 / variable2;
+            } else{result = 0; std::cout << "Error in Calculate: division by zero" << std::endl;}
         }
     }
     catch (int exc){
@@ -468,12 +470,15 @@ std::string Syntax::analyze(std::string text, TextView* _stdout_) {
                 if (Only_1_Value(text)) {
                     value = identify_value(&text);
                     validate_definition(type, value);
-                    // verificar type y value compatibles
                 }
                 else{
                     value = identify_operation(&text);
                     if (!calculable(value, &value)){
-                        instruction = "definition_with_operation";
+                        if (instruction == "definition"){
+                            instruction = "definition_with_operation";
+                        } else if (instruction == "re definition"){
+                            instruction = "re definition_with_operation";
+                        }
                     }
                 }
                 std::cout << "value = " + value << std::endl;
@@ -482,7 +487,6 @@ std::string Syntax::analyze(std::string text, TextView* _stdout_) {
                 _ram_view_status = client.construction(type, label, value, instruction, std::to_string(access), this->getSize(type));
             }
         }
-
     }
     if (fatal_error){
         _stdout_->get_buffer()->set_text("Error: invalid syntax");

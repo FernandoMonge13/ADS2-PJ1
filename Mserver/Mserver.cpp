@@ -34,6 +34,10 @@ std::string Mserver::receive(std::string temporal){
     else if (instruccion == "definition_with_operation"){
         return defintion_with_operation(temporal);
     }
+    else if (instruccion == "re definition"){
+        std::cout << "entró" << std::endl;
+        return re_definition(temporal);
+    }
 }
 
 void Mserver::add(std::string _value, std::string _type, int position) {
@@ -318,5 +322,16 @@ std::string Mserver::calculateD(std::string _variable_1, std::string _variable_2
         std::cout << "failed in conversion" << std::endl;
     }
     return std::to_string(result);
+}
+
+std::string Mserver::re_definition(std::string message) {
+    auto json_message = json::parse(message);
+
+    Node* node = list.find(json_message["Name"].get<std::string>());
+    std::string value = json_message["Value"].get<std::string>();
+    std::string type = node->getType();
+    int position = node->getN();
+    add(value, type, position);
+    return print();
 }
 
