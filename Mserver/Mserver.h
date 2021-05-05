@@ -41,9 +41,11 @@ public:
 private:
 
     bool* memory = (bool*) malloc(10485760);
-    std::string re_definition(std::string message);
+    std::string printV(std::string message);
     std::string definition(std::string message);
     std::string defintion_with_operation(std::string message);
+    std::string re_definition(std::string message);
+    std::string re_definition_with_operation(std::string message);
     std::string calculateI(std::string _variable_1, std::string _variable_2, std::string _operation);
     std::string  calculateL(std::string _variable_1, std::string _variable_2, std::string _operation);
     std::string  calculateF(std::string _variable_1, std::string _variable_2, std::string _operation);

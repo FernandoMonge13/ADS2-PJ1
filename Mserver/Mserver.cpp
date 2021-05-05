@@ -35,8 +35,13 @@ std::string Mserver::receive(std::string temporal){
         return defintion_with_operation(temporal);
     }
     else if (instruccion == "re definition"){
-        std::cout << "entró" << std::endl;
         return re_definition(temporal);
+    }
+    else if (instruccion == "re definition_with_operation"){
+        return re_definition_with_operation(temporal);
+    }
+    else if (instruccion == "print"){
+        return printV(temporal);
     }
 }
 
@@ -333,5 +338,32 @@ std::string Mserver::re_definition(std::string message) {
     int position = node->getN();
     add(value, type, position);
     return print();
+}
+
+std::string Mserver::re_definition_with_operation(std::string message) {
+    auto json_message = json::parse(message);
+
+    Node* node = list.find(json_message["Name"].get<std::string>());
+    std::string no_calculated_value = json_message["Value"].get<std::string>();
+    std::string type = node->getType();
+    int position = node->getN();
+
+    std::string calculated_value = operation_handler(no_calculated_value,type);
+    add(calculated_value, type, position);
+
+    return print();
+}
+
+std::string Mserver::printV(std::string message) {
+    auto json_message = json::parse(message);
+    Node* node = list.find(json_message["Name"].get<std::string>());
+    std::string value = list.getValue(node->getType(), node->getN(), memory);
+    json j_message = {
+            {"Addresses",  "addresses"},
+            {"Values",  value},
+            {"Labels", "labels"},
+            {"Refs_Count", "refs_count"},
+    };
+    return j_message.dump();
 }
 
