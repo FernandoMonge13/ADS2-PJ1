@@ -30,11 +30,15 @@ private:
     bool fatal_error;
     bool flag_condition = false;
     int access = 0;
+    TextView* logger_box ;
+    std::string data = "";
 
 
 public:
     std::string analyze(std::string text, TextView* _stdout_);
     std::string debugText(std::string* text, TextView* _stdout_);
+    void setLogger(TextView* _logger);
+    void logger(std::string, std::string);
     void DebugStart();
     Syntax();
 

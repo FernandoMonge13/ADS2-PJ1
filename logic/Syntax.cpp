@@ -440,6 +440,8 @@ int Syntax::calculate(std::string _variable_1, std::string _variable_2, std::str
 }
 
 std::string Syntax::analyze(std::string text, TextView* _stdout_) {
+    data  = "";
+    logger_box->get_buffer()->set_text(data);
     fatal_error = false;
     std::string instruction = "ReRun";
     std::string to_print;
@@ -554,6 +556,8 @@ void Syntax::validate_definition(std::string _type, std::string _value) {
 
 std::string Syntax::debugText(std::string *text, TextView *_stdout_) {
 
+    data  = "";
+    logger_box->get_buffer()->set_text(data);
     fatal_error = false;
     std::string instruction;
     std::string to_print;
@@ -612,4 +616,15 @@ std::string Syntax::debugText(std::string *text, TextView *_stdout_) {
 void Syntax::DebugStart() {
     std::string instruction = "ReRun";
     client.construction("no", "no", "no", instruction, "no", "no");
+}
+
+void Syntax::setLogger(TextView * _logger) {
+    logger_box = _logger;
+
+}
+
+void Syntax::logger(std::string from, std::string info) {
+    data.append("\n"+from + " " + info);
+    logger_box->get_buffer()->set_text(data);
+
 }
