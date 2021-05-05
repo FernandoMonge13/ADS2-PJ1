@@ -1,0 +1,27 @@
+digraph "MainWindow::MainWindow"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="MainWindow::MainWindow",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Generates the window with all its components."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="MainWindow::debugStart",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMainWindow.html#a5d049948ba1a30dae2654dd9bcde4c3a",tooltip=" "];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Syntax::DebugStart",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSyntax.html#a7733a5565bfc9ad2d37ca6803fbbccfb",tooltip=" "];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Client::construction",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classClient.html#a3f05cb35be05fe8d27443a49069b810f",tooltip=" "];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="MainWindow::next_pressed",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMainWindow.html#a2d0c7e73108991e84bfaef4f30ef0382",tooltip=" "];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Syntax::debugText",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSyntax.html#a537f8b6e711c89ddb1336821536f7546",tooltip=" "];
+  Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="nlohmann::to_string",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespacenlohmann.html#a6ce645a0b8717757e096a5b5773b7a16",tooltip="user-defined to_string function for JSON values"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="MainWindow::run_button\l_clicked",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classMainWindow.html#a24f1b378d5ef7b3f8b77717a8187f061",tooltip=" "];
+  Node8 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Syntax::analyze",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classSyntax.html#a328ae9cdb72d859eb7bcd7e4e8f0bc8b",tooltip=" "];
+  Node9 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node7 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

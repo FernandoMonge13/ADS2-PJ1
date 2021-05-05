@@ -1,0 +1,11 @@
+digraph "Server" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  dir_1a445cb237d74f7a5f8d11ec3b0585cc [shape=box, label="Server", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_1a445cb237d74f7a5f8d11ec3b0585cc.html"];
+  dir_1461be47150aff16a081be733e8763ec [shape=box label="Json" URL="dir_1461be47150aff16a081be733e8763ec.html"];
+  dir_92680532451fd14ee63a102b487d9848 [shape=box label="Mserver" URL="dir_92680532451fd14ee63a102b487d9848.html"];
+  dir_1a445cb237d74f7a5f8d11ec3b0585cc->dir_1461be47150aff16a081be733e8763ec [headlabel="2", labeldistance=1.5 headhref="dir_000013_000008.html"];
+  dir_1a445cb237d74f7a5f8d11ec3b0585cc->dir_92680532451fd14ee63a102b487d9848 [headlabel="1", labeldistance=1.5 headhref="dir_000013_000011.html"];
+  dir_92680532451fd14ee63a102b487d9848->dir_1461be47150aff16a081be733e8763ec [headlabel="1", labeldistance=1.5 headhref="dir_000011_000008.html"];
+}

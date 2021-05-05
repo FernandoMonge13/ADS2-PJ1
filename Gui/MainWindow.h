@@ -8,16 +8,9 @@
 
 using namespace Gtk;
 
-/**
- * @file MainWindow.h
- * @version 1.1
- * @date 02/04/2021
- * @author CAMANEM
- * @title Main Window
- *
+/*!
  * @brief MainWindow creates and contains the program window and all graphic objects
  */
-
 class MainWindow {
 
 private:
@@ -47,11 +40,18 @@ private:
     std::string debug_Text;
 
     void update(std::string ram_data);
+    /*!
+     * @brief Descripción Corta
+     *
+     * @param text
+     * @param max_lenght
+     * @return
+     */
     std::string showData(std::string* text, int max_lenght);
 
 public:
 
-    /*
+    /*!
      * @brief Generates the window with all its components
      */
     MainWindow();

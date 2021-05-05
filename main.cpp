@@ -15,8 +15,8 @@ int main() {
     std::cin>> option;
 
     if (option == 1){
-        Server hp = Server();
-        hp.start();
+        Server server = Server();
+        server.start();
 
     }else{
         MainWindow window;
