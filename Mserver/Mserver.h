@@ -14,16 +14,29 @@
 
 using json = nlohmann::json;
 
-// HOLA;
-// HOLA855;
-
-
+/*!
+ * @brief It whats basically do is manage the memory
+ */
 class Mserver {
 
 public:
-    std::string receive(std::string);
-    std::string print();
+    /*!
+     * @brief Constructor
+     */
     Mserver();
+
+    /*!
+     * @brief it get a Json object from the client to add it to the memory
+     * @return the information reorganized
+     */
+    std::string receive(std::string);
+
+    /*!
+     * @brief give us the status of the memory state
+     * @return the info that is actually in memory
+     */
+    std::string print();
+
 
 private:
 

@@ -93,7 +93,6 @@ void MainWindow::run_button_clicked(){
 void MainWindow::debugStart() {
 
     debug_Text = editor.get_buffer()->get_text();
-    Syntax* syntax = new Syntax;
     syntax->DebugStart();
 }
 

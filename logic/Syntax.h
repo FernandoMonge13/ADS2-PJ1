@@ -10,7 +10,9 @@
 
 using namespace Gtk;
 
-
+/*!
+ * This class is the one that validates the different possibilities that could appear in to the IDE structure
+ */
 class Syntax {
 
 private:
@@ -35,11 +37,43 @@ private:
 
 
 public:
+    /*!
+     * @brief analyze the info that is on the IDE in automatic mode
+     * @param text that is going to be analyzed
+     * @param _stdout_ where an out put info is gonna be
+     * @return single IDE line analyzed
+     */
     std::string analyze(std::string text, TextView* _stdout_);
+
+    /*!
+     * @brief analyze the info that is on the IDE in debug mode
+     * @param text that is going to be analyzed
+     * @param _stdout_ where an out put info is gonna be
+     * @return single IDE line analyzed
+     */
     std::string debugText(std::string* text, TextView* _stdout_);
+
+    /*!
+     * @brief obtain the logger objet
+     * @param _logger window object where is gonna be the logg info
+     */
     void setLogger(TextView* _logger);
+
+    /*!
+     * @brief info that is gonna be on the logger
+     * @param where the problem happened
+     * @param error message
+     */
     void logger(std::string, std::string);
+
+    /*!
+     * @brief start the debug mode
+     */
     void DebugStart();
+
+    /*!
+     * @brief constructor
+     */
     Syntax();
 
 };

@@ -40,13 +40,7 @@ private:
     std::string debug_Text;
 
     void update(std::string ram_data);
-    /*!
-     * @brief Descripción Corta
-     *
-     * @param text
-     * @param max_lenght
-     * @return
-     */
+
     std::string showData(std::string* text, int max_lenght);
 
 public:
@@ -55,8 +49,19 @@ public:
      * @brief Generates the window with all its components
      */
     MainWindow();
+
+    /*!
+     * @brief Function related to the run button
+     */
     void run_button_clicked();
+
+    /*!
+     * @brief Function related to the debug button
+     */
     void debugStart();
+    /*!
+     * @brief Function related to the step by step button
+     */
     void next_pressed();
 };
 

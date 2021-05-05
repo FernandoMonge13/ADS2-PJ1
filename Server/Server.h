@@ -20,12 +20,21 @@
 
 using json = nlohmann::json;
 
-
+/**
+     * @brief It provide us the chance of chance the communication
+     */
 class Server {
 
 public:
 
+    /*!
+     * @brief Constructor
+     */
     Server();
+
+    /*!
+     * @brief Starts the server related to sockets
+     */
     void start();
 
 private:
